@@ -1,0 +1,6 @@
+.destinyTooltip {
+  position: absolute;
+  width: 350px;
+  background: rgba(30,36,43, 0.95);
+  color: #fff;
+}
