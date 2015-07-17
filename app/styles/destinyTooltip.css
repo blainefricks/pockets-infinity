@@ -4,3 +4,46 @@
   background: rgba(30,36,43, 0.95);
   color: #fff;
 }
+
+.destinyTooltip .itemHeader,
+.destinyTooltip .itemBody {
+  padding: 10px;
+}
+
+.destinyTooltip .itemName {
+  text-transform: uppercase;
+  font-size: 22px;
+  font-weight: normal;
+}
+
+.destinyTooltip .itemHeader .itemSubtitle,
+.destinyTooltip .itemHeader .tierTypeName {
+  position: relative;
+  font-size: 17px;
+  line-height: 20px;
+  font-weight: normal;
+  opacity: 0.5;
+}
+
+.destinyTooltip .itemHeader .tierTypeName {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.itemStats .primaryStat {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  width: 170px;
+}
+
+.itemStats .valueNumber:after {
+  background: url("/img/theme/destiny/icons/icons_gearCompare.png") no-repeat scroll -100px -100px;
+  content: "";
+  background-size: 100% auto;
+  display: inline-block;
+  height: 10px;
+  margin-left: 10px;
+  width: 10px;
+}
