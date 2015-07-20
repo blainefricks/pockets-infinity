@@ -1,2 +1,3 @@
 app/vendor/
 *.log
+app/js/apiKey.js
