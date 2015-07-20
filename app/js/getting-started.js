@@ -10,8 +10,7 @@ xhr.setRequestHeader("X-API-Key", apiKey);
 xhr.onreadystatechange = function(){
   if (this.readyState === 4 && this.status === 200) {
     var json = JSON.parse(this.responseText);
-    document.getElementById("itemName").innerHTML = json.Response.data.inventoryItem.itemName;
-    document.getElementById("itemDescription").innerHTML = json.Response.data.inventoryItem.itemDescription;
+    console.log(json.Response.data.inventoryItem.itemName);
   };
 }
 

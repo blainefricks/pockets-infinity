@@ -1,5 +1,14 @@
+.tierTypeExotic .destinyTooltip .itemHeader, .destinyTooltip[data-tiertype="Exotic"] .itemHeader {
+  background: rgba(206,174,50,0.9);
+  color: #f5f5f5;
+}
+.tierTypeLegendary .destinyTooltip .itemHeader, .destinyTooltip[data-tiertype="Legendary"] .itemHeader, .tierTypeSuperior .destinyTooltip .itemHeader, .destinyTooltip[data-tiertype="Superior"] .itemHeader {
+  background: rgba(78,50,99,0.9);
+  color: #f5f5f5;
+}
+
 .destinyTooltip {
-  position: absolute;
+  /*position: absolute;*/
   width: 350px;
   background: rgba(30,36,43, 0.95);
   color: #fff;
@@ -37,7 +46,9 @@
   vertical-align: middle;
   width: 170px;
 }
-
+.itemDescription {
+  font-style: italic;
+}
 .itemStats .valueNumber:after {
   background: url("/img/theme/destiny/icons/icons_gearCompare.png") no-repeat scroll -100px -100px;
   content: "";
