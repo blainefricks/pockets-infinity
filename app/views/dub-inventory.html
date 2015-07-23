@@ -1,0 +1,53 @@
+<div class="inventory">
+  <div class="bucketsLeft">
+    <div class="bucket bucket-subclass" data-buckethash="" data-bucketid="bucket-subclass">
+      <div class="bucketItem">
+        <div class="itemImage"></div>
+        <div class="destinyTooltip"></div>
+      </div>
+      <div class="unequippedItems">
+        <div class="label">Sublcass</div>
+        <div class="bucketItem" ng-repeat="bucketItem in inventorySubclassItems">
+          <div class="itemImage"></div>
+          <div class="itemAction">Equip</div>
+          <div dub-destiny-tooltip></div>
+        </div>
+      </div>
+    </div>
+    <div class="bucket bucket-primary-weapon">
+      <div class="bucketItem">
+        <div class="itemImage"></div>
+        <div dub-destiny-tooltip></div>
+      </div>
+      <div class="unequippedItems">
+        <div class="label">Primary Weapons</div>
+        <div class="bucketItem" ng-repeat="bucketItem in inventoryPrimaryWeaponItems">
+          <div class="itemImage"></div>
+          <div class="itemAction">Equip</div>
+          <div dub-destiny-tooltip></div>
+        </div>
+      </div>
+    </div>
+    <div class="bucket bucket-special-weapon">
+      <div class="bucketItem">
+        <div></div>
+        <div class="itemImage"></div>
+        <div class="destinyTooltip"></div>
+      </div>
+      <div class="unequippedItems">
+        <div class="label">Special Weapons</div>
+        <div class="bucketItem" ng-repeat="bucketItem in inventorySpecialWeaponItems">
+          <div class="itemImage"></div>
+          <div class="itemAction">Equip</div>
+          <div dub-destiny-tooltip></div>
+        </div>
+      </div>
+    </div>
+    <div class="bucket bucket-heavy-weapon"></div>
+  </div>
+  <div class="bucketsRight"></div>
+  <div class="bucketItem" ng-repeat="item in inventoryItems">
+    <div class="bucket" data-itemHash="{{item.itemHash}}"></div>
+    <div dub-destiny-tooltip></div>
+  </div>
+</div>

@@ -1,17 +1,31 @@
-var dubApp = angular.module('dubApp', []);
-
-dubApp.controller('dubAppCtrl', function ($scope){
+dubApp.controller('dubAppCtrl', ['$scope', function($scope) {
   $scope.inventoryItems = [
-    {"itemName":"Gjallarhorn",
-    "itemDescription":"\"If there is beauty in destruction, why not also in its delivery?\" - Feizel Crux",
-    "tierTypeName":"Exotic",
-    "itemType" : "Rocket Launcher"
+    {
+      itemHash: "12345",
+      itemName: "Her Right Hand",
+      tierTypeName:"Legendary",
+      itemType: "Auto Rifle",
+      statValue: "statValue",
+      itemDescription:"The Royal Guard's weapon of choice.",
+      statName: "statName",
+      valueNumber: "valueNumber",
+      itemPerkDescription: "itemPerkDescription",
     },
-    {"itemName":"Her Right Hand",
-    "itemDescription":"The Royal Guard's weapon of choice.",
-    "tierTypeName":"Legendary",
-    "itemType" : "Auto Rifle"
+    {
+      itemHash: "3164616404",
+      itemName:"Thorn",
+      itemType: "Hand Cannon",
+      tierTypeName:"Exotic",
+      itemDescription:"\"To rend one's enemies is to see them not as equals, but objects—hollow of spirit and meaning.\" - 13th Understanding, 7th Book of Sorrow",
+      statName: "statName",
+      valueNumber: "valueNumber",
+      itemPerkDescription: "itemPerkDescription",
     }
-
-  ];
+    ];
+    $scope.inventorySubclassItems = [{}];
+}])
+.directive('dubInventory', function() {
+  return {
+    templateUrl: 'views/dub-inventory.html'
+  };
 });

@@ -1,0 +1,52 @@
+<div class="destinyTooltip" data-tiertype="{{item.tierTypeName}}" data-itemHash="{{item.itemHash}}">
+  <div class="itemHeader">
+    <div class="itemName">{{item.itemName}}</div>
+    <div class="itemSubtitle">
+      <span>{{item.itemType}}</span>
+      <div class="tierTypeName">{{item.tierTypeName}}</div>
+    </div>
+  </div>
+  <div class="itemBody">
+    <div class="itemStats">
+      <div class="primaryStat">
+        <div class="damageTypeIcon" style="background-image: url('');"></div>
+        <span class="statValue ">{{item.statValue}}</span>
+      </div>
+      <div class="itemDescription">{{item.itemDescription}}</div>
+      <table class="itemStatTable">
+        <tbody>
+          <tr class="itemStat">
+            <td class="statName">
+              <span>{{item.statName}}</span>
+            </td>
+            <td class="valueBar barStat">
+              <span class="value">
+                <span class="valueModifiedByNode">
+                  <span class="valueModified"></span>
+                </span>
+              </span>
+            </td>
+          </tr>
+          <tr class="itemStat usesStatNumbers">
+            <td class="statName">
+              <span>{{item.statName}}</span>
+            </td>
+            <td class="valueBar">
+              <span class="valueNumber">{{item.valueNumber}}</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="itemPerks">
+        <div class="itemPerk">
+          <span class="icon"></span>
+          <span class="itemPerkDescription">{{item.itemPerkDescription}}</span>
+        </div>
+        <div class="itemPerk active">
+          <span class="icon"></span>
+          <span class="itemPerkDescription">{{item.itemPerkDescription}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
