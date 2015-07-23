@@ -1,5 +1,5 @@
 dubApp.controller('dubAppCtrl', ['$scope', function($scope) {
-  $scope.inventoryItems = [
+  $scope.inventoryPrimaryWeaponItems = [
     {
       itemHash: "12345",
       itemName: "Her Right Hand",

@@ -1,4 +1,11 @@
 <div class="inventory">
+  <div class="leftStats">
+    <div class="level">
+      <div class="label">Level</div>
+      <div class="value">{{guardian.level}}</div>
+    </div>
+  </div>
+  <div class="rightStats"></div>
   <div class="bucketsLeft">
     <div class="bucket bucket-subclass" data-buckethash="" data-bucketid="bucket-subclass">
       <div class="bucketItem">
@@ -21,7 +28,7 @@
       </div>
       <div class="unequippedItems">
         <div class="label">Primary Weapons</div>
-        <div class="bucketItem" ng-repeat="bucketItem in inventoryPrimaryWeaponItems">
+        <div class="bucketItem" ng-repeat="item in inventoryPrimaryWeaponItems">
           <div class="itemImage"></div>
           <div class="itemAction">Equip</div>
           <div dub-destiny-tooltip></div>
