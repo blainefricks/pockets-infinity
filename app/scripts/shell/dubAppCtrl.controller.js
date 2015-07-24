@@ -1,5 +1,22 @@
 dubApp.controller('dubAppCtrl', ['$scope', function($scope) {
-  $scope.inventoryPrimaryWeaponItems = [
+  // Equipped Subclass
+  $scope.inventorySubclassItems_Equipped = [
+    {
+      itemHash: "itemHash",
+      itemName: "Sungsinger",
+      itemType: "Warlock Subclass",
+    },
+  ];
+  // Unequipped Subclasses
+  $scope.inventorySubclassItems = [
+    {
+      itemHash: "itemHash",
+      itemName: "Voidwalker",
+      itemType: "Warlock Subclass",
+    },
+  ];
+  // Equipped Primary Weapon
+  $scope.inventoryPrimaryWeaponItems_Equipped = [
     {
       itemHash: "12345",
       itemName: "Her Right Hand",
@@ -11,6 +28,9 @@ dubApp.controller('dubAppCtrl', ['$scope', function($scope) {
       valueNumber: "valueNumber",
       itemPerkDescription: "itemPerkDescription",
     },
+  ];
+  // Unequipped Primary Weapons
+  $scope.inventoryPrimaryWeaponItems = [
     {
       itemHash: "3164616404",
       itemName:"Thorn",
@@ -21,8 +41,33 @@ dubApp.controller('dubAppCtrl', ['$scope', function($scope) {
       valueNumber: "valueNumber",
       itemPerkDescription: "itemPerkDescription",
     }
-    ];
-    $scope.inventorySubclassItems = [{}];
+  ];
+  $scope.inventorySpecialWeaponItems_Equipped = [
+    {
+      itemHash: "itemHash",
+      itemName: "Amplified Geo-D6",
+      tierTypeName:"Legendary",
+      itemType: "Sniper Rifle",
+      statValue: "statValue",
+      itemDescription:"Shortest distance between two points across a curved visual axis: Aim + Squeeze.",
+      statName: "statName",
+      valueNumber: "valueNumber",
+      itemPerkDescription: "itemPerkDescription",
+    },
+  ];
+  $scope.inventorySpecialWeaponItems = [
+    {
+      itemHash: "12345",
+      itemName: "itemName",
+      tierTypeName:"tierTypeName",
+      itemType: "itemType",
+      statValue: "statValue",
+      itemDescription:"itemDescription",
+      statName: "statName",
+      valueNumber: "valueNumber",
+      itemPerkDescription: "itemPerkDescription",
+    },
+  ];
 }])
 .directive('dubInventory', function() {
   return {

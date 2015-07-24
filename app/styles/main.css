@@ -88,3 +88,27 @@ body {
 .bucket {
   position: relative;
 }
+.unequippedItems{
+  position: absolute;
+  top: 0;
+  width: 266px;
+  height: 252px;
+  text-align: right;
+  white-space: normal;
+  z-index: 2;
+  background-repeat: no-repeat;
+  -webkit-transform-origin: 100% 0;
+          transform-origin: 100% 0;
+  -webkit-transform: scale(0.28125);
+          transform: scale(0.28125);
+}
+.bucket.bucket-subclass:hover .unequippedItems,
+.bucket.bucket-primary-weapon:hover .unequippedItems,
+.bucket.bucket-special-weapon:hover .unequippedItems,
+.bucket.bucket-heavy-weapon:hover .unequippedItems
+ {
+  padding-right: 10px;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  background-position: 10px 0;
+}
