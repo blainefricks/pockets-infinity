@@ -40,6 +40,16 @@ dubApp.controller('dubAppCtrl', ['$scope', function($scope) {
       statName: "statName",
       valueNumber: "valueNumber",
       itemPerkDescription: "itemPerkDescription",
+    },
+    {
+      itemHash: "itemHash",
+      itemName:"itemName",
+      itemType: "itemType",
+      tierTypeName:"tierTypeName",
+      itemDescription:"itemDescription",
+      statName: "statName",
+      valueNumber: "valueNumber",
+      itemPerkDescription: "itemPerkDescription",
     }
   ];
   $scope.inventorySpecialWeaponItems_Equipped = [
