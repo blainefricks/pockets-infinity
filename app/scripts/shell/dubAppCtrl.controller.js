@@ -4,7 +4,9 @@ dubApp.controller('dubAppCtrl', ['$scope', function($scope) {
     {
       itemHash: "itemHash",
       itemName: "Sungsinger",
+      tierTypeName:"Common",
       itemType: "Warlock Subclass",
+      itemDescription: "There are flames that even the Darkness cannot extinguish.",
     },
   ];
   // Unequipped Subclasses
@@ -12,7 +14,9 @@ dubApp.controller('dubAppCtrl', ['$scope', function($scope) {
     {
       itemHash: "itemHash",
       itemName: "Voidwalker",
+      tierTypeName:"Common",
       itemType: "Warlock Subclass",
+      itemDescription: "Those who have stared into the Void are not bound by the laws of space and time.",
     },
   ];
   // Equipped Primary Weapon
@@ -45,12 +49,42 @@ dubApp.controller('dubAppCtrl', ['$scope', function($scope) {
       itemHash: "itemHash",
       itemName:"itemName",
       itemType: "itemType",
+      tierTypeName:"Uncommon",
+      itemDescription:"itemDescription",
+      statName: "statName",
+      valueNumber: "valueNumber",
+      itemPerkDescription: "itemPerkDescription",
+    },
+    {
+      itemHash: "itemHash",
+      itemName:"itemName",
+      itemType: "itemType",
+      tierTypeName:"Rare",
+      itemDescription:"itemDescription",
+      statName: "statName",
+      valueNumber: "valueNumber",
+      itemPerkDescription: "itemPerkDescription",
+    },
+    {
+      itemHash: "itemHash",
+      itemName:"itemName",
+      itemType: "itemType",
       tierTypeName:"tierTypeName",
       itemDescription:"itemDescription",
       statName: "statName",
       valueNumber: "valueNumber",
       itemPerkDescription: "itemPerkDescription",
-    }
+    },
+    {
+      itemHash: "itemHash",
+      itemName:"itemName",
+      itemType: "itemType",
+      tierTypeName:"tierTypeName",
+      itemDescription:"itemDescription",
+      statName: "statName",
+      valueNumber: "valueNumber",
+      itemPerkDescription: "itemPerkDescription",
+    },
   ];
   $scope.inventorySpecialWeaponItems_Equipped = [
     {
@@ -77,6 +111,92 @@ dubApp.controller('dubAppCtrl', ['$scope', function($scope) {
       valueNumber: "valueNumber",
       itemPerkDescription: "itemPerkDescription",
     },
+    {
+      itemHash: "itemHash",
+      itemName:"itemName",
+      itemType: "itemType",
+      tierTypeName:"tierTypeName",
+      itemDescription:"itemDescription",
+      statName: "statName",
+      valueNumber: "valueNumber",
+      itemPerkDescription: "itemPerkDescription",
+    },
+    {
+      itemHash: "itemHash",
+      itemName:"itemName",
+      itemType: "itemType",
+      tierTypeName:"tierTypeName",
+      itemDescription:"itemDescription",
+      statName: "statName",
+      valueNumber: "valueNumber",
+      itemPerkDescription: "itemPerkDescription",
+    },
+    {
+      itemHash: "itemHash",
+      itemName:"itemName",
+      itemType: "itemType",
+      tierTypeName:"tierTypeName",
+      itemDescription:"itemDescription",
+      statName: "statName",
+      valueNumber: "valueNumber",
+      itemPerkDescription: "itemPerkDescription",
+    }
+  ];
+  $scope.inventoryHeavyWeaponItems_Equipped = [
+    {
+      itemHash: "12345",
+      itemName: "itemName",
+      tierTypeName:"tierTypeName",
+      itemType: "itemType",
+      statValue: "statValue",
+      itemDescription:"itemDescription",
+      statName: "statName",
+      valueNumber: "valueNumber",
+      itemPerkDescription: "itemPerkDescription",
+    }
+  ];
+  $scope.inventoryHeavyWeaponItems = [
+    {
+      itemHash: "12345",
+      itemName: "itemName",
+      tierTypeName:"tierTypeName",
+      itemType: "itemType",
+      statValue: "statValue",
+      itemDescription:"itemDescription",
+      statName: "statName",
+      valueNumber: "valueNumber",
+      itemPerkDescription: "itemPerkDescription",
+    },
+    {
+      itemHash: "itemHash",
+      itemName:"itemName",
+      itemType: "itemType",
+      tierTypeName:"tierTypeName",
+      itemDescription:"itemDescription",
+      statName: "statName",
+      valueNumber: "valueNumber",
+      itemPerkDescription: "itemPerkDescription",
+    },
+    {
+      itemHash: "itemHash",
+      itemName:"itemName",
+      itemType: "itemType",
+      tierTypeName:"tierTypeName",
+      itemDescription:"itemDescription",
+      statName: "statName",
+      valueNumber: "valueNumber",
+      itemPerkDescription: "itemPerkDescription",
+    },
+    {
+      itemHash: "itemHash",
+      itemName:"itemName",
+      itemType: "itemType",
+      tierTypeName:"tierTypeName",
+      itemDescription:"itemDescription",
+      statName: "statName",
+      valueNumber: "valueNumber",
+      itemPerkDescription: "itemPerkDescription",
+    }
   ];
 }])
 .directive('dubInventory', function() {

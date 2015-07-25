@@ -10,23 +10,28 @@
   width: 118px;
   height: 118px;
 }
-.destinyTooltip {
+[dub-destiny-tooltip] {
   display: none;
   position: absolute;
+  margin-top: 15px;
+  transition: all 0.1s ease-in-out;
+  opacity: 0;
+  z-index: 999;
+  left: 115px;
+  width: 350px;
+  background: rgba(30,36,43, 0.95);
+}
+.destinyTooltip {
+  position: relative;
   width: 350px;
   background: rgba(30,36,43, 0.95);
   text-align: left;
   color: #fff;
-  top: 15px;
-  left: 115px;
-  z-index: 99;
-  transition: all 0.1s ease-in-out;
-  opacity: 0;
 }
 
-.bucketItem:hover .destinyTooltip {
+.bucketItem:hover [dub-destiny-tooltip] {
   display: block;
-  top: 0px;
+  margin-top: 0px;
   opacity: 1;
 }
 
@@ -34,7 +39,10 @@
 .destinyTooltip .itemBody {
   padding: 10px;
 }
-
+.destinyTooltip .itemHeader {
+  background: rgba(245,245,245,0.9);
+  color: #333;
+}
 .tierTypeExotic .destinyTooltip .itemHeader, .destinyTooltip[data-tiertype="Exotic"] .itemHeader {
   background: rgba(206,174,50,0.9);
   color: #f5f5f5;
@@ -43,7 +51,14 @@
   background: rgba(78,50,99,0.9);
   color: #f5f5f5;
 }
-
+.tierTypeRare .destinyTooltip .itemHeader, .destinyTooltip[data-tiertype="Rare"] .itemHeader {
+    background: rgba(85,127,158,0.9);
+    color: #f5f5f5;
+}
+.destinyTooltip[data-tiertype="Uncommon"] .itemHeader {
+    background: rgba(47,107,60,0.9);
+    color: #f5f5f5;
+}
 .destinyTooltip .itemName {
   text-transform: uppercase;
   font-size: 22px;
