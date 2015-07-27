@@ -17,9 +17,14 @@
   transition: all 0.1s ease-in-out;
   opacity: 0;
   z-index: 999;
-  left: 115px;
   width: 350px;
   background: rgba(30,36,43, 0.95);
+}
+.bucketsLeft [dub-destiny-tooltip] {
+  left: 100px;
+}
+.bucketsRight [dub-destiny-tooltip] {
+  right: 100px;
 }
 .destinyTooltip {
   position: relative;

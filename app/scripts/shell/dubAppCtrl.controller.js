@@ -86,6 +86,7 @@ dubApp.controller('dubAppCtrl', ['$scope', function($scope) {
       itemPerkDescription: "itemPerkDescription",
     },
   ];
+  // Equipped Special Weapon
   $scope.inventorySpecialWeaponItems_Equipped = [
     {
       itemHash: "itemHash",
@@ -99,6 +100,7 @@ dubApp.controller('dubAppCtrl', ['$scope', function($scope) {
       itemPerkDescription: "itemPerkDescription",
     },
   ];
+  // Unequipped Special Weapons
   $scope.inventorySpecialWeaponItems = [
     {
       itemHash: "12345",
@@ -142,6 +144,7 @@ dubApp.controller('dubAppCtrl', ['$scope', function($scope) {
       itemPerkDescription: "itemPerkDescription",
     }
   ];
+  // Equipped Heavy Weapon
   $scope.inventoryHeavyWeaponItems_Equipped = [
     {
       itemHash: "12345",
@@ -155,6 +158,7 @@ dubApp.controller('dubAppCtrl', ['$scope', function($scope) {
       itemPerkDescription: "itemPerkDescription",
     }
   ];
+  // Unequipped Heavy Weapons
   $scope.inventoryHeavyWeaponItems = [
     {
       itemHash: "12345",
@@ -192,6 +196,146 @@ dubApp.controller('dubAppCtrl', ['$scope', function($scope) {
       itemName:"itemName",
       itemType: "itemType",
       tierTypeName:"tierTypeName",
+      itemDescription:"itemDescription",
+      statName: "statName",
+      valueNumber: "valueNumber",
+      itemPerkDescription: "itemPerkDescription",
+    }
+  ];
+  // Equipped Head Armor
+  $scope.inventoryHeadItems_Equipped = [
+    {
+      itemHash: "12345",
+      itemName: "Equipped Head Armor",
+      tierTypeName:"tierTypeName",
+      itemType: "itemType",
+      statValue: "statValue",
+      itemDescription:"itemDescription",
+      statName: "statName",
+      valueNumber: "valueNumber",
+      itemPerkDescription: "itemPerkDescription",
+    }
+  ];
+  // Unequipped Head Armor
+  $scope.inventoryHeadItems = [
+    {
+      itemHash: "12345",
+      itemName: "Unequipped Head Armor",
+      tierTypeName:"tierTypeName",
+      itemType: "itemType",
+      statValue: "statValue",
+      itemDescription:"itemDescription",
+      statName: "statName",
+      valueNumber: "valueNumber",
+      itemPerkDescription: "itemPerkDescription",
+    }
+  ];
+  // Equipped Arm Armor
+  $scope.inventoryArmItems_Equipped = [
+    {
+      itemHash: "12345",
+      itemName: "Equipped Arm Armor",
+      tierTypeName:"tierTypeName",
+      itemType: "itemType",
+      statValue: "statValue",
+      itemDescription:"itemDescription",
+      statName: "statName",
+      valueNumber: "valueNumber",
+      itemPerkDescription: "itemPerkDescription",
+    }
+  ];
+  // Unequipped Arm Armor
+  $scope.inventoryArmItems = [
+    {
+      itemHash: "12345",
+      itemName: "Unequipped Arm Armor",
+      tierTypeName:"tierTypeName",
+      itemType: "itemType",
+      statValue: "statValue",
+      itemDescription:"itemDescription",
+      statName: "statName",
+      valueNumber: "valueNumber",
+      itemPerkDescription: "itemPerkDescription",
+    }
+  ];
+  // Equipped Chest Armor
+  $scope.inventoryChestItems_Equipped = [
+    {
+      itemHash: "12345",
+      itemName: "Equipped Chest Armor",
+      tierTypeName:"tierTypeName",
+      itemType: "itemType",
+      statValue: "statValue",
+      itemDescription:"itemDescription",
+      statName: "statName",
+      valueNumber: "valueNumber",
+      itemPerkDescription: "itemPerkDescription",
+    }
+  ];
+  // Unequipped Chest Armor
+  $scope.inventoryChestItems = [
+    {
+      itemHash: "12345",
+      itemName: "Unequipped Chest Armor",
+      tierTypeName:"tierTypeName",
+      itemType: "itemType",
+      statValue: "statValue",
+      itemDescription:"itemDescription",
+      statName: "statName",
+      valueNumber: "valueNumber",
+      itemPerkDescription: "itemPerkDescription",
+    }
+  ];
+  // Equipped Leg Armor
+  $scope.inventoryLegItems_Equipped = [
+    {
+      itemHash: "12345",
+      itemName: "Equipped Leg Armor",
+      tierTypeName:"tierTypeName",
+      itemType: "itemType",
+      statValue: "statValue",
+      itemDescription:"itemDescription",
+      statName: "statName",
+      valueNumber: "valueNumber",
+      itemPerkDescription: "itemPerkDescription",
+    }
+  ];
+  // Unequipped Leg Armor
+  $scope.inventoryLegItems = [
+    {
+      itemHash: "12345",
+      itemName: "Unequipped Leg Armor",
+      tierTypeName:"tierTypeName",
+      itemType: "itemType",
+      statValue: "statValue",
+      itemDescription:"itemDescription",
+      statName: "statName",
+      valueNumber: "valueNumber",
+      itemPerkDescription: "itemPerkDescription",
+    }
+  ];
+  // Equipped Class Item
+  $scope.inventoryClassItems_Equipped = [
+    {
+      itemHash: "12345",
+      itemName: "Equipped Class Armor",
+      tierTypeName:"tierTypeName",
+      itemType: "itemType",
+      statValue: "statValue",
+      itemDescription:"itemDescription",
+      statName: "statName",
+      valueNumber: "valueNumber",
+      itemPerkDescription: "itemPerkDescription",
+    }
+  ];
+  // Unequipped Class Armor
+  $scope.inventoryClassItems = [
+    {
+      itemHash: "12345",
+      itemName: "Unequipped Class Armor",
+      tierTypeName:"tierTypeName",
+      itemType: "itemType",
+      statValue: "statValue",
       itemDescription:"itemDescription",
       statName: "statName",
       valueNumber: "valueNumber",

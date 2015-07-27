@@ -59,8 +59,8 @@ body {
 */
 [dub-inventory] {
   position: relative;
-  margin: 15px 300px;
-  width: 80%;
+  margin: 30px 300px;
+  width: 300px;
   height: 450px;
 }
 .leftStats {
@@ -88,6 +88,7 @@ body {
 .bucketsRight{
   position: absolute;
   right: 0;
+  z-index: 1;
 }
 .bucket {
   position: relative;
@@ -98,28 +99,48 @@ body {
   top: 0;
   width: 266px;
   height: 252px;
-  text-align: right;
   white-space: normal;
-  right: 87px;
   z-index: 2;
+  background-image: url(/app/images/bg_inventory_bucket.png);
   background-repeat: no-repeat;
   -webkit-transform-origin: 100% 0;
           transform-origin: 100% 0;
   -webkit-transform: scale(0.28125);
           transform: scale(0.28125);
 }
-.bucket.bucket-subclass:hover .unequippedItems,
-.bucket.bucket-primary-weapon:hover .unequippedItems,
-.bucket.bucket-special-weapon:hover .unequippedItems,
-.bucket.bucket-heavy-weapon:hover .unequippedItems
- {
-  padding-right: 10px;
+.bucketsLeft .unequippedItems {
+  right: 87px;
+  text-align: right;
+}
+.bucketsRight .unequippedItems {
+  left: -105px;
+}
+.bucket:hover .unequippedItems {
+  /*padding-right: 10px;*/
   -webkit-transform: scale(1);
   transform: scale(1);
   background-position: 10px 0;
 }
+.bucketsRight .bucket:hover .unequippedItems {
+  left: 83px;
+}
 .unequippedItems .bucketItem {
   position: relative;
   display: inline-block;
-  margin-bottom: 0px;
+  margin-left: 5px;
+  margin-bottom: 3px;
+}
+.unequippedItems .label {
+  opacity: 0;
+  position: absolute;
+  top: -25px;
+}
+.bucketsLeft .unequippedItems .label {
+  right: 0;
+}
+.bucketsRight .unequippedItems .label {
+  left: 5px;
+}
+.bucket:hover .unequippedItems .label {
+  opacity: 1;
 }

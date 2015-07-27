@@ -65,8 +65,78 @@
     </div>
   </div>
 </div>
-<div class="bucketsRight"></div>
-<div class="bucketItem" ng-repeat="bucketItem in inventoryItems">
-  <div class="bucket" data-itemHash="{{item.itemHash}}"></div>
-  <div dub-destiny-tooltip></div>
+<div class="bucketsRight">
+  <div class="bucket bucket-head" data-buckethash="" data-bucketid="bucket-subclass">
+    <div class="bucketItem equipped" ng-repeat="bucketItem in inventoryHeadItems_Equipped">
+      <div class="itemImage" style="background-image:url('{{bucketItem.itemImage}}');"></div>
+      <div dub-destiny-tooltip></div>
+    </div>
+    <div class="unequippedItems">
+      <div class="label">Head Armor</div>
+      <div class="bucketItem" ng-repeat="bucketItem in inventoryHeadItems">
+        <div class="itemImage"></div>
+        <div class="itemAction">Equip</div>
+        <div dub-destiny-tooltip></div>
+      </div>
+    </div>
+  </div>
+  <div class="bucket bucket-arms">
+    <div class="bucketItem equipped" ng-repeat="bucketItem in inventoryArmItems_Equipped">
+      <div class="itemImage"></div>
+      <div dub-destiny-tooltip></div>
+    </div>
+    <div class="unequippedItems">
+      <div class="label">Arms Armor</div>
+      <div class="bucketItem" ng-repeat="bucketItem in inventoryArmItems">
+        <div class="itemImage"></div>
+        <div class="itemAction">Equip</div>
+        <div dub-destiny-tooltip></div>
+      </div>
+    </div>
+  </div>
+  <div class="bucket bucket-chest">
+    <div class="bucketItem equipped" ng-repeat="bucketItem in inventoryChestItems_Equipped">
+      <div></div>
+      <div class="itemImage"></div>
+      <div dub-destiny-tooltip></div>
+    </div>
+    <div class="unequippedItems">
+      <div class="label">Chest Armor</div>
+      <div class="bucketItem" ng-repeat="bucketItem in inventoryChestItems">
+        <div class="itemImage"></div>
+        <div class="itemAction">Equip</div>
+        <div dub-destiny-tooltip></div>
+      </div>
+    </div>
+  </div>
+  <div class="bucket bucket-legs">
+    <div class="bucketItem equipped" ng-repeat="bucketItem in inventoryLegItems_Equipped">
+      <div></div>
+      <div class="itemImage"></div>
+      <div dub-destiny-tooltip></div>
+    </div>
+    <div class="unequippedItems">
+      <div class="label">Leg Armor</div>
+      <div class="bucketItem" ng-repeat="bucketItem in inventoryLegItems">
+        <div class="itemImage"></div>
+        <div class="itemAction">Equip</div>
+        <div dub-destiny-tooltip></div>
+      </div>
+    </div>
+  </div>
+  <div class="bucket bucket-class-items">
+    <div class="bucketItem equipped" ng-repeat="bucketItem in inventoryClassItems_Equipped">
+      <div></div>
+      <div class="itemImage"></div>
+      <div dub-destiny-tooltip></div>
+    </div>
+    <div class="unequippedItems">
+      <div class="label">Class Items</div>
+      <div class="bucketItem" ng-repeat="bucketItem in inventoryClassItems">
+        <div class="itemImage"></div>
+        <div class="itemAction">Equip</div>
+        <div dub-destiny-tooltip></div>
+      </div>
+    </div>
+  </div>
 </div>
