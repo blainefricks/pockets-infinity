@@ -145,3 +145,15 @@ body {
 .bucket:hover .unequippedItems .label {
   opacity: 1;
 }
+.bucketItem {
+  position: relative;
+  z-index: 1;
+  width: 82px;
+  height: 82px;
+  margin-bottom: 30px;
+  background: rgba(0,0,0,0.5);
+}
+.bucket.bucket-sublcass .bucketItem {
+  width: 118px;
+  height: 118px;
+}
