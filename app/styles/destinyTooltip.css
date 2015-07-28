@@ -1,12 +1,15 @@
 [dub-destiny-tooltip] {
   display: none;
   position: absolute;
-  margin-top: 15px;
+  top: 0;
   transition: all 0.1s ease-in-out;
-  opacity: 0;
   z-index: 999;
   width: 350px;
   background: rgba(30,36,43, 0.95);
+}
+.bucketItem:hover [dub-destiny-tooltip] {
+  display: block;
+  opacity: .99;
 }
 .bucketsLeft [dub-destiny-tooltip] {
   left: 100px;
@@ -15,17 +18,11 @@
   right: 100px;
 }
 .destinyTooltip {
-  position: relative;
+  position: absolute;
   width: 350px;
   background: rgba(30,36,43, 0.95);
   text-align: left;
   color: #fff;
-}
-
-.bucketItem:hover [dub-destiny-tooltip] {
-  display: block;
-  margin-top: 0px;
-  opacity: 99;
 }
 
 .destinyTooltip .itemHeader,
