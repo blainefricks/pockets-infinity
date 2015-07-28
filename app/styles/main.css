@@ -35,7 +35,7 @@ html {
      -moz-text-size-adjust: none;
       -ms-text-size-adjust: none;
        -o-text-size-adjust: none;
-  background: url(/app/images/bg_homepage_starfield.jpg) 50% 0;
+  background: url(/images/bg_homepage_starfield.jpg) 50% 0;
   background-size: cover;
   -webkit-transition: none;
   transition: none;
@@ -47,6 +47,7 @@ body {
   position: relative;
   overflow-y: scroll;
   font-family: 'Roboto', sans-serif;
+  font-size: 100%;
   font-weight: 400;
   width: 100%;
 }
@@ -101,7 +102,7 @@ body {
   height: 252px;
   white-space: normal;
   z-index: 2;
-  background-image: url(/app/images/bg_inventory_bucket.png);
+  background-image: url(/images/bg_inventory_bucket.png);
   background-repeat: no-repeat;
   -webkit-transform-origin: 100% 0;
           transform-origin: 100% 0;
