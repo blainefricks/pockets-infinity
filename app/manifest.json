@@ -5,6 +5,11 @@
   "description": "Its basically Batman's utility belt for your Guardian, all your items in one place.",
   "version": "0.1",
   "short_name": "DUB",
+  "background": {
+    "scripts": [
+      "extension-scripts/chrome.js"
+    ]
+    },
   "browser_action": {
     "default_icon": "favicon.ico"
   },
