@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="dubApp">
+<head>
+  <meta charset="utf-8">
+  <title>DUB v0.1</title>
+  <meta name="description" content="Destiny Utility Belt">
+  <meta name="veiwport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" type="text/css" href="styles/main.css">
+  <link rel="stylesheet" type="text/css" href="styles/destinyTooltip.css">
+</head>
+
+<body ng-app="dubApp">
+
+  <script src="vendor/angular/angular.min.js"></script>
+  <script src="scripts/dubApp.module.js"></script>
+  <script src="scripts/apiKey.js"></script>
+  <script src="scripts/services/dubBungieServices.factory.js"></script>
+  <script src="scripts/shell/dubAppCtrl.controller.js"></script>
+  <script src="scripts/inventory/dubDestinyTooltip.directive.js"></script>
+<!--
+  <script src="scripts/getting-started.js"></script>
+-->
+
+  <div ng-controller="dubAppCtrl">
+    <div dub-inventory></div>
+  </div>
+
+</body>
+
+</html>

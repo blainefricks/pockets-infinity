@@ -1,0 +1,146 @@
+*
+{
+  font: inherit;
+  margin: 0;
+  border: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  outline: 0;
+}
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+     -moz-font-smoothing: antialiased;
+      -ms-font-smoothing: antialiased;
+       -o-font-smoothing: antialiased;
+          font-smoothing: antialiased;
+  -webkit-text-size-adjust: none;
+     -moz-text-size-adjust: none;
+      -ms-text-size-adjust: none;
+       -o-text-size-adjust: none;
+}
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, code, del, dfn, em, img, q, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, textarea, table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-family: inherit;
+  vertical-align: baseline;
+}
+html {
+  -webkit-text-size-adjust: none;
+     -moz-text-size-adjust: none;
+      -ms-text-size-adjust: none;
+       -o-text-size-adjust: none;
+  background: url(/app/images/bg_homepage_starfield.jpg) 50% 0;
+  background-size: cover;
+  -webkit-transition: none;
+  transition: none;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+}
+body {
+  position: relative;
+  overflow-y: scroll;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  width: 100%;
+}
+
+
+/*
+*********************************************************
+** Guardian Inventory
+*********************************************************
+*/
+[dub-inventory] {
+  position: relative;
+  margin: 30px 300px;
+  width: 300px;
+  height: 450px;
+}
+.leftStats {
+  position: absolute;
+  top: 0;
+  left: 140px;
+  z-index: 30;
+  font-size: 25px;
+  color: rgba(245,245,245,0.5);
+}
+.rightStats {
+  position: absolute;
+  top: 0;
+  right: 110px;
+  z-index: 30;
+  font-size: 25px;
+  text-align: right;
+  color: rgba(245,245,245,0.5);
+}
+.bucketsLeft{
+  position: absolute;
+  left: 0;
+  z-index: 1;
+}
+.bucketsRight{
+  position: absolute;
+  right: 0;
+  z-index: 1;
+}
+.bucket {
+  position: relative;
+  z-index: 1;
+}
+.unequippedItems{
+  position: absolute;
+  top: 0;
+  width: 266px;
+  height: 252px;
+  white-space: normal;
+  z-index: 2;
+  background-image: url(/app/images/bg_inventory_bucket.png);
+  background-repeat: no-repeat;
+  -webkit-transform-origin: 100% 0;
+          transform-origin: 100% 0;
+  -webkit-transform: scale(0.28125);
+          transform: scale(0.28125);
+}
+.bucketsLeft .unequippedItems {
+  right: 87px;
+  text-align: right;
+}
+.bucketsRight .unequippedItems {
+  left: -105px;
+}
+.bucket:hover .unequippedItems {
+  /*padding-right: 10px;*/
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  background-position: 10px 0;
+}
+.bucketsRight .bucket:hover .unequippedItems {
+  left: 83px;
+}
+.unequippedItems .bucketItem {
+  position: relative;
+  display: inline-block;
+  margin-left: 5px;
+  margin-bottom: 3px;
+}
+.unequippedItems .label {
+  opacity: 0;
+  position: absolute;
+  top: -25px;
+}
+.bucketsLeft .unequippedItems .label {
+  right: 0;
+}
+.bucketsRight .unequippedItems .label {
+  left: 5px;
+}
+.bucket:hover .unequippedItems .label {
+  opacity: 1;
+}

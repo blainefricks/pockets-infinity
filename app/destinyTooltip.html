@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>DUB - Destiny Tooltip</title>
+  <meta name="veiwport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="styles/main.css">
+  <link rel="stylesheet" type="text/css" href="styles/destinyTooltip.css">
+</head>
+<body>
+
+<div class="destinyTooltip">
+  <div class="itemHeader">
+    <div class="itemName">{itemName}</div>
+    <div class="itemSubtitle">
+      <span>{itemType}</span>
+      <div class="tierTypeName">{tierTypeName}</div>
+    </div>
+  </div>
+  <div class="itemBody">
+    <div class="itemStats">
+      <div class="primaryStat">
+        <div class="damageTypeIcon" style="background-image: url('');"></div>
+        <span class="statValue ">{statValue}</span>
+      </div>
+      <div class="itemDescription">{itemDescription}</div>
+      <table class="itemStatTable">
+        <tbody>
+          <tr class="itemStat">
+            <td class="statName">
+              <span>{statName}</span>
+            </td>
+            <td class="valueBar barStat">
+              <span class="value">
+                <span class="valueModifiedByNode">
+                  <span class="valueModified"></span>
+                </span>
+              </span>
+            </td>
+          </tr>
+          <tr class="itemStat usesStatNumbers">
+            <td class="statName">
+              <span>{statName}</span>
+            </td>
+            <td class="valueBar">
+              <span class="valueNumber">{valueNumber}</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="itemPerks">
+        <div class="itemPerk">
+          <span class="icon"></span>
+          <span class="itemPerkDescription">{itemPerkDescription}</span>
+        </div>
+        <div class="itemPerk active">
+          <span class="icon"></span>
+          <span class="itemPerkDescription">{itemPerkDescription}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

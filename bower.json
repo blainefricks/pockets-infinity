@@ -1,0 +1,14 @@
+{
+  "name": "DUB",
+  "version": "0.1.0",
+  "homepage": "https://github.com/blainefricks/DUB",
+  "authors": [
+    "Blaine Fricks <blaine.fricks@live.com>"
+  ],
+  "description": "Destiny Utility Belt",
+  "main": "app/index.html",
+  "keywords": [
+    "destiny"
+  ],
+  "license": "MIT"
+}

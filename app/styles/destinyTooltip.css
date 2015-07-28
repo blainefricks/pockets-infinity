@@ -1,0 +1,105 @@
+.bucketItem {
+  position: relative;
+  z-index: 1;
+  width: 82px;
+  height: 82px;
+  margin-bottom: 30px;
+  background: rgba(0,0,0,0.5);
+}
+.bucket.bucket-sublcass .bucketItem {
+  width: 118px;
+  height: 118px;
+}
+[dub-destiny-tooltip] {
+  display: none;
+  position: absolute;
+  margin-top: 15px;
+  transition: all 0.1s ease-in-out;
+  opacity: 0;
+  z-index: 999;
+  width: 350px;
+  background: rgba(30,36,43, 0.95);
+}
+.bucketsLeft [dub-destiny-tooltip] {
+  left: 100px;
+}
+.bucketsRight [dub-destiny-tooltip] {
+  right: 100px;
+}
+.destinyTooltip {
+  position: relative;
+  width: 350px;
+  background: rgba(30,36,43, 0.95);
+  text-align: left;
+  color: #fff;
+}
+
+.bucketItem:hover [dub-destiny-tooltip] {
+  display: block;
+  margin-top: 0px;
+  opacity: 1;
+}
+
+.destinyTooltip .itemHeader,
+.destinyTooltip .itemBody {
+  padding: 10px;
+}
+.destinyTooltip .itemHeader {
+  background: rgba(245,245,245,0.9);
+  color: #333;
+}
+.tierTypeExotic .destinyTooltip .itemHeader, .destinyTooltip[data-tiertype="Exotic"] .itemHeader {
+  background: rgba(206,174,50,0.9);
+  color: #f5f5f5;
+}
+.tierTypeLegendary .destinyTooltip .itemHeader, .destinyTooltip[data-tiertype="Legendary"] .itemHeader, .tierTypeSuperior .destinyTooltip .itemHeader, .destinyTooltip[data-tiertype="Superior"] .itemHeader {
+  background: rgba(78,50,99,0.9);
+  color: #f5f5f5;
+}
+.tierTypeRare .destinyTooltip .itemHeader, .destinyTooltip[data-tiertype="Rare"] .itemHeader {
+    background: rgba(85,127,158,0.9);
+    color: #f5f5f5;
+}
+.destinyTooltip[data-tiertype="Uncommon"] .itemHeader {
+    background: rgba(47,107,60,0.9);
+    color: #f5f5f5;
+}
+.destinyTooltip .itemName {
+  text-transform: uppercase;
+  font-size: 22px;
+  font-weight: normal;
+}
+
+.destinyTooltip .itemHeader .itemSubtitle,
+.destinyTooltip .itemHeader .tierTypeName {
+  position: relative;
+  font-size: 17px;
+  line-height: 20px;
+  font-weight: normal;
+  opacity: 0.5;
+}
+
+.destinyTooltip .itemHeader .tierTypeName {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.itemStats .primaryStat {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  width: 170px;
+}
+.itemDescription {
+  font-style: italic;
+}
+.itemStats .valueNumber:after {
+  background: url("https://bungie.net/img/theme/destiny/icons/icons_gearCompare.png") no-repeat scroll -100px -100px;
+  content: "";
+  background-size: 100% auto;
+  display: inline-block;
+  height: 10px;
+  margin-left: 10px;
+  width: 10px;
+}
