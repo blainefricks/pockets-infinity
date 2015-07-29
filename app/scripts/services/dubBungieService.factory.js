@@ -1,10 +1,14 @@
 (function(){
 
-  dubApp.factory('dubBungieServices', BungieService);
+  dubApp.factory('dubBungieService', BungieService);
 
   BungieService.$inject = ['$q'];
 
    function BungieService($q) {
+
+    function getBungieCookies (argument) {
+      // body...
+    };
 
     function getCurrentUser() {
       return {
@@ -23,7 +27,7 @@
         headers: {
           'X-API-Key': apiKey,
         }
-      }
+      };
     };
   }
 })();
