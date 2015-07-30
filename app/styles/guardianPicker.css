@@ -1,0 +1,15 @@
+[dub-guardian-picker] {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+}
+.guardianContainer {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+}
+.guardianContainer.position0 {
+  background-color: red;
+}

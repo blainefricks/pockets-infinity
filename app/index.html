@@ -7,6 +7,7 @@
   <meta name="veiwport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="stylesheet" type="text/css" href="styles/main.css">
+  <link rel="stylesheet" type="text/css" href="styles/guardianPicker.css">
   <link rel="stylesheet" type="text/css" href="styles/destinyTooltip.css">
 </head>
 
@@ -17,12 +18,14 @@
   <script src="scripts/apiKey.js"></script>
   <script src="scripts/services/dubBungieServices.factory.js"></script>
   <script src="scripts/shell/dubAppCtrl.controller.js"></script>
+  <script src="scripts/inventory/dubGuardianPicker.directive.js"></script>
   <script src="scripts/inventory/dubDestinyTooltip.directive.js"></script>
 <!--
   <script src="scripts/getting-started.js"></script>
 -->
 
   <div ng-controller="dubAppCtrl">
+    <div dub-guardian-picker></div>
     <div dub-inventory></div>
   </div>
 

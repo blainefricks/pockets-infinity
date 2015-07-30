@@ -342,6 +342,26 @@ dubApp.controller('dubAppCtrl', ['$scope', function($scope) {
       itemPerkDescription: "itemPerkDescription",
     }
   ];
+  $scope.guardians = [
+    {
+      name: 'Reclaimer01',
+      class: 'Warlock',
+      level: '32',
+      nameplate: '32'
+    },
+    {
+      name: 'Reclaimer01',
+      class: 'Titan',
+      level: '31',
+      nameplate: '32'
+    },
+    {
+      name: 'Reclaimer01',
+      class: 'Hunter',
+      level: '31',
+      nameplate: '32'
+    }
+  ];
 }])
 .directive('dubInventory', function() {
   return {
