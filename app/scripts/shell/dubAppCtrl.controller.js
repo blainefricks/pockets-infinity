@@ -344,18 +344,21 @@ dubApp.controller('dubAppCtrl', ['$scope', function($scope) {
   ];
   $scope.guardians = [
     {
+      position: 'Primary',
       name: 'Reclaimer01',
       class: 'Warlock',
       level: '32',
       nameplate: '32'
     },
     {
+      position: 'Secondary',
       name: 'Reclaimer01',
       class: 'Titan',
       level: '31',
       nameplate: '32'
     },
     {
+      position: 'Tertiary',
       name: 'Reclaimer01',
       class: 'Hunter',
       level: '31',

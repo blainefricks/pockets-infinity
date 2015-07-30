@@ -1,15 +1,42 @@
 [dub-guardian-picker] {
   position: absolute;
   display: block;
-  top: 0;
-  left: 0;
+  top: 7px;
+  left: 7px;
+  cursor: pointer;
+  z-index: 30;
+}
+[dub-guardian-picker]:hover {
+  width: 300px;
+  height: 225px;
 }
 .guardianContainer {
   position: absolute;
   display: block;
   top: 0;
   left: 0;
+  width: 300px;
+  height: 75px;
+  padding: 8px;
+  background: rgba(0,0,0,0.5);
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.5);
+  transition: all ease-in-out 0.25s;
 }
-.guardianContainer.position0 {
-  background-color: red;
+.guardianContainer.positionPrimary {
+  z-index: 3;
+}
+.guardianContainer.positionSecondary {
+  top: 7px;
+  z-index: 2;
+}
+.guardianContainer.positionTertiary {
+  top: 14px;
+  z-index: 1;
+}
+[dub-guardian-picker]:hover .guardianContainer.positionPrimary{}
+[dub-guardian-picker]:hover .guardianContainer.positionSecondary{
+  top: 82px;
+}
+[dub-guardian-picker]:hover .guardianContainer.positionTertiary {
+  top: 164px;
 }
