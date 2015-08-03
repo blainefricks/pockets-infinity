@@ -6,9 +6,29 @@
 
    function BungieService($q, $http) {
 
+    var bungledValue = null;
+
     function getBungieCookies() {
-      // body...
+      chrome.cookies.getAll({
+        'domain' : '.bungie.net',
+        // 'name' : 'bungled'
+      }, function (cookies) {
+        if (cookies.length > 0) {
+          // Cookies found.
+          console.log(cookies);
+        } else{
+          alert("Error: No cookies found.");
+        };
+      });
     };
+
+    function getBungledValue() {
+      // Get the 'value' field of the cookie named 'bungled'
+      bungledValue = getBungieCookies();
+
+      return bungledValue;
+    }
+    console.log("Bungled Value: " + getBungledValue());
 
     function getCurrentUserRequest() {
       return {
@@ -40,4 +60,5 @@
       };
     }
   }
+  BungieService();
 })();
