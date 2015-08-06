@@ -2,11 +2,9 @@
 
   dubApp.factory('dubBungieService', BungieService);
 
-  BungieService.$inject = ['$q', '$http'];
+   function BungieService() {
 
-   function BungieService($q, $http) {
-
-    var bungledValue = null;
+      var xhr = new XMLHttpRequest();
 
 
     /*********************************************************/
@@ -33,36 +31,51 @@
     /*********************************************************/
 
 
-    function getCurrentUserRequest(token) {
-      console.log(token); // dev
-      return {
-        method: 'GET',
-        url: 'https://www.bungie.net/platform/user/getbungienetuser/',
-        headers: {
-          'X-API-Key': apiKey,
-          'x-csrf': token
-        }
-      };
+    function getCurrentUserRequest(bungledCookieValue) {
+      console.log(bungledCookieValue); // dev
+
+      xhr.open(
+        "GET",
+        "https://www.bungie.net/Platform/User/Getbungienetuser/",
+        true);
+      xhr.setRequestHeader("X-API-Key", apiKey, "X-CSRF", bungledCookieValue);
+
+      xhr.onreadystatechange = function(){
+        if (this.readyState === 4 && this.status === 200) {
+          var json = JSON.parse(this.responseText);
+          if (json.ErrorCode > 1) {
+            alert("Please log in to bungie.net.");
+          } else{};
+          console.log(json);
+        };
+      }
+
+      xhr.send();
     }
 
-    function getGuardiansRequest(token) {
+    function function_name (argument) {
+      // body...
+    }
+
+    function getGuardiansRequest(bungledCookieValue) {
       return {
         method: 'GET',
         url: '',
         headers: {
           'X-API-Key': apiKey,
-          'x-csrf': token
+          'x-csrf': bungledCookieValue
         }
       };
     }
 
-    function getGuardianInventoryRequest(token, platform, membershipId, character) {
+    function getGuardianInventoryRequest(bungledCookieValue, membershipType, membershipId, character) {
+      // Returns the inventory for the supplied character.
       return {
         method: 'GET',
-        url: 'https://bungie.net/Destiny/' + platform + '/Account/' + membershipId + '/Character/' + character + '/Inventory/',
+        url: 'https://bungie.net/Destiny/' + membershipType + '/Account/' + membershipId + '/Character/' + character.id + '/Inventory/',
         headers: {
           'X-API-Key': apiKey,
-          'x-csrf': token
+          'x-csrf': bungledCookieValue
         }
       };
     }
