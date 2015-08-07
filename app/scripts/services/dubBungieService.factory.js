@@ -4,7 +4,26 @@
 
    function BungieService() {
 
+    function apiRequest (method, url, token, request) {
       var xhr = new XMLHttpRequest();
+
+      xhr.open(method, url, true);
+      xhr.setRequestHeader("X-API-Key", apiKey, "X-CSRF", token);
+
+      xhr.onreadystatechange = function(){
+        if (this.readyState === 4 && this.status === 200) {
+          var json = JSON.parse(this.responseText);
+          if (json.ErrorCode > 1) {
+            alert("Error: " + json.ErrorStatus + "\n" + json.Message);
+            console.log(json); // dev: log error
+          } else {
+            console.log(json); // dev: log response
+          };
+        };
+      }
+
+      xhr.send();
+    }
 
 
     /*********************************************************/
@@ -31,54 +50,20 @@
     /*********************************************************/
 
 
-    function getCurrentUserRequest(bungledCookieValue) {
-      console.log(bungledCookieValue); // dev
-
-      xhr.open(
-        "GET",
-        "https://www.bungie.net/Platform/User/Getbungienetuser/",
-        true);
-      xhr.setRequestHeader("X-API-Key", apiKey, "X-CSRF", bungledCookieValue);
-
-      xhr.onreadystatechange = function(){
-        if (this.readyState === 4 && this.status === 200) {
-          var json = JSON.parse(this.responseText);
-          if (json.ErrorCode > 1) {
-            alert("Please log in to bungie.net.");
-          } else{};
-          console.log(json);
-        };
-      }
-
-      xhr.send();
+    function getCurrentUserRequest(token) {
+      // Returns account information for the current user
+      apiRequest("GET", "https://www.bungie.net/Platform/User/GetBungieNetUser/", token, Response.user);
     }
 
-    function function_name (argument) {
-      // body...
+    function getGuardiansRequest(token) {
+      apiRequest("GET", "",token, Response);
     }
 
-    function getGuardiansRequest(bungledCookieValue) {
-      return {
-        method: 'GET',
-        url: '',
-        headers: {
-          'X-API-Key': apiKey,
-          'x-csrf': bungledCookieValue
-        }
-      };
-    }
-
-    function getGuardianInventoryRequest(bungledCookieValue, membershipType, membershipId, character) {
+    function getGuardianInventoryRequest(token, membershipType, membershipId, character) {
       // Returns the inventory for the supplied character.
-      return {
-        method: 'GET',
-        url: 'https://bungie.net/Destiny/' + membershipType + '/Account/' + membershipId + '/Character/' + character.id + '/Inventory/',
-        headers: {
-          'X-API-Key': apiKey,
-          'x-csrf': bungledCookieValue
-        }
-      };
+      apiRequest("GET", 'https://bungie.net/Destiny/' + membershipType + '/Account/' + membershipId + '/Character/' + character.id + '/Inventory/', token, Response);
     }
+
   }
   BungieService();
 })();
