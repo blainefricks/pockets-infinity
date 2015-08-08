@@ -14,9 +14,11 @@
         xhr.setRequestHeader("X-API-Key", apiKey, "X-CSRF", token);
 
         xhr.onreadystatechange = function() {
-          var json = JSON.parse(this.responseText);
-          resolve(response);
-          reject(console.log("apiRequest is rejected;"));
+          if (this.readyState === 4 && this.status === 200) {
+            var json = JSON.parse(this.responseText);
+            resolve(response);
+            reject(console.log("apiRequest is rejected;"));
+          }
         }
       });
     }
