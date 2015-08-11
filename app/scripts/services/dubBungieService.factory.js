@@ -42,9 +42,9 @@
 
         function getAllCallback(cookies) {
           if (cookies.length > 0) {
-            console.log("cookies[0].value: " + cookies[0].value); // dev
+            console.log("bungled cookie value:", cookies[0].value); // dev
             resolve(cookies[0].value);
-          } else{
+          } else {
             reject(alert("Error: No cookies found."));
           };
         }
