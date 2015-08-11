@@ -5,21 +5,27 @@
    function BungieService() {
     var currentUserPromise = null;
 
-    function apiRequest(method, url, token) {
-      console.log("apiRequest(" + method + ", " + url + ", " + token + ")"); // dev
+    function apiRequest(request) {
+
+      console.log("apiRequest(request)", request); // dev
+
       return new Promise(function(resolve, reject) {
         var xhr = new XMLHttpRequest();
 
-        xhr.open(method, url, true);
-        xhr.setRequestHeader("X-API-Key", apiKey, "X-CSRF", token);
+        xhr.open(request.method, request.url, true);
+        xhr.setRequestHeader("X-API-Key", apiKey, "X-CSRF", request.token);
 
-        xhr.onreadystatechange = function() {
+        xhr.onreadystatechange = function(){
           if (this.readyState === 4 && this.status === 200) {
-            var json = JSON.parse(this.responseText);
+            var response = JSON.parse(this.responseText);
+
             resolve(response);
-            reject(console.log("apiRequest is rejected;"));
+            reject(console.log("apiRequest is rejected"));
           }
         }
+
+        xhr.send();
+
       });
     }
 
@@ -51,20 +57,37 @@
 
     function getCurrentUser() {
       currentUserPromise = currentUserPromise || getBungieCookies()
-        .then(getCurrentUserRequest);
-      console.log(currentUserPromise); // dev
+        .then(getCurrentUserRequest)
+        .then(apiRequest)
+        .then(processCurrentUserRequest)
+        .catch(function(error) {
+          console.log("Failed!", error);
+        });
+
       return currentUserPromise;
     }
 
-    getCurrentUser();
-
     function getCurrentUserRequest(token) {
       // Returns account information for the current user
-      console.log("getCurrentUserRequest(" + token + ")"); // dev-note: Bungled Cookie Value
-      apiRequest("GET", "https://www.bungie.net/Platform/User/GetBungieNetUser/", token)
-        .then(function(json) {
-          console.log(json.Response.user.membershipId); // dev: log the response for testing
-        });
+
+      console.log("getCurrentUserRequest(token)", token); // dev
+
+      return {
+        method : "GET",
+        url : "https://www.bungie.net/Platform/User/GetBungieNetUser/",
+        token : token
+      }
+    }
+
+    function processCurrentUserRequest(response) {
+      console.log("processCurrentUserRequest(response)", response); // dev
+      if (response.ErrorCode > 1) {
+        console.log(response.Message);
+      } else {
+        console.log(response.Response.user); // dev: log the response for testing
+      };
+
+      return response;
     }
 
     function getGuardiansRequest(token) {
@@ -81,6 +104,8 @@
           console.log(json.Response);
         });
     }
+
+    getCurrentUser();
 
   }
   BungieService();
