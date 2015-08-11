@@ -100,10 +100,11 @@
 
     function getGuardianInventoryRequest(token, membershipType, membershipId, character) {
       // Returns the inventory for the supplied character.
-      apiRequest("GET", 'https://bungie.net/Destiny/' + membershipType + '/Account/' + membershipId + '/Character/' + character.id + '/Inventory/', token)
-        .then(function(json) {
-          console.log(json.Response);
-        });
+      return {
+        method : "GET",
+        url : 'https://bungie.net/Destiny/' + membershipType + '/Account/' + membershipId + '/Character/' + character.id + '/Inventory/',
+        token : token
+      }
     }
 
     getCurrentUser();
