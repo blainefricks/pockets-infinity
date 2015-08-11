@@ -91,10 +91,11 @@
     }
 
     function getGuardiansRequest(token) {
-      apiRequest("GET", "",token)
-        .then(function(json) {
-          console.log(json);
-        });
+      return {
+        method : "GET",
+        url : "",
+        token : token
+      }
     }
 
     function getGuardianInventoryRequest(token, membershipType, membershipId, character) {
