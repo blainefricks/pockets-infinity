@@ -3,7 +3,13 @@
   dubApp.factory('dubBungieService', BungieService);
 
    function BungieService() {
-    var currentUserPromise = null;
+    var bungieNetUserPromise = null;
+
+    var factory = {
+      getBungieNetUser : getBungieNetUser
+    }
+
+    return factory;
 
     function apiRequest(request) {
 
@@ -55,22 +61,22 @@
     /*********************************************************/
 
 
-    function getCurrentUser() {
-      currentUserPromise = currentUserPromise || getBungieCookies()
-        .then(getCurrentUserRequest)
+    function getBungieNetUser() {
+      // Returns account information for the current user
+
+      bungieNetUserPromise = bungieNetUserPromise || getBungieCookies()
+        .then(getBungieNetUserRequest)
         .then(apiRequest)
-        .then(processCurrentUserRequest)
+        .then(processBungieNetRequest)
         .catch(function(error) {
           console.log("Failed!", error);
         });
 
-      return currentUserPromise;
+      return bungieNetUserPromise;
     }
 
-    function getCurrentUserRequest(token) {
-      // Returns account information for the current user
-
-      console.log("getCurrentUserRequest(token)", token); // dev
+    function getBungieNetUserRequest(token) {
+      console.log("getBungieNetUserRequest(token)", token); // dev
 
       return {
         method : "GET",
@@ -79,8 +85,8 @@
       }
     }
 
-    function processCurrentUserRequest(response) {
-      console.log("processCurrentUserRequest(response)", response); // dev
+    function processBungieNetRequest(response) {
+      console.log("processBungieNetRequest(response)", response); // dev
       if (response.ErrorCode > 1) {
         console.log(response.Message);
       } else {
@@ -106,9 +112,5 @@
         token : token
       }
     }
-
-    getCurrentUser();
-
   }
-  BungieService();
 })();
