@@ -1,12 +1,12 @@
 (function(){
 
-  dubApp.controller('dubAppCtrl', DubApp);
+  app.controller('appCtrl', App);
 
-  DubApp.$inject = ['$scope', 'dubBungieService'];
+  App.$inject = ['$scope', 'bungieService'];
 
-  function DubApp($scope, dubBungieService) {
+  function App($scope, bungieService) {
 
-    dubBungieService.getBungieNetUser();
+    bungieService.getBungieNetUser();
 
     // Equipped Subclass
     $scope.inventorySubclassItems_Equipped = [

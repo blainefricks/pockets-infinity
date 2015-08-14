@@ -1,6 +1,6 @@
 (function(){
 
-  dubApp.factory('dubBungieService', BungieService);
+  app.factory('bungieService', BungieService);
 
    function BungieService() {
     var bungieNetUserPromise = null;

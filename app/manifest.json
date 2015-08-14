@@ -1,10 +1,10 @@
 {
   "manifest_version": 2,
 
-  "name": "Destiny Utility Belt",
-  "description": "Its basically Batman's utility belt for your Guardian, all your items in one place.",
+  "name": "Pockets Infinity",
+  "description": "Destiny Companion Chrome Extension",
   "version": "0.1",
-  "short_name": "DUB",
+  "short_name": "PI",
   "background": {
     "scripts": [
       "extension-scripts/chrome.js"

@@ -58,7 +58,7 @@ body {
 ** Guardian Inventory
 *********************************************************
 */
-[dub-inventory] {
+[inventory] {
   position: relative;
   margin: 60px auto;
   width: 300px;
