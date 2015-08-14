@@ -1,11 +1,11 @@
 {
-  "name": "DUB",
+  "name": "Pockets Infinity",
   "version": "0.1.0",
-  "homepage": "https://github.com/blainefricks/DUB",
+  "homepage": "https://github.com/blainefricks/pockets-infinity",
   "authors": [
     "Blaine Fricks <blaine.fricks@live.com>"
   ],
-  "description": "Destiny Utility Belt",
+  "description": "Destiny Companion Chrome Extension",
   "main": "app/index.html",
   "keywords": [
     "destiny"

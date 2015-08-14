@@ -1,1 +1,0 @@
-var dubApp = angular.module('dubApp', []);
