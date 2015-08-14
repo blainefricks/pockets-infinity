@@ -185,6 +185,7 @@
     function processGuardianInventory(response) {
       console.log("processGuardianInventory(response)", response); // dev
 
+      return response;
     }
   }
 })();
