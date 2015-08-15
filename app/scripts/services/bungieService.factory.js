@@ -2,7 +2,9 @@
 
   app.factory('bungieService', BungieService);
 
-   function BungieService() {
+  BungieService.$inject = ['$http'];
+
+   function BungieService($http) {
     var bungieNetUserPromise = null;
     var guardianPromise = null;
 
@@ -11,30 +13,6 @@
     }
 
     return factory;
-
-    function apiRequest(request) {
-
-      console.log("apiRequest(request)", request); // dev
-
-      return new Promise(function(resolve, reject) {
-        var xhr = new XMLHttpRequest();
-
-        xhr.open(request.method, request.url, true);
-        xhr.setRequestHeader("X-API-Key", apiKey, "X-CSRF", request.token);
-
-        xhr.onreadystatechange = function(){
-          if (this.readyState === 4 && this.status === 200) {
-            var response = JSON.parse(this.responseText);
-
-            resolve(response);
-            reject(console.log("apiRequest is rejected"));
-          }
-        }
-
-        xhr.send();
-
-      });
-    }
 
 
     /*********************************************************/
@@ -66,7 +44,7 @@
 
       bungieNetUserPromise = bungieNetUserPromise || getBungieCookies()
         .then(getBungieNetUserRequest)
-        .then(apiRequest)
+        .then($http)
         .then(processBungieNetRequest)
         .catch(function(error) {
           console.log("Failed!", error);
@@ -89,15 +67,15 @@
 
     function processBungieNetRequest(response) {
       console.log("processBungieNetRequest(response)", response); // dev
-      if (response.ErrorCode > 1) {
-        console.log(response.Message);
+      if (response.data.ErrorCode > 1) {
+        console.log(response.data.Message);
       };
 
       return response;
     }
 
     function generateMembership(response) {
-      var userData = response.Response.user;
+      var userData = response.data.Response.user;
       var platformId = null;
 
       if (userData.xboxDisplayName) {
@@ -131,7 +109,7 @@
 
       guardianPromise = getBungieCookies()
         .then(getGuardiansRequest)
-        .then(apiRequest)
+        .then($http)
         .then(processGuardiansRequest);
 
       return guardianPromise;
@@ -152,7 +130,7 @@
     }
 
     function generateGuardians(response) {
-      var guardianData = response.Response.destinyAccounts.characters;
+      var guardianData = response.data.Response.destinyAccounts.characters;
 
       return {
         id : guardianId
@@ -166,7 +144,7 @@
     function getInventories() {
       var promise = getBungieCookies()
       .then(getGuardianInventoryRequest)
-      .then(apiRequest)
+      .then($http)
       .then(processGuardianInventory);
 
       return promise;
@@ -177,7 +155,7 @@
       // Returns the inventory for the supplied character.
       return {
         method : "GET",
-        url : 'https://bungie.net/Destiny/' + membership.type + '/Account/' + membership.id + '/Character/' + guardian.id + '/Inventory/',
+        url : 'https://bungie.net/Destiny/' + membership.platform + '/Account/' + membership.id + '/Character/' + guardian.id + '/Inventory/',
         token : token
       }
     }
