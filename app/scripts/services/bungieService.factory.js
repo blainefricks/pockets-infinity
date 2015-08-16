@@ -8,11 +8,11 @@
     var bungieNetUserPromise = null;
     var guardianPromise = null;
 
-    var factory = {
+    var factoryServices = {
       getBungieNetUser : getBungieNetUser
     }
 
-    return factory;
+    return factoryServices;
 
 
     /*********************************************************/
