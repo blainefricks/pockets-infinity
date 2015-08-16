@@ -108,33 +108,47 @@
       console.log(membership); // dev
 
       guardianPromise = getBungieCookies()
-        .then(getGuardiansRequest)
+        .then(getGuardiansRequest.bind(null, membership))
         .then($http)
-        .then(processGuardiansRequest);
+        .then(processGuardiansRequest)
+        .then(generateGuardians);
 
       return guardianPromise;
     }
 
-    function getGuardiansRequest(token, membership) {
-      console.log(membership); // dev
+    function getGuardiansRequest(membership, token) {
       console.log("token : " + token + "\n" + "membership : " + membership); // dev
       return {
-        method : 'GET',
-        url: 'https://www.bungie.net/Platform/User/GetBungieAccount/' + membership.id + '/' + membership.platform + '/',
-        token : token
+        method: "GET",
+        url: "https://www.bungie.net/Platform/User/GetBungieAccount/" + membership.id + "/" + membership.platform + "/",
+        headers : {
+          "X-API-Key": apiKey,
+          "x-crsf": token
+        },
+        withCredentials: true
       }
     }
 
     function processGuardiansRequest(response) {
       console.log(response); // dev
+
+      return response;
     }
 
     function generateGuardians(response) {
-      var guardianData = response.data.Response.destinyAccounts.characters;
+      var guardianData = response.data.Response.destinyAccounts[0].characters;
 
-      return {
-        id : guardianId
-      }
+      for (var i = 0; i < guardianData.length; i++) {
+        console.log("Guardian"+ [i] + ": " + guardianData[i].characterId); // dev
+      };
+
+      var guardians = [
+        {
+          id : guardianData
+        }
+      ];
+
+      return guardians;
     }
 
 
