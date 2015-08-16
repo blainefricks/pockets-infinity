@@ -172,9 +172,13 @@
       console.log("getGuardianInventoryRequest(token)", token); // dev
       // Returns the inventory for the supplied character.
       return {
-        method : "GET",
-        url : 'https://bungie.net/Destiny/' + membership.platform + '/Account/' + membership.id + '/Character/' + guardian.id + '/Inventory/',
-        token : token
+        method: "GET",
+        url: "https://bungie.net/Destiny/" + membership.platform + "/Account/" + membership.id + "/Character/" + guardian.id + "/Inventory/",
+        headers: {
+          "X-API-Key": apiKey,
+          "x-crsf": token
+        },
+        withCredentials: true
       }
     }
 
