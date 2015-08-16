@@ -68,7 +68,7 @@
     function processBungieNetRequest(response) {
       console.log("processBungieNetRequest(response)", response); // dev
       if (response.data.ErrorCode > 1) {
-        console.log(response.data.Message);
+        console.log(response.data.ErrorStatus + "\n" + response.data.Message);
       };
 
       return response;
