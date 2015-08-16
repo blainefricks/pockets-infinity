@@ -59,10 +59,14 @@
       console.log("getBungieNetUserRequest(token)", token); // dev
 
       return {
-        method : "GET",
-        url : "https://www.bungie.net/Platform/User/GetBungieNetUser/",
-        token : token
-      }
+        method: "GET",
+        url: "https://www.bungie.net/Platform/User/GetBungieNetUser/",
+        headers: {
+          "X-API-Key": apiKey,
+          "x-crsf": token
+        },
+        withCredentials: true
+      };
     }
 
     function processBungieNetRequest(response) {
