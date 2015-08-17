@@ -160,12 +160,12 @@
 
 
     function getInventories() {
-      var promise = getBungieCookies()
+      var inventoryPromise = getBungieCookies()
       .then(getGuardianInventoryRequest)
       .then($http)
       .then(processGuardianInventory);
 
-      return promise;
+      return inventoryPromise;
     }
 
     function getGuardianInventoryRequest(token, membership, guardian) {
