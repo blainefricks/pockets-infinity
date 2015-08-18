@@ -19,15 +19,32 @@
 
 
     function getBungieCookies() {
+      // Gets all Bungie.net cookies from browser, searches for the
+      // 'bungled' and 'bungledid' cookies, then returns their values.
+
+      var cookieData = {
+        bungled : null,
+        bungledid : null
+      };
+
       return new Promise(function(resolve, reject) {
         chrome.cookies.getAll({
-          'domain': '.bungie.net',
-          'name': 'bungled'
+          'domain': '.bungie.net'
         }, getAllCallback);
 
         function getAllCallback(cookies) {
           if (cookies.length > 0) {
-            resolve(cookies[0].value);
+            for (var i = 0; i < cookies.length; i++) {
+              if (cookies[i].name === "bungled") {
+                // set 'bungled' value
+                cookieData.bungled = cookies[i].value;
+              };
+              if (cookies[i].name === "bungledid") {
+                // set 'bungledid' value
+                cookieData.bungledid = cookies[i].value;
+              };
+            };
+            resolve(cookieData);
           } else {
             reject(alert("Error: No cookies found."));
           };
@@ -55,15 +72,15 @@
       return bungieNetUserPromise;
     }
 
-    function getBungieNetUserRequest(token) {
-      console.log("getBungieNetUserRequest(token)", token); // dev
+    function getBungieNetUserRequest(cookie) {
+      console.log("getBungieNetUserRequest(cookie)", cookie); // dev
 
       return {
         method: "GET",
         url: "https://www.bungie.net/Platform/User/GetBungieNetUser/",
         headers: {
           "X-API-Key": apiKey,
-          "x-crsf": token
+          "x-crsf": cookie.bungled
         },
         withCredentials: true
       };
@@ -120,14 +137,15 @@
       return guardianPromise;
     }
 
-    function getGuardiansRequest(membership, token) {
-      console.log("token : " + token + "\n" + "membership : " + membership); // dev
+    function getGuardiansRequest(membership, cookie) {
+      console.log("cookie : " + cookie + "\n" + "membership : " + membership); // dev
+
       return {
         method: "GET",
         url: "https://www.bungie.net/Platform/User/GetBungieAccount/" + membership.id + "/" + membership.platform + "/",
         headers : {
           "X-API-Key": apiKey,
-          "x-crsf": token
+          "x-crsf": cookie.bungled
         },
         withCredentials: true
       }
@@ -168,15 +186,16 @@
       return inventoryPromise;
     }
 
-    function getGuardianInventoryRequest(token, membership, guardian) {
+    function getGuardianInventoryRequest(cookie, membership, guardian) {
       console.log("getGuardianInventoryRequest(token)", token); // dev
       // Returns the inventory for the supplied character.
+
       return {
         method: "GET",
         url: "https://bungie.net/Destiny/" + membership.platform + "/Account/" + membership.id + "/Character/" + guardian.id + "/Inventory/",
         headers: {
           "X-API-Key": apiKey,
-          "x-crsf": token
+          "x-crsf": cookie.bungled
         },
         withCredentials: true
       }
