@@ -80,7 +80,7 @@
         url: "https://www.bungie.net/Platform/User/GetBungieNetUser/",
         headers: {
           "X-API-Key": apiKey,
-          "x-crsf": cookie.bungled
+          "X-CSRF": cookie.bungled
         },
         withCredentials: true
       };
@@ -145,7 +145,7 @@
         url: "https://www.bungie.net/Platform/User/GetBungieAccount/" + membership.id + "/" + membership.platform + "/",
         headers : {
           "X-API-Key": apiKey,
-          "x-crsf": cookie.bungled
+          "X-CSRF": cookie.bungled
         },
         withCredentials: true
       }
@@ -195,7 +195,7 @@
         url: "https://bungie.net/Destiny/" + membership.platform + "/Account/" + membership.id + "/Character/" + guardian.id + "/Inventory/",
         headers: {
           "X-API-Key": apiKey,
-          "x-crsf": cookie.bungled
+          "X-CSRF": cookie.bungled
         },
         withCredentials: true
       }
