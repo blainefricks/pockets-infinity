@@ -128,7 +128,7 @@
     function getGuardians(membership) {
       console.log(membership); // dev
 
-      guardianPromise = getBungieCookies()
+      guardianPromise = guardianPromise || getBungieCookies()
         .then(getGuardiansRequest.bind(null, membership))
         .then($http)
         .then(processGuardiansRequest)
@@ -159,16 +159,16 @@
 
     function generateGuardians(response) {
       var guardianData = response.data.Response.destinyAccounts[0].characters;
+      var guardians = [];
 
       for (var i = 0; i < guardianData.length; i++) {
         console.log("Guardian"+ [i] + ": " + guardianData[i].characterId); // dev
+        guardians.push({
+          id : guardianData[i].characterId
+        });
       };
 
-      var guardians = [
-        {
-          id : guardianData
-        }
-      ];
+      console.log(guardians); // dev
 
       return guardians;
     }
