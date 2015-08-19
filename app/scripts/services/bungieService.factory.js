@@ -7,6 +7,7 @@
    function BungieService($http) {
     var bungieNetUserPromise = null;
     var guardianPromise = null;
+    var inventoryPromise = null;
 
     var factoryServices = {
       getBungieNetUser : getBungieNetUser
@@ -178,7 +179,7 @@
 
 
     function getInventories() {
-      var inventoryPromise = getBungieCookies()
+      inventoryPromise = inventoryPromise || getBungieCookies()
       .then(getGuardianInventoryRequest)
       .then($http)
       .then(processGuardianInventory);
@@ -187,7 +188,7 @@
     }
 
     function getGuardianInventoryRequest(cookie, membership, guardian) {
-      console.log("getGuardianInventoryRequest(token)", token); // dev
+      console.log("getGuardianInventoryRequest(cookie)", cookie); // dev
       // Returns the inventory for the supplied character.
 
       return {
