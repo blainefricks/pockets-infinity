@@ -98,6 +98,8 @@
 
     function generateMembership(response) {
       var userData = response.data.Response.user;
+      var handle = null;
+      var id = null;
       var platformId = null;
 
       if (userData.xboxDisplayName) {
