@@ -1,12 +1,12 @@
 (function() {
   // Instance specific extension URL
-  var dubAppUrl = chrome.extension.getURL('index.html');
+  var appUrl = chrome.extension.getURL('index.html');
 
   function launchApp(tabs) {
     if (tabs.length === 0) {
       // Open a new tab
       chrome.tabs.create({
-        url: dubAppUrl
+        url: appUrl
       });
     } else {
       // Activate the tab.
@@ -19,7 +19,7 @@
   function appClicked() {
     // Check to see if the app is opened.
     chrome.tabs.query({
-      url: dubAppUrl
+      url: appUrl
     }, launchApp);
   }
 
