@@ -182,7 +182,7 @@
       inventoryPromise = inventoryPromise || getBungieCookies()
       .then(getGuardianInventoryRequest)
       .then($http)
-      .then(processGuardianInventory);
+      .then(processGuardianInventoryRequest);
 
       return inventoryPromise;
     }
@@ -202,7 +202,7 @@
       }
     }
 
-    function processGuardianInventory(response) {
+    function processGuardianInventoryRequest(response) {
       console.log("processGuardianInventory(response)", response); // dev
 
       return response;
