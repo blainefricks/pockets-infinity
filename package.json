@@ -1,7 +1,7 @@
 {
-  "name" : "DUB",
+  "name" : "Pockets Infinity",
   "version" : "0.0.1",
-  "description" : "Destiny Utility Belt",
+  "description" : "Destiny Companion Chrome Extension",
   "author" : "Blaine Fricks <blaine.fricks@live.com>",
   "scripts" : {
     "start" : "http-server -a 0.0.0.0 -p 8000"
@@ -9,11 +9,11 @@
   "main" : "app/index.html",
   "repository" : {
     "type" : "git",
-    "url" : "https://github.com/blainefricks/DUB.git"
+    "url" : "https://github.com/blainefricks/pockets-infinity.git"
   },
   "license" : "MIT",
   "bugs" : {
-    "url" : "https://github.com/blainefricks/DUB/issues"
+    "url" : "https://github.com/blainefricks/pockets-infinity/issues"
   },
-  "homepage" : "https://github.com/blainefricks/DUB"
+  "homepage" : "https://github.com/blainefricks/pockets-infinity"
 }

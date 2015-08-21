@@ -1,29 +1,31 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="dubApp">
+<html lang="en" ng-app="app" ng-csp>
 <head>
   <meta charset="utf-8">
-  <title>DUB v0.1</title>
-  <meta name="description" content="Destiny Utility Belt">
+  <title>Pockets Infinity v0.1.0</title>
+  <meta name="description" content="Destiny Companion Chrome Extension">
   <meta name="veiwport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="stylesheet" type="text/css" href="styles/main.css">
   <link rel="stylesheet" type="text/css" href="styles/destinyTooltip.css">
 </head>
 
-<body ng-app="dubApp">
+<body ng-app="app">
 
   <script src="vendor/angular/angular.min.js"></script>
-  <script src="scripts/dubApp.module.js"></script>
+  <script src="vendor/angular/angular-cookies.min.js"></script>
+  <script src="scripts/app.module.js"></script>
   <script src="scripts/apiKey.js"></script>
-  <script src="scripts/services/dubBungieServices.factory.js"></script>
-  <script src="scripts/shell/dubAppCtrl.controller.js"></script>
-  <script src="scripts/inventory/dubDestinyTooltip.directive.js"></script>
+  <script src="scripts/services/bungieService.factory.js"></script>
+  <script src="scripts/shell/appCtrl.controller.js"></script>
+  <script src="scripts/inventory/inventory.directive.js"></script>
+  <script src="scripts/inventory/destinyTooltip.directive.js"></script>
 <!--
   <script src="scripts/getting-started.js"></script>
 -->
 
-  <div ng-controller="dubAppCtrl">
-    <div dub-inventory></div>
+  <div ng-controller="appCtrl">
+    <div inventory></div>
   </div>
 
 </body>

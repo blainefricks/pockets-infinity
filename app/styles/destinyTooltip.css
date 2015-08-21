@@ -1,43 +1,28 @@
-.bucketItem {
-  position: relative;
-  z-index: 1;
-  width: 82px;
-  height: 82px;
-  margin-bottom: 30px;
-  background: rgba(0,0,0,0.5);
-}
-.bucket.bucket-sublcass .bucketItem {
-  width: 118px;
-  height: 118px;
-}
-[dub-destiny-tooltip] {
+[destiny-tooltip] {
   display: none;
   position: absolute;
-  margin-top: 15px;
+  top: 0;
   transition: all 0.1s ease-in-out;
-  opacity: 0;
   z-index: 999;
   width: 350px;
   background: rgba(30,36,43, 0.95);
 }
-.bucketsLeft [dub-destiny-tooltip] {
+.bucketItem:hover [destiny-tooltip] {
+  display: block;
+  opacity: .99;
+}
+.bucketsLeft [destiny-tooltip] {
   left: 100px;
 }
-.bucketsRight [dub-destiny-tooltip] {
+.bucketsRight [destiny-tooltip] {
   right: 100px;
 }
 .destinyTooltip {
-  position: relative;
+  position: absolute;
   width: 350px;
   background: rgba(30,36,43, 0.95);
   text-align: left;
   color: #fff;
-}
-
-.bucketItem:hover [dub-destiny-tooltip] {
-  display: block;
-  margin-top: 0px;
-  opacity: 1;
 }
 
 .destinyTooltip .itemHeader,
