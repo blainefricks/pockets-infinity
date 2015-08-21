@@ -20,7 +20,7 @@ var apiKey = 'ENTER_YOUR_API_KEY_HERE';
 Enable [Chrome Extensions Developer Mode](https://developer.chrome.com/extensions/faq#faq-dev-01) and point it to the `app/` folder.
 
 ## Reporting Bugs
-Have a bug to report? First search through the [open and closed issues](https://github.com/blainefricks/pockets-infinity/issues) before submitting your bug. If your problem has not been submitted, please open a new issue.
+Have a bug to report? First search through the [open](https://github.com/blainefricks/pockets-infinity/issues?q=is%3Aopen+is%3Aissue) and [closed](https://github.com/blainefricks/pockets-infinity/issues?q=is%3Aissue+is%3Aclosed) issues before submitting your bug. If your problem has not been submitted, please open a new issue.
 
 ## License
 Code released under [the MIT license](http://choosealicense.com/licenses/mit/).
