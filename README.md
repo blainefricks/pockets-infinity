@@ -8,7 +8,7 @@ Pockets Infinity gives players of the game [Destiny](http://destinythegame.com/)
 - [Chrome Desktop Web Browser](https://www.google.com/intl/en/chrome/browser/desktop/index.html)
 
 ## Getting Started
-Clone the repo: `git clone https://github.com/blainefricks/pockets-infinity`.
+[Download](https://github.com/blainefricks/pockets-infinity/zipball/master) a .zip or clone the repo: `git clone https://github.com/blainefricks/pockets-infinity` or download from [here](http://blainefricks.github.io/pockets-infinity/).
 
 Install dependencies: `bower install` or see the [Wiki](https://github.com/blainefricks/pockets-infinity/wiki/dependencies) for a list of dependencies.
 
