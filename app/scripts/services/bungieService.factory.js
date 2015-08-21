@@ -47,7 +47,7 @@
             };
             resolve(cookieData);
           } else {
-            reject(alert("Error: No cookies found."));
+            reject(alert("Error: No cookies found. Please sign into Bungie.net."));
           };
         }
       });
@@ -74,7 +74,8 @@
     }
 
     function getBungieNetUserRequest(cookie) {
-      console.log("getBungieNetUserRequest(cookie)", cookie); // dev
+      console.log("Cookies: bungled=" + cookie.bungled + "; bungledid=" + cookie.bungledid + ";");
+      // console.log("getBungieNetUserRequest(cookie)", cookie); // dev
 
       return {
         method: "GET",
@@ -88,7 +89,7 @@
     }
 
     function processBungieNetRequest(response) {
-      console.log("processBungieNetRequest(response)", response); // dev
+      // console.log("processBungieNetRequest(response)", response); // dev
       if (response.data.ErrorCode > 1) {
         console.log(response.data.ErrorStatus + "\n" + response.data.Message);
       };
@@ -106,16 +107,16 @@
         platformId = 1;
         console.log("Platform: Xbox"); // dev
         handle = userData.xboxDisplayName;
-        console.log(handle); // dev
       }
 
       if (userData.psnDisplayName) {
         platformId = 2;
         console.log("Platform: PlayStation"); // dev
         handle = userData.psnDisplayName;
-        console.log(handle); // dev
       }
-      console.log("membershipId:",userData.membershipId);
+
+      console.log("Gamertag:",handle);
+      console.log("Membership ID:",userData.membershipId);
 
       return {
         handle : handle,
@@ -129,7 +130,7 @@
 
 
     function getGuardians(membership) {
-      console.log(membership); // dev
+      // console.log(membership); // dev
 
       guardianPromise = guardianPromise || getBungieCookies()
         .then(getGuardiansRequest.bind(null, membership))
@@ -141,7 +142,7 @@
     }
 
     function getGuardiansRequest(membership, cookie) {
-      console.log("cookie : " + cookie + "\n" + "membership : " + membership); // dev
+      // console.log("cookie : " + cookie + "\n" + "membership : " + membership); // dev
 
       return {
         method: "GET",
@@ -155,7 +156,7 @@
     }
 
     function processGuardiansRequest(response) {
-      console.log(response); // dev
+      // console.log(response); // dev
 
       return response;
     }
@@ -171,7 +172,7 @@
         });
       };
 
-      console.log(guardians); // dev
+      // console.log(guardians); // dev
 
       return guardians;
     }
