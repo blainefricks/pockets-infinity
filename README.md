@@ -4,7 +4,7 @@
 Pockets Infinity gives players of the game [Destiny](http://destinythegame.com/) enhanced access to the items on their Guardians and the Vault. Its basically Batman's utility belt for your Guardian, all your items in one place.
 
 ## Requirements
-- [Bungie Platform Developer API-Key]()
+- [Bungie Platform Developer API-Key](https://www.bungie.net/en/User/API)
 - [Chrome Desktop Web Browser](https://www.google.com/intl/en/chrome/browser/desktop/index.html)
 
 ## Getting Started
@@ -12,7 +12,7 @@ Clone the repo: `git clone https://github.com/blainefricks/pockets-infinity`.
 
 Install dependencies: `bower install` or see the [Wiki](https://github.com/blainefricks/pockets-infinity/wiki/dependencies) for a list of dependencies.
 
-Save your [API-Key]() in the `app/scripts/` folder as `apiKey.js`.
+Save your [API-Key](https://www.bungie.net/en/User/API) in the `app/scripts/apiKey.js` file:
 ```javascript
 var apiKey = 'ENTER_YOUR_API_KEY_HERE';
 ```
