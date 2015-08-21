@@ -21,10 +21,11 @@ var apiKey = 'ENTER_YOUR_API_KEY_HERE';
 
 Enable [Chrome Extensions Developer Mode](https://developer.chrome.com/extensions/faq#faq-dev-01) and point it to the `app/` folder.
 
-Once you have installed the Chrome Extension, sign into [Bunge.net](http://bungie.net) and then press the Pockets Infinity icon or options page to launch. Press `Ctr + Shift + J` on Windows or `Cmd + Opt + J` on Mac to view the Console and see your Destiny data that Pockets Infinity fetches.
+Once you have installed the Chrome Extension, sign into [Bunge.net](http://bungie.net) and then press the Pockets Infinity icon or options page to launch. Press `Ctr + Shift + J` on Windows or `Cmd + Opt + J` on Mac to view your Destiny data that Pockets Infinity fetches.
 
+##### Console Example
 ```javascript
-Cookies: bungled=BUNGLED_COOKIE; bungledid=BUNGLED_COOKIE;
+Cookies: bungled=BUNGLED_COOKIE; bungledid=BUNGLEDID_COOKIE;
 Platform: YOUR_PLATFORM_TYPE
 Gamertag: YOUR_GAMERTAG
 Membership ID: YOUR_MEMBERSHIP_ID
