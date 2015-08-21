@@ -24,7 +24,7 @@ Enable [Chrome Extensions Developer Mode](https://developer.chrome.com/extension
 Once you have installed the Chrome Extension, sign into [Bunge.net](http://bungie.net) and then press the Pockets Infinity icon or options page to launch. Press `Ctr + Shift + J` on Windows or `Cmd + Opt + J` on Mac to view the Console and see your Destiny data that Pockets Infinity fetches.
 
 ## Reporting Bugs
-Have a bug to report? First search through the [open](https://github.com/blainefricks/pockets-infinity/issues?q=is%3Aopen+is%3Aissue) and [closed](https://github.com/blainefricks/pockets-infinity/issues?q=is%3Aissue+is%3Aclosed) issues before submitting your bug. If your problem has not been submitted, please open a new issue.
+Have a bug to report? First search through the [open](https://github.com/blainefricks/pockets-infinity/issues?q=is%3Aopen+is%3Aissue) and [closed](https://github.com/blainefricks/pockets-infinity/issues?q=is%3Aissue+is%3Aclosed) issues before submitting your bug. If your problem has not been submitted, please open a new issue and include the version of Pockets Infinity you are using.
 
 ## License
 Code released under [the MIT license](http://choosealicense.com/licenses/mit/).
