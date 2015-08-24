@@ -1,6 +1,6 @@
 *
 {
-  font: inherit;
+  /*font: inherit;*/
   margin: 0;
   border: 0;
   padding: 0;
@@ -70,6 +70,17 @@ body {
   z-index: 9999;
 }
 
+.destiny-info {
+  position: relative;
+  display: block;
+  margin: 50px 0px;
+  padding: 15px;
+}
+
+.destiny-info #error {
+  padding: 20px 0px;
+  color: red;
+}
 
 /*
 *********************************************************

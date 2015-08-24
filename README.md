@@ -3,7 +3,7 @@
 
 Pockets Infinity gives players of the game [Destiny](http://destinythegame.com/) enhanced access to the items on their Guardians and the Vault. Its basically Batman's utility belt for your Guardian, all your items in one place.
 
-Since version `0.1.0-alpha` is _pre-release_, Pockets Infinity only dipslays information in the console, press `Ctr + Shift + J` on Windows or `Cmd + Opt + J` on Mac to bring up the console.
+Since version `0.1.0-alpha` is _pre-release_, Pockets Infinity only dipslays a limited amount of information. See the output example below.
 
 ## Requirements
 - [Bungie Platform Developer API-Key](https://www.bungie.net/en/User/API)
@@ -21,9 +21,9 @@ var apiKey = 'ENTER_YOUR_API_KEY_HERE';
 
 Enable [Chrome Extensions Developer Mode](https://developer.chrome.com/extensions/faq#faq-dev-01) and point it to the `app/` folder.
 
-Once you have installed the Chrome Extension, sign into [Bunge.net](http://bungie.net) and then press the Pockets Infinity icon or options page to launch. Press `Ctr + Shift + J` on Windows or `Cmd + Opt + J` on Mac to view your Destiny data that Pockets Infinity fetches.
+Once you have installed the Chrome Extension, sign into [Bunge.net](http://bungie.net) and then press the Pockets Infinity icon or options page to launch.
 
-##### Console Example
+##### Output Example
 ```javascript
 Cookies: bungled=BUNGLED_COOKIE; bungledid=BUNGLEDID_COOKIE;
 Platform: YOUR_PLATFORM_TYPE

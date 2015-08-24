@@ -1,4 +1,10 @@
 <!DOCTYPE html>
+
+<!--
+  Pockets Infinity
+  v0.1.0-alpha
+-->
+
 <html lang="en" ng-app="app" ng-csp>
 <head>
   <meta charset="utf-8">
@@ -28,7 +34,18 @@
   <div class="version-number">Pockets Infinity v0.1.0-alpha</div>
   <a class="submit-bug" href="https://github.com/blainefricks/pockets-infinity/issues" target="_blank">Submit a Bug</a>
 
-  <div ng-controller="appCtrl">
+  <div class="destiny-info">
+    <div id="cookies"></div>
+    <div id="platform"></div>
+    <div id="gamertag"></div>
+    <div id="membership-id"></div>
+    <div id="guardian0-id"></div>
+    <div id="guardian1-id"></div>
+    <div id="guardian2-id"></div>
+    <div id="error"></div>
+  </div>
+
+  <div ng-controller="appCtrl" style="display:none;">
     <div inventory></div>
   </div>
 
