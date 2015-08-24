@@ -24,15 +24,7 @@ Enable [Chrome Extensions Developer Mode](https://developer.chrome.com/extension
 Once you have installed the Chrome Extension, sign into [Bunge.net](http://bungie.net) and then press the Pockets Infinity icon or options page to launch.
 
 ##### Output Example
-```javascript
-Cookies: bungled=BUNGLED_COOKIE; bungledid=BUNGLEDID_COOKIE;
-Platform: YOUR_PLATFORM_TYPE
-Gamertag: YOUR_GAMERTAG
-Membership ID: YOUR_MEMBERSHIP_ID
-Guardian0: GUARDIAN_0_ID
-Guardian1: GUARDIAN_1_ID
-Guardian2: GUARDIAN_2_ID
-```
+![screenshot of Pockets Infinity](app/images/img-app-screenshot.png)
 
 ## Reporting Bugs
 Have a bug to report? First search through the [open](https://github.com/blainefricks/pockets-infinity/issues?q=is%3Aopen+is%3Aissue) and [closed](https://github.com/blainefricks/pockets-infinity/issues?q=is%3Aissue+is%3Aclosed) issues before submitting your bug. If your problem has not been submitted, please open a new issue and include the version of Pockets Infinity you are using.
