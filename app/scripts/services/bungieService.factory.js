@@ -74,10 +74,10 @@
     }
 
     function getBungieNetUserRequest(cookie) {
-      console.log("Cookies: bungled=" + cookie.bungled + "; bungledid=" + cookie.bungledid + ";");
+      console.log("Cookies: bungled=" + cookie.bungled + "; bungledid=" + cookie.bungledid + ";"); // dev
       // console.log("getBungieNetUserRequest(cookie)", cookie); // dev
-      document.getElementById("cookies").innerHTML = "<b>Cookies:</b> <i>bungled</i>=" + cookie.bungled + "; <i>bungledid</i>=" + cookie.bungledid + ";";
-      
+      document.getElementById("cookies").innerHTML = "<b>Cookies:</b> <i>bungled</i>=" + cookie.bungled + "; <i>bungledid</i>=" + cookie.bungledid + ";"; // 0.1.0
+
       return {
         method: "GET",
         url: "https://www.bungie.net/Platform/User/GetBungieNetUser/",
@@ -93,7 +93,7 @@
       // console.log("processBungieNetRequest(response)", response); // dev
       if (response.data.ErrorCode > 1) {
         document.getElementById("error").innerHTML = "<b>" + response.data.ErrorStatus + "</b><br>" + response.data.Message; // 0.1.0
-        console.log(response.data.ErrorStatus + "\n" + response.data.Message);
+        console.log(response.data.ErrorStatus + "\n" + response.data.Message); // dev
       };
 
       return response;
@@ -165,9 +165,9 @@
       // console.log(response); // dev
       if (response.data.ErrorCode > 1) {
         document.getElementById("error").innerHTML = "<b>" + response.data.ErrorStatus + "</b><br>" + response.data.Message; // 0.1.0
-        console.log(response.data.ErrorStatus + "\n" + response.data.Message);
+        console.log(response.data.ErrorStatus + "\n" + response.data.Message); // dev
       };
-      
+
       return response;
     }
 
