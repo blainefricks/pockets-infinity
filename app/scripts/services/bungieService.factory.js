@@ -2,56 +2,52 @@
 
   app.factory('bungieService', BungieService);
 
-   function BungieService() {
+  BungieService.$inject = ['$http'];
+
+   function BungieService($http) {
     var bungieNetUserPromise = null;
     var guardianPromise = null;
+    var inventoryPromise = null;
 
-    var factory = {
+    var factoryServices = {
       getBungieNetUser : getBungieNetUser
     }
 
-    return factory;
-
-    function apiRequest(request) {
-
-      console.log("apiRequest(request)", request); // dev
-
-      return new Promise(function(resolve, reject) {
-        var xhr = new XMLHttpRequest();
-
-        xhr.open(request.method, request.url, true);
-        xhr.setRequestHeader("X-API-Key", apiKey, "X-CSRF", request.token);
-
-        xhr.onreadystatechange = function(){
-          if (this.readyState === 4 && this.status === 200) {
-            var response = JSON.parse(this.responseText);
-
-            resolve(response);
-            reject(console.log("apiRequest is rejected"));
-          }
-        }
-
-        xhr.send();
-
-      });
-    }
+    return factoryServices;
 
 
     /*********************************************************/
 
 
     function getBungieCookies() {
+      // Gets all Bungie.net cookies from browser, searches for the
+      // 'bungled' and 'bungledid' cookies, then returns their values.
+
+      var cookieData = {
+        bungled : null,
+        bungledid : null
+      };
+
       return new Promise(function(resolve, reject) {
         chrome.cookies.getAll({
-          'domain': '.bungie.net',
-          'name': 'bungled'
+          'domain': '.bungie.net'
         }, getAllCallback);
 
         function getAllCallback(cookies) {
           if (cookies.length > 0) {
-            resolve(cookies[0].value);
+            for (var i = 0; i < cookies.length; i++) {
+              if (cookies[i].name === "bungled") {
+                // set 'bungled' value
+                cookieData.bungled = cookies[i].value;
+              };
+              if (cookies[i].name === "bungledid") {
+                // set 'bungledid' value
+                cookieData.bungledid = cookies[i].value;
+              };
+            };
+            resolve(cookieData);
           } else {
-            reject(alert("Error: No cookies found."));
+            reject(alert("Error: No cookies found. Please sign into Bungie.net."));
           };
         }
       });
@@ -66,7 +62,7 @@
 
       bungieNetUserPromise = bungieNetUserPromise || getBungieCookies()
         .then(getBungieNetUserRequest)
-        .then(apiRequest)
+        .then($http)
         .then(processBungieNetRequest)
         .catch(function(error) {
           console.log("Failed!", error);
@@ -77,43 +73,56 @@
       return bungieNetUserPromise;
     }
 
-    function getBungieNetUserRequest(token) {
-      console.log("getBungieNetUserRequest(token)", token); // dev
+    function getBungieNetUserRequest(cookie) {
+      console.log("Cookies: bungled=" + cookie.bungled + "; bungledid=" + cookie.bungledid + ";"); // dev
+      // console.log("getBungieNetUserRequest(cookie)", cookie); // dev
+      document.getElementById("cookies").innerHTML = "<b>Cookies:</b> <i>bungled</i>=" + cookie.bungled + "; <i>bungledid</i>=" + cookie.bungledid + ";"; // 0.1.0
 
       return {
-        method : "GET",
-        url : "https://www.bungie.net/Platform/User/GetBungieNetUser/",
-        token : token
-      }
+        method: "GET",
+        url: "https://www.bungie.net/Platform/User/GetBungieNetUser/",
+        headers: {
+          "X-API-Key": apiKey,
+          "X-CSRF": cookie.bungled
+        },
+        withCredentials: true
+      };
     }
 
     function processBungieNetRequest(response) {
-      console.log("processBungieNetRequest(response)", response); // dev
-      if (response.ErrorCode > 1) {
-        console.log(response.Message);
+      // console.log("processBungieNetRequest(response)", response); // dev
+      if (response.data.ErrorCode > 1) {
+        document.getElementById("error").innerHTML = "<b>" + response.data.ErrorStatus + "</b><br>" + response.data.Message; // 0.1.0
+        console.log(response.data.ErrorStatus + "\n" + response.data.Message); // dev
       };
 
       return response;
     }
 
     function generateMembership(response) {
-      var userData = response.Response.user;
+      var userData = response.data.Response.user;
+      var handle = null;
+      var id = null;
       var platformId = null;
 
       if (userData.xboxDisplayName) {
         platformId = 1;
+        document.getElementById("platform").innerHTML = "<b>Platform:</b> Xbox ("+platformId+")"; // 0.1.0
         console.log("Platform: Xbox"); // dev
         handle = userData.xboxDisplayName;
-        console.log(handle); // dev
       }
 
       if (userData.psnDisplayName) {
         platformId = 2;
+        document.getElementById("platform").innerHTML = "<b>Platform:</b> Playstation"; // 0.1.0
         console.log("Platform: PlayStation"); // dev
         handle = userData.psnDisplayName;
-        console.log(handle); // dev
       }
-      console.log("membershipId:",userData.membershipId);
+
+      document.getElementById("gamertag").innerHTML = "<b>Gamertag:</b> " + handle; // 0.1.0
+      console.log("Gamertag:",handle); // dev
+      document.getElementById("membership-id").innerHTML = "<b>Membership ID:</b> " + userData.membershipId; // 0.1.0
+      console.log("Membership ID:",userData.membershipId); // dev
 
       return {
         handle : handle,
@@ -127,36 +136,56 @@
 
 
     function getGuardians(membership) {
-      console.log(membership); // dev
+      // console.log(membership); // dev
 
-      guardianPromise = getBungieCookies()
-        .then(getGuardiansRequest)
-        .then(apiRequest)
-        .then(processGuardiansRequest);
+      guardianPromise = guardianPromise || getBungieCookies()
+        .then(getGuardiansRequest.bind(null, membership))
+        .then($http)
+        .then(processGuardiansRequest)
+        .then(generateGuardians);
 
       return guardianPromise;
     }
 
-    function getGuardiansRequest(token, membership) {
-      console.log(membership); // dev
-      console.log("token : " + token + "\n" + "membership : " + membership); // dev
+    function getGuardiansRequest(membership, cookie) {
+      // console.log("cookie : " + cookie + "\n" + "membership : " + membership); // dev
+
       return {
-        method : 'GET',
-        url: 'https://www.bungie.net/Platform/User/GetBungieAccount/' + membership.id + '/' + membership.platform + '/',
-        token : token
+        method: "GET",
+        url: "https://www.bungie.net/Platform/User/GetBungieAccount/" + membership.id + "/" + membership.platform + "/",
+        headers : {
+          "X-API-Key": apiKey,
+          "X-CSRF": cookie.bungled
+        },
+        withCredentials: true
       }
     }
 
     function processGuardiansRequest(response) {
-      console.log(response); // dev
+      // console.log(response); // dev
+      if (response.data.ErrorCode > 1) {
+        document.getElementById("error").innerHTML = "<b>" + response.data.ErrorStatus + "</b><br>" + response.data.Message; // 0.1.0
+        console.log(response.data.ErrorStatus + "\n" + response.data.Message); // dev
+      };
+
+      return response;
     }
 
     function generateGuardians(response) {
-      var guardianData = response.Response.destinyAccounts.characters;
+      var guardianData = response.data.Response.destinyAccounts[0].characters;
+      var guardians = [];
 
-      return {
-        id : guardianId
-      }
+      for (var i = 0; i < guardianData.length; i++) {
+        document.getElementById("guardian"+[i]+"-id").innerHTML = "<b>Guardian"+ [i] + ":</b> " + guardianData[i].characterId; // 0.1.0
+        console.log("Guardian"+ [i] + ": " + guardianData[i].characterId); // dev
+        guardians.push({
+          id : guardianData[i].characterId
+        });
+      };
+
+      // console.log(guardians); // dev
+
+      return guardians;
     }
 
 
@@ -164,25 +193,30 @@
 
 
     function getInventories() {
-      var promise = getBungieCookies()
+      inventoryPromise = inventoryPromise || getBungieCookies()
       .then(getGuardianInventoryRequest)
-      .then(apiRequest)
-      .then(processGuardianInventory);
+      .then($http)
+      .then(processGuardianInventoryRequest);
 
-      return promise;
+      return inventoryPromise;
     }
 
-    function getGuardianInventoryRequest(token, membership, guardian) {
-      console.log("getGuardianInventoryRequest(token)", token); // dev
+    function getGuardianInventoryRequest(cookie, membership, guardian) {
+      console.log("getGuardianInventoryRequest(cookie)", cookie); // dev
       // Returns the inventory for the supplied character.
+
       return {
-        method : "GET",
-        url : 'https://bungie.net/Destiny/' + membership.type + '/Account/' + membership.id + '/Character/' + guardian.id + '/Inventory/',
-        token : token
+        method: "GET",
+        url: "https://bungie.net/Destiny/" + membership.platform + "/Account/" + membership.id + "/Character/" + guardian.id + "/Inventory/",
+        headers: {
+          "X-API-Key": apiKey,
+          "X-CSRF": cookie.bungled
+        },
+        withCredentials: true
       }
     }
 
-    function processGuardianInventory(response) {
+    function processGuardianInventoryRequest(response) {
       console.log("processGuardianInventory(response)", response); // dev
 
       return response;
