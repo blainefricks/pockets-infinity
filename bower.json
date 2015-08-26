@@ -1,0 +1,22 @@
+{
+  "name": "Pockets Infinity",
+  "version": "0.1.0",
+  "description": "Destiny Companion Chrome Extension",
+  "homepage": "https://github.com/blainefricks/pockets-infinity",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/blainefricks/pockets-infinity.git"
+    },
+  "authors": [
+    "Blaine Fricks <blaine.fricks@live.com>"
+  ],
+  "dependencies" : {
+    "angular": "1.4.x",
+    "angular-cookies": "1.4.x"
+  },
+  "main": "app/index.html",
+  "keywords": [
+    "destiny"
+  ],
+  "license": "MIT"
+}

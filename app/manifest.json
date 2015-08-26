@@ -1,0 +1,21 @@
+{
+  "manifest_version": 2,
+
+  "name": "Pockets Infinity",
+  "description": "Destiny Companion Chrome Extension",
+  "version": "0.1",
+  "short_name": "PI",
+  "background": {
+    "scripts": [
+      "extension-scripts/chrome.js"
+    ]
+  },
+  "permissions": [
+    "cookies",
+    "*://*.bungie.net/*"
+  ],
+  "browser_action": {
+    "default_icon": "favicon.ico"
+  },
+  "options_page": "index.html"
+}
