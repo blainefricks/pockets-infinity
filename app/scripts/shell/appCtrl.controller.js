@@ -351,5 +351,29 @@
         itemPerkDescription: "itemPerkDescription",
       }
     ];
+    // Guardians
+    $scope.guardians = [
+    {
+      displayName: 'Reclaimer01',
+      className: 'Warlock',
+      powerLevel: '32',
+      guardianProgress: '50%',
+      nameplateURL: 'https://www.bungie.net/common/destiny_content/icons/d482a38c8062563aa3bc641856b85161.jpg'
+    },
+    {
+      displayName: 'Reclaimer01',
+      className: 'Titan',
+      powerLevel: '31',
+      guardianProgress: '50%',
+      nameplateURL: 'https://www.bungie.net/common/destiny_content/icons/756173d646f132f1de9d87545caa1054.jpg'
+    },
+    {
+      displayName: 'Reclaimer01',
+      className: 'Hunter',
+      powerLevel: '31',
+      guardianProgress: '50%',
+      nameplateURL: 'https://www.bungie.net/common/destiny_content/icons/4b7ec936d5acb61f37077d0783952573.jpg'
+    }
+  ];
   }
 }());
