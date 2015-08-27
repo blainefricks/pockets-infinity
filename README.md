@@ -1,9 +1,9 @@
 # Pockets Infinity
-**Version:** `0.1.0-alpha`
+**Version:** `0.1.1-alpha`
 
 Pockets Infinity gives players of the game [Destiny](http://destinythegame.com/) enhanced access to the items on their Guardians and the Vault. Its basically Batman's utility belt for your Guardian, all your items in one place.
 
-Since version `0.1.0-alpha` is _pre-release_, Pockets Infinity only dipslays a limited amount of information.
+Since version `0.1.1-alpha` is _pre-release_, Pockets Infinity only dipslays a limited amount of information.
 
 ![screenshot of Pockets Infinity](app/images/img-app-screenshot.png)
 
@@ -13,7 +13,7 @@ Since version `0.1.0-alpha` is _pre-release_, Pockets Infinity only dipslays a l
 ## Getting Started
 [Download a .zip](https://github.com/blainefricks/pockets-infinity/zipball/master) or clone the repo: `git clone https://github.com/blainefricks/pockets-infinity.git`.
 
-Install dependencies: `bower install` or see the [Wiki](https://github.com/blainefricks/pockets-infinity/wiki/dependencies) for a list of dependencies.
+Dependencies are included but you may install dependencies yourself with `bower install` or see the [Wiki](https://github.com/blainefricks/pockets-infinity/wiki/dependencies) for a list of dependencies.
 
 Enable [Chrome Extensions Developer Mode](https://developer.chrome.com/extensions/faq#faq-dev-01) and point it to the `app/` folder.
 

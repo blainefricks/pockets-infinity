@@ -76,7 +76,7 @@
     function getBungieNetUserRequest(cookie) {
       console.log("Cookies: bungled=" + cookie.bungled + "; bungledid=" + cookie.bungledid + ";"); // dev
       // console.log("getBungieNetUserRequest(cookie)", cookie); // dev
-      document.getElementById("cookies").innerHTML = "<b>Cookies:</b> <i>bungled</i>=" + cookie.bungled + "; <i>bungledid</i>=" + cookie.bungledid + ";"; // 0.1.0
+      document.getElementById("cookies").innerHTML = "<b>Cookies:</b> <i>bungled</i>=" + cookie.bungled + "; <i>bungledid</i>=" + cookie.bungledid + ";"; // 0.1.1
 
       return {
         method: "GET",
@@ -92,7 +92,7 @@
     function processBungieNetRequest(response) {
       // console.log("processBungieNetRequest(response)", response); // dev
       if (response.data.ErrorCode > 1) {
-        document.getElementById("error").innerHTML = "<b>" + response.data.ErrorStatus + "</b><br>" + response.data.Message; // 0.1.0
+        document.getElementById("error").innerHTML = "<b>" + response.data.ErrorStatus + "</b><br>" + response.data.Message; // 0.1.1
         console.log(response.data.ErrorStatus + "\n" + response.data.Message); // dev
       };
 
@@ -107,21 +107,21 @@
 
       if (userData.xboxDisplayName) {
         platformId = 1;
-        document.getElementById("platform").innerHTML = "<b>Platform:</b> Xbox ("+platformId+")"; // 0.1.0
+        document.getElementById("platform").innerHTML = "<b>Platform:</b> Xbox ("+platformId+")"; // 0.1.1
         console.log("Platform: Xbox"); // dev
         handle = userData.xboxDisplayName;
       }
 
       if (userData.psnDisplayName) {
         platformId = 2;
-        document.getElementById("platform").innerHTML = "<b>Platform:</b> Playstation"; // 0.1.0
+        document.getElementById("platform").innerHTML = "<b>Platform:</b> Playstation"; // 0.1.1
         console.log("Platform: PlayStation"); // dev
         handle = userData.psnDisplayName;
       }
 
-      document.getElementById("gamertag").innerHTML = "<b>Gamertag:</b> " + handle; // 0.1.0
+      document.getElementById("gamertag").innerHTML = "<b>Gamertag:</b> " + handle; // 0.1.1
       console.log("Gamertag:",handle); // dev
-      document.getElementById("membership-id").innerHTML = "<b>Membership ID:</b> " + userData.membershipId; // 0.1.0
+      document.getElementById("membership-id").innerHTML = "<b>Membership ID:</b> " + userData.membershipId; // 0.1.1
       console.log("Membership ID:",userData.membershipId); // dev
 
       return {
@@ -164,7 +164,7 @@
     function processGuardiansRequest(response) {
       // console.log(response); // dev
       if (response.data.ErrorCode > 1) {
-        document.getElementById("error").innerHTML = "<b>" + response.data.ErrorStatus + "</b><br>" + response.data.Message; // 0.1.0
+        document.getElementById("error").innerHTML = "<b>" + response.data.ErrorStatus + "</b><br>" + response.data.Message; // 0.1.1
         console.log(response.data.ErrorStatus + "\n" + response.data.Message); // dev
       };
 
@@ -176,7 +176,7 @@
       var guardians = [];
 
       for (var i = 0; i < guardianData.length; i++) {
-        document.getElementById("guardian"+[i]+"-id").innerHTML = "<b>Guardian"+ [i] + ":</b> " + guardianData[i].characterId; // 0.1.0
+        document.getElementById("guardian"+[i]+"-id").innerHTML = "<b>Guardian"+ [i] + ":</b> " + guardianData[i].characterId; // 0.1.1
         console.log("Guardian"+ [i] + ": " + guardianData[i].characterId); // dev
         guardians.push({
           id : guardianData[i].characterId
