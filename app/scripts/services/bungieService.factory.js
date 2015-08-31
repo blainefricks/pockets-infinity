@@ -2,12 +2,13 @@
 
   app.factory('bungieService', BungieService);
 
-  BungieService.$inject = ['$http'];
+  BungieService.$inject = ['$rootScope', '$http'];
 
-   function BungieService($http) {
+   function BungieService($rootScope, $http) {
     var bungieNetUserPromise = null;
     var guardianPromise = null;
     var inventoryPromise = null;
+    var bungieURL = "http://www.bungie.net";
 
     var factoryServices = {
       getBungieNetUser : getBungieNetUser
@@ -142,6 +143,9 @@
         .then(getGuardiansRequest.bind(null, membership))
         .then($http)
         .then(processGuardiansRequest)
+        .catch(function(error) {
+          console.log("Failed!", error);
+        })
         .then(generateGuardians);
 
       return guardianPromise;
@@ -162,7 +166,7 @@
     }
 
     function processGuardiansRequest(response) {
-      // console.log(response); // dev
+      console.log(response); // dev
       if (response.data.ErrorCode > 1) {
         document.getElementById("error").innerHTML = "<b>" + response.data.ErrorStatus + "</b><br>" + response.data.Message; // 0.1.1
         console.log(response.data.ErrorStatus + "\n" + response.data.Message); // dev
@@ -179,11 +183,19 @@
         document.getElementById("guardian"+[i]+"-id").innerHTML = "<b>Guardian"+ [i] + ":</b> " + guardianData[i].characterId; // 0.1.1
         console.log("Guardian"+ [i] + ": " + guardianData[i].characterId); // dev
         guardians.push({
-          id : guardianData[i].characterId
+          backgroundPath     : bungieURL + guardianData[i].backgroundPath,
+          emblemPath         : bungieURL + guardianData[i].emblemPath,
+          characterClass     : guardianData[i].characterClass.className,
+          id                 : guardianData[i].characterId,
+          dateLastPlayed     : guardianData[i].dateLastPlayed,
+          gender             : guardianData[i].gender.genderName,
+          level              : guardianData[i].level,
+          percentToNextLevel : guardianData[i].percentToNextLevel,
+          race               : guardianData[i].race.raceName
         });
       };
 
-      // console.log(guardians); // dev
+      console.log(guardians); // dev
 
       return guardians;
     }
