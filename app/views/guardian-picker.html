@@ -1,11 +1,11 @@
-<div ng-repeat="guardian in guardians" class="guardianContainer" style="background-image:url({{guardian.nameplateURL}})">
-  <div class="emblem"></div>
+<div ng-repeat="guardian in guardians" class="guardianContainer" id="{{guardian.id}}" style="background-image:url({{guardian.backgroundPath}})">
+  <div class="emblem" style="background-image:url({{guardian.emblemPath}});"></div>
   <div class="guardianDetails">
-    <div>{{guardian.displayName}}</div>
-    <div>{{guardian.className}}</div>
-    <div>{{guardian.powerLevel}}</div>
+    <div class="guardianClass">{{guardian.characterClass}}</div>
+    <div class="guardianRace">{{guardian.race}} {{guardian.gender}}</div>
+    <div class="guardianLevel">{{guardian.level}}</div>
   </div>
   <div class="guardianProgress">
-    <div class="barFill" style="width:{{guardian.guardianProgress}};"></div>
+    <div class="barFill" style="width:{{guardian.percentToNextLevel}}%;"></div>
   </div>
 </div>

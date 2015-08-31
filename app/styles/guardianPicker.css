@@ -49,3 +49,43 @@
 [guardian-picker]:hover .guardianContainer:nth-child(3) {
   top: 156px;
 }
+.emblem {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  height: 66px;
+  width: 66px;
+  background-color: grey;
+  background-size: cover;
+}
+.guardianProgress {
+  position: absolute;
+  display: block;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background-color: rgba(255,255,255,0.15);
+}
+.guardianProgress .barFill {
+  height: 100%;
+  background-color: #f5dc56;
+}
+.guardianDetails {
+  position: relative;
+  padding-left: 66px;
+}
+.guardianClass {
+}
+.guardianRace {
+}
+.guardianLevel {
+  position: absolute;
+  display: inline-block;
+  top: 0;
+  right: 0;
+  font-size: 32px;
+  line-height: 57px;
+}
