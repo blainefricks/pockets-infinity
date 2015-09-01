@@ -4,7 +4,7 @@
 
   BungieService.$inject = ['$rootScope', '$http'];
 
-   function BungieService($rootScope, $http) {
+  function BungieService($rootScope, $http) {
     var bungieNetUserPromise = null;
     var guardianPromise = null;
     var inventoryPromise = null;
