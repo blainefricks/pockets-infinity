@@ -189,6 +189,7 @@
           id                 : guardianData[i].characterId,
           dateLastPlayed     : guardianData[i].dateLastPlayed,
           gender             : guardianData[i].gender.genderName,
+          prestige           : guardianData[i].isPrestigeLevel,
           level              : guardianData[i].level,
           percentToNextLevel : guardianData[i].percentToNextLevel,
           race               : guardianData[i].race.raceName

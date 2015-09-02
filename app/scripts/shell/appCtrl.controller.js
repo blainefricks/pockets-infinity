@@ -260,7 +260,8 @@
       id: '1234',
       dateLastPlayed: '2015-08-23T16:45:33Z',
       gender: 'Male',
-      level: '32',
+      prestige: true,
+      level: '34',
       percentToNextLevel: '50',
       race: 'Awoken'
     },
@@ -270,6 +271,7 @@
       characterClass: 'Titan',
       id: '2345',
       dateLastPlayed: '2015-08-26T16:45:33Z',
+      prestige: true,
       gender: 'Male',
       level: '31',
       percentToNextLevel: '85',
@@ -282,7 +284,8 @@
       id: '5678',
       dateLastPlayed: '2015-08-19T16:45:33Z',
       gender: 'Male',
-      level: '31',
+      prestige: false,
+      level: '19',
       percentToNextLevel: '15',
       race: 'Exo'
     }

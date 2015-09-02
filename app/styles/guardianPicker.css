@@ -69,17 +69,25 @@
   height: 8px;
   background-color: rgba(255,255,255,0.15);
 }
+.prestige-true .guardianProgress .barFill {
+  background-color: #f5dc56;
+}
 .guardianProgress .barFill {
   height: 100%;
-  background-color: #f5dc56;
+  background-color: rgba(255,255,255,0.75);
 }
 .guardianDetails {
   position: relative;
   padding-left: 66px;
 }
 .guardianClass {
+  padding-top: 6px;
+  font-weight: bold;
+  font-size: 18px;
 }
 .guardianRace {
+  font-weight: bold;
+  font-size: 14px;
 }
 .guardianLevel {
   position: absolute;
@@ -88,4 +96,17 @@
   right: 0;
   font-size: 32px;
   line-height: 57px;
+}
+.prestige-true .guardianLevel {
+  color: #f5dc56;
+}
+.prestige-true .guardianLevel::before {
+  content: '';
+  position: absolute;
+  top: 25px;
+  left: -10px;
+  width: 5px;
+  height: 5px;
+  background-color: #f5dc56;
+  transform: rotate(45deg);
 }
