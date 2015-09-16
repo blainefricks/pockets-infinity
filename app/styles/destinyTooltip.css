@@ -3,13 +3,13 @@
   position: absolute;
   top: 0;
   transition: all 0.1s ease-in-out;
-  z-index: 999;
   width: 350px;
   background: rgba(30,36,43, 0.95);
+  opacity: .99;
+  z-index: 999;
 }
 .bucketItem:hover [destiny-tooltip] {
   display: block;
-  opacity: .99;
 }
 .bucketsLeft [destiny-tooltip] {
   left: 100px;
