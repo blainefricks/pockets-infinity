@@ -109,6 +109,10 @@ body {
   text-align: right;
   color: rgba(245,245,245,0.5);
 }
+.bucketsLeft,
+.bucketsRight {
+  margin-bottom: 250px;
+}
 .bucketsLeft{
   position: absolute;
   left: 0;

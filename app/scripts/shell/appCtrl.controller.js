@@ -8,349 +8,446 @@
 
     bungieService.getBungieNetUser();
 
-    // Equipped Subclass
-    $scope.inventorySubclassItems_Equipped = [
+    // Buckets
+    $scope.bucketsLeft = [
       {
-        itemHash: "itemHash",
-        itemName: "Sungsinger",
-        tierTypeName:"Common",
-        itemType: "Warlock Subclass",
-        itemDescription: "There are flames that even the Darkness cannot extinguish.",
-      },
-    ];
-    // Unequipped Subclasses
-    $scope.inventorySubclassItems = [
-      {
-        itemHash: "itemHash",
-        itemName: "Voidwalker",
-        tierTypeName:"Common",
-        itemType: "Warlock Subclass",
-        itemDescription: "Those who have stared into the Void are not bound by the laws of space and time.",
-      },
-    ];
-    // Equipped Primary Weapon
-    $scope.inventoryPrimaryWeaponItems_Equipped = [
-      {
-        itemHash: "12345",
-        itemName: "Her Right Hand",
-        tierTypeName:"Legendary",
-        itemType: "Auto Rifle",
-        statValue: "statValue",
-        itemDescription:"The Royal Guard's weapon of choice.",
-        statName: "statName",
-        valueNumber: "valueNumber",
-        itemPerkDescription: "itemPerkDescription",
-      },
-    ];
-    // Unequipped Primary Weapons
-    $scope.inventoryPrimaryWeaponItems = [
-      {
-        itemHash: "3164616404",
-        itemName:"Thorn",
-        itemType: "Hand Cannon",
-        tierTypeName:"Exotic",
-        itemDescription:"\"To rend one's enemies is to see them not as equals, but objects—hollow of spirit and meaning.\" - 13th Understanding, 7th Book of Sorrow",
-        statName: "statName",
-        valueNumber: "valueNumber",
-        itemPerkDescription: "itemPerkDescription",
+        id: "bucket-subclass",
+        label: "Sublcass",
+        equipped: [
+          {
+            itemHash: "itemHash",
+            itemName: "Sungsinger",
+            tierTypeName:"Common",
+            itemType: "Warlock Subclass",
+            itemDescription: "There are flames that even the Darkness cannot extinguish.",
+            itemImageURL: "",
+          }
+        ],
+        unequipped: [
+          {
+            itemHash: "itemHash",
+            itemName: "Voidwalker",
+            tierTypeName:"Common",
+            itemType: "Warlock Subclass",
+            itemDescription: "Those who have stared into the Void are not bound by the laws of space and time.",
+          }
+        ],
       },
       {
-        itemHash: "itemHash",
-        itemName:"itemName",
-        itemType: "itemType",
-        tierTypeName:"Uncommon",
-        itemDescription:"itemDescription",
-        statName: "statName",
-        valueNumber: "valueNumber",
-        itemPerkDescription: "itemPerkDescription",
+        id: "bucket-primary-weapons",
+        label: "Primary Weapons",
+        equipped: [
+          {
+            itemHash: "12345",
+            itemName: "Her Right Hand",
+            tierTypeName:"Legendary",
+            itemType: "Auto Rifle",
+            statValue: "statValue",
+            itemDescription:"The Royal Guard's weapon of choice.",
+            statName: "statName",
+            valueNumber: "valueNumber",
+            itemPerkDescription: "itemPerkDescription"
+          },
+        ],
+        unequipped: [
+          {
+            itemHash: "3164616404",
+            itemName:"Thorn",
+            itemType: "Hand Cannon",
+            tierTypeName:"Exotic",
+            statValue: "statValue",
+            itemDescription:"\"To rend one's enemies is to see them not as equals, but objects—hollow of spirit and meaning.\" - 13th Understanding, 7th Book of Sorrow",
+            statName: "statName",
+            valueNumber: "valueNumber",
+            itemPerkDescription: "itemPerkDescription",
+          },
+          {
+            itemHash: "itemHash",
+            itemName:"itemName",
+            itemType: "itemType",
+            tierTypeName:"Uncommon",
+            itemDescription:"itemDescription",
+            statName: "statName",
+            statValue: "statValue",
+            valueNumber: "valueNumber",
+            itemPerkDescription: "itemPerkDescription",
+          },
+          {
+            itemHash: "itemHash",
+            itemName:"itemName",
+            itemType: "itemType",
+            tierTypeName:"Rare",
+            itemDescription:"itemDescription",
+            statName: "statName",
+            statValue: "statValue",
+            valueNumber: "valueNumber",
+            itemPerkDescription: "itemPerkDescription",
+          },
+          {
+            itemHash: "itemHash",
+            itemName:"itemName",
+            itemType: "itemType",
+            tierTypeName:"tierTypeName",
+            itemDescription:"itemDescription",
+            statValue: "statValue",
+            statName: "statName",
+            valueNumber: "valueNumber",
+            itemPerkDescription: "itemPerkDescription",
+          },
+          {
+            itemHash: "itemHash",
+            itemName:"itemName",
+            itemType: "itemType",
+            tierTypeName:"tierTypeName",
+            itemDescription:"itemDescription",
+            statValue: "statValue",
+            statName: "statName",
+            valueNumber: "valueNumber",
+            itemPerkDescription: "itemPerkDescription",
+          },
+        ],
       },
       {
-        itemHash: "itemHash",
-        itemName:"itemName",
-        itemType: "itemType",
-        tierTypeName:"Rare",
-        itemDescription:"itemDescription",
-        statName: "statName",
-        valueNumber: "valueNumber",
-        itemPerkDescription: "itemPerkDescription",
+        id: "bucket-special-weapons",
+        label: "Special Weapons",
+        equipped: [
+          {
+            itemHash: "itemHash",
+            itemName: "Amplified Geo-D6",
+            tierTypeName:"Legendary",
+            itemType: "Sniper Rifle",
+            statValue: "statValue",
+            itemDescription:"Shortest distance between two points across a curved visual axis: Aim + Squeeze.",
+            statName: "statName",
+            valueNumber: "valueNumber",
+            itemPerkDescription: "itemPerkDescription",
+          }
+        ],
+        unequipped: [
+          {
+            itemHash: "12345",
+            itemName: "itemName",
+            tierTypeName:"tierTypeName",
+            itemType: "itemType",
+            statValue: "statValue",
+            itemDescription:"itemDescription",
+            statName: "statName",
+            valueNumber: "valueNumber",
+            itemPerkDescription: "itemPerkDescription",
+          },
+          {
+            itemHash: "itemHash",
+            itemName:"itemName",
+            itemType: "itemType",
+            tierTypeName:"tierTypeName",
+            itemDescription:"itemDescription",
+            statValue: "statValue",
+            statName: "statName",
+            valueNumber: "valueNumber",
+            itemPerkDescription: "itemPerkDescription",
+          },
+          {
+            itemHash: "itemHash",
+            itemName:"itemName",
+            itemType: "itemType",
+            tierTypeName:"tierTypeName",
+            itemDescription:"itemDescription",
+            statValue: "statValue",
+            statName: "statName",
+            valueNumber: "valueNumber",
+            itemPerkDescription: "itemPerkDescription",
+          },
+          {
+            itemHash: "itemHash",
+            itemName:"itemName",
+            itemType: "itemType",
+            tierTypeName:"tierTypeName",
+            itemDescription:"itemDescription",
+            statValue: "statValue",
+            statName: "statName",
+            valueNumber: "valueNumber",
+            itemPerkDescription: "itemPerkDescription",
+          }
+        ],
       },
       {
-        itemHash: "itemHash",
-        itemName:"itemName",
-        itemType: "itemType",
-        tierTypeName:"tierTypeName",
-        itemDescription:"itemDescription",
-        statName: "statName",
-        valueNumber: "valueNumber",
-        itemPerkDescription: "itemPerkDescription",
+        id: "bucket-heavy-weapons",
+        label: "Heavy Weapons",
+        equipped: [
+          {
+            itemHash: "12345",
+            itemName: "itemName",
+            tierTypeName:"tierTypeName",
+            itemType: "itemType",
+            statValue: "statValue",
+            itemDescription:"itemDescription",
+            statName: "statName",
+            valueNumber: "valueNumber",
+            itemPerkDescription: "itemPerkDescription",
+          }
+        ],
+        unequipped: [
+          {
+            itemHash: "12345",
+            itemName: "itemName",
+            tierTypeName:"tierTypeName",
+            itemType: "itemType",
+            statValue: "statValue",
+            itemDescription:"itemDescription",
+            statName: "statName",
+            valueNumber: "valueNumber",
+            itemPerkDescription: "itemPerkDescription",
+          },
+          {
+            itemHash: "itemHash",
+            itemName:"itemName",
+            itemType: "itemType",
+            tierTypeName:"tierTypeName",
+            itemDescription:"itemDescription",
+            statValue: "statValue",
+            statName: "statName",
+            valueNumber: "valueNumber",
+            itemPerkDescription: "itemPerkDescription",
+          },
+          {
+            itemHash: "itemHash",
+            itemName:"itemName",
+            itemType: "itemType",
+            tierTypeName:"tierTypeName",
+            itemDescription:"itemDescription",
+            statValue: "statValue",
+            statName: "statName",
+            valueNumber: "valueNumber",
+            itemPerkDescription: "itemPerkDescription",
+          },
+          {
+            itemHash: "itemHash",
+            itemName:"itemName",
+            itemType: "itemType",
+            tierTypeName:"tierTypeName",
+            itemDescription:"itemDescription",
+            statValue: "statValue",
+            statName: "statName",
+            valueNumber: "valueNumber",
+            itemPerkDescription: "itemPerkDescription",
+          }
+        ],
       },
       {
-        itemHash: "itemHash",
-        itemName:"itemName",
-        itemType: "itemType",
-        tierTypeName:"tierTypeName",
-        itemDescription:"itemDescription",
-        statName: "statName",
-        valueNumber: "valueNumber",
-        itemPerkDescription: "itemPerkDescription",
-      },
-    ];
-    // Equipped Special Weapon
-    $scope.inventorySpecialWeaponItems_Equipped = [
-      {
-        itemHash: "itemHash",
-        itemName: "Amplified Geo-D6",
-        tierTypeName:"Legendary",
-        itemType: "Sniper Rifle",
-        statValue: "statValue",
-        itemDescription:"Shortest distance between two points across a curved visual axis: Aim + Squeeze.",
-        statName: "statName",
-        valueNumber: "valueNumber",
-        itemPerkDescription: "itemPerkDescription",
-      },
-    ];
-    // Unequipped Special Weapons
-    $scope.inventorySpecialWeaponItems = [
-      {
-        itemHash: "12345",
-        itemName: "itemName",
-        tierTypeName:"tierTypeName",
-        itemType: "itemType",
-        statValue: "statValue",
-        itemDescription:"itemDescription",
-        statName: "statName",
-        valueNumber: "valueNumber",
-        itemPerkDescription: "itemPerkDescription",
-      },
-      {
-        itemHash: "itemHash",
-        itemName:"itemName",
-        itemType: "itemType",
-        tierTypeName:"tierTypeName",
-        itemDescription:"itemDescription",
-        statName: "statName",
-        valueNumber: "valueNumber",
-        itemPerkDescription: "itemPerkDescription",
-      },
-      {
-        itemHash: "itemHash",
-        itemName:"itemName",
-        itemType: "itemType",
-        tierTypeName:"tierTypeName",
-        itemDescription:"itemDescription",
-        statName: "statName",
-        valueNumber: "valueNumber",
-        itemPerkDescription: "itemPerkDescription",
-      },
-      {
-        itemHash: "itemHash",
-        itemName:"itemName",
-        itemType: "itemType",
-        tierTypeName:"tierTypeName",
-        itemDescription:"itemDescription",
-        statName: "statName",
-        valueNumber: "valueNumber",
-        itemPerkDescription: "itemPerkDescription",
+        id: "bucket-ghost_shells",
+        label: "Ghost Shells",
+        equipped: [
+          {
+            itemHash: "itemHash",
+            itemName:"itemName",
+            itemType: "itemType",
+            tierTypeName:"tierTypeName",
+            itemDescription:"itemDescription",
+            statValue: "statValue",
+            statName: "statName",
+            valueNumber: "valueNumber",
+            itemPerkDescription: "itemPerkDescription",
+          }
+        ],
+        unequipped: [
+          {
+            itemHash: "itemHash",
+            itemName:"itemName",
+            itemType: "itemType",
+            tierTypeName:"tierTypeName",
+            itemDescription:"itemDescription",
+            statValue: "statValue",
+            statName: "statName",
+            valueNumber: "valueNumber",
+            itemPerkDescription: "itemPerkDescription",
+          }
+        ]
       }
     ];
-    // Equipped Heavy Weapon
-    $scope.inventoryHeavyWeaponItems_Equipped = [
+
+    $scope.bucketsRight = [
       {
-        itemHash: "12345",
-        itemName: "itemName",
-        tierTypeName:"tierTypeName",
-        itemType: "itemType",
-        statValue: "statValue",
-        itemDescription:"itemDescription",
-        statName: "statName",
-        valueNumber: "valueNumber",
-        itemPerkDescription: "itemPerkDescription",
-      }
-    ];
-    // Unequipped Heavy Weapons
-    $scope.inventoryHeavyWeaponItems = [
-      {
-        itemHash: "12345",
-        itemName: "itemName",
-        tierTypeName:"tierTypeName",
-        itemType: "itemType",
-        statValue: "statValue",
-        itemDescription:"itemDescription",
-        statName: "statName",
-        valueNumber: "valueNumber",
-        itemPerkDescription: "itemPerkDescription",
+        id: "bucket-helmets",
+        label: "Helmets",
+        equipped: [
+          {
+            itemHash: "12345",
+            itemName: "itemName",
+            tierTypeName:"Legendary",
+            itemType: "itemType",
+            statValue: "statValue",
+            itemDescription:"itemDescription",
+            statName: "statName",
+            valueNumber: "valueNumber",
+            itemPerkDescription: "itemPerkDescription"
+          }
+        ],
+        unequipped: [
+          {
+            itemHash: "12345",
+            itemName: "itemName",
+            tierTypeName:"tierTypeName",
+            itemType: "itemType",
+            statValue: "statValue",
+            itemDescription:"itemDescription",
+            statName: "statName",
+            valueNumber: "valueNumber",
+            itemPerkDescription: "itemPerkDescription"
+          }
+        ]
       },
       {
-        itemHash: "itemHash",
-        itemName:"itemName",
-        itemType: "itemType",
-        tierTypeName:"tierTypeName",
-        itemDescription:"itemDescription",
-        statName: "statName",
-        valueNumber: "valueNumber",
-        itemPerkDescription: "itemPerkDescription",
+        id: "bucket-gauntlets",
+        label: "Gauntlets",
+        equipped: [
+          {
+            itemHash: "itemHash",
+            itemName:"itemName",
+            itemType: "itemType",
+            tierTypeName:"Legendary",
+            itemDescription:"itemDescription",
+            statValue: "statValue",
+            statName: "statName",
+            valueNumber: "valueNumber",
+            itemPerkDescription: "itemPerkDescription",
+          }
+        ],
+        unequipped: [
+          {
+            itemHash: "itemHash",
+            itemName:"itemName",
+            itemType: "itemType",
+            tierTypeName:"tierTypeName",
+            itemDescription:"itemDescription",
+            statValue: "statValue",
+            statName: "statName",
+            valueNumber: "valueNumber",
+            itemPerkDescription: "itemPerkDescription",
+          }
+        ]
       },
       {
-        itemHash: "itemHash",
-        itemName:"itemName",
-        itemType: "itemType",
-        tierTypeName:"tierTypeName",
-        itemDescription:"itemDescription",
-        statName: "statName",
-        valueNumber: "valueNumber",
-        itemPerkDescription: "itemPerkDescription",
+        id: "bucket-armor-chest",
+        label: "Chest Armor",
+        equipped: [
+          {
+            itemHash: "itemHash",
+            itemName:"itemName",
+            itemType: "itemType",
+            tierTypeName:"Exotic",
+            itemDescription:"itemDescription",
+            statValue: "statValue",
+            statName: "statName",
+            valueNumber: "valueNumber",
+            itemPerkDescription: "itemPerkDescription",
+          }
+        ],
+        unequipped: [
+          {
+            itemHash: "itemHash",
+            itemName:"itemName",
+            itemType: "itemType",
+            tierTypeName:"Legendary",
+            itemDescription:"itemDescription",
+            statValue: "statValue",
+            statName: "statName",
+            valueNumber: "valueNumber",
+            itemPerkDescription: "itemPerkDescription",
+          }
+        ]
       },
       {
-        itemHash: "itemHash",
-        itemName:"itemName",
-        itemType: "itemType",
-        tierTypeName:"tierTypeName",
-        itemDescription:"itemDescription",
-        statName: "statName",
-        valueNumber: "valueNumber",
-        itemPerkDescription: "itemPerkDescription",
-      }
-    ];
-    // Equipped Head Armor
-    $scope.inventoryHeadItems_Equipped = [
+        id: "bucket-armor-legs",
+        label: "Leg Armor",
+        equipped: [
+          {
+            itemHash: "itemHash",
+            itemName:"itemName",
+            itemType: "itemType",
+            tierTypeName:"Legendary",
+            itemDescription:"itemDescription",
+            statValue: "statValue",
+            statName: "statName",
+            valueNumber: "valueNumber",
+            itemPerkDescription: "itemPerkDescription",
+          }
+        ],
+        unequipped: [
+          {
+            itemHash: "itemHash",
+            itemName:"itemName",
+            itemType: "itemType",
+            tierTypeName:"Legendary",
+            itemDescription:"itemDescription",
+            statName: "statName",
+            statValue: "statValue",
+            valueNumber: "valueNumber",
+            itemPerkDescription: "itemPerkDescription",
+          }
+        ]
+      },
       {
-        itemHash: "12345",
-        itemName: "Equipped Head Armor",
-        tierTypeName:"tierTypeName",
-        itemType: "itemType",
-        statValue: "statValue",
-        itemDescription:"itemDescription",
-        statName: "statName",
-        valueNumber: "valueNumber",
-        itemPerkDescription: "itemPerkDescription",
-      }
-    ];
-    // Unequipped Head Armor
-    $scope.inventoryHeadItems = [
+        id: "bucket-armor-class",
+        label: "Class Armor",
+        equipped: [
+          {
+            itemHash: "itemHash",
+            itemName:"itemName",
+            itemType: "itemType",
+            tierTypeName:"Legendary",
+            itemDescription:"itemDescription",
+            statName: "statName",
+            statValue: "statValue",
+            valueNumber: "valueNumber",
+            itemPerkDescription: "itemPerkDescription",
+          }
+        ],
+        unequipped: [
+          {
+            itemHash: "itemHash",
+            itemName:"itemName",
+            itemType: "itemType",
+            tierTypeName:"Rare",
+            itemDescription:"itemDescription",
+            statName: "statName",
+            statValue: "statValue",
+            valueNumber: "valueNumber",
+            itemPerkDescription: "itemPerkDescription",
+          }
+        ]
+      },
       {
-        itemHash: "12345",
-        itemName: "Unequipped Head Armor",
-        tierTypeName:"tierTypeName",
-        itemType: "itemType",
-        statValue: "statValue",
-        itemDescription:"itemDescription",
-        statName: "statName",
-        valueNumber: "valueNumber",
-        itemPerkDescription: "itemPerkDescription",
+        id: "bucket-artifacts",
+        label: "Artifacts",
+        equipped: [
+          {
+            itemHash: "itemHash",
+            itemName:"itemName",
+            itemType: "itemType",
+            tierTypeName:"Legendary",
+            itemDescription:"itemDescription",
+            statName: "statName",
+            statValue: "statValue",
+            valueNumber: "valueNumber",
+            itemPerkDescription: "itemPerkDescription",
+          }
+        ],
+        unequipped: [
+          {
+            itemHash: "itemHash",
+            itemName:"itemName",
+            itemType: "itemType",
+            tierTypeName:"Legendary",
+            itemDescription:"itemDescription",
+            statName: "statName",
+            statValue: "statValue",
+            valueNumber: "valueNumber",
+            itemPerkDescription: "itemPerkDescription",
+          }
+        ]
       }
     ];
-    // Equipped Arm Armor
-    $scope.inventoryArmItems_Equipped = [
-      {
-        itemHash: "12345",
-        itemName: "Equipped Arm Armor",
-        tierTypeName:"tierTypeName",
-        itemType: "itemType",
-        statValue: "statValue",
-        itemDescription:"itemDescription",
-        statName: "statName",
-        valueNumber: "valueNumber",
-        itemPerkDescription: "itemPerkDescription",
-      }
-    ];
-    // Unequipped Arm Armor
-    $scope.inventoryArmItems = [
-      {
-        itemHash: "12345",
-        itemName: "Unequipped Arm Armor",
-        tierTypeName:"tierTypeName",
-        itemType: "itemType",
-        statValue: "statValue",
-        itemDescription:"itemDescription",
-        statName: "statName",
-        valueNumber: "valueNumber",
-        itemPerkDescription: "itemPerkDescription",
-      }
-    ];
-    // Equipped Chest Armor
-    $scope.inventoryChestItems_Equipped = [
-      {
-        itemHash: "12345",
-        itemName: "Equipped Chest Armor",
-        tierTypeName:"tierTypeName",
-        itemType: "itemType",
-        statValue: "statValue",
-        itemDescription:"itemDescription",
-        statName: "statName",
-        valueNumber: "valueNumber",
-        itemPerkDescription: "itemPerkDescription",
-      }
-    ];
-    // Unequipped Chest Armor
-    $scope.inventoryChestItems = [
-      {
-        itemHash: "12345",
-        itemName: "Unequipped Chest Armor",
-        tierTypeName:"tierTypeName",
-        itemType: "itemType",
-        statValue: "statValue",
-        itemDescription:"itemDescription",
-        statName: "statName",
-        valueNumber: "valueNumber",
-        itemPerkDescription: "itemPerkDescription",
-      }
-    ];
-    // Equipped Leg Armor
-    $scope.inventoryLegItems_Equipped = [
-      {
-        itemHash: "12345",
-        itemName: "Equipped Leg Armor",
-        tierTypeName:"tierTypeName",
-        itemType: "itemType",
-        statValue: "statValue",
-        itemDescription:"itemDescription",
-        statName: "statName",
-        valueNumber: "valueNumber",
-        itemPerkDescription: "itemPerkDescription",
-      }
-    ];
-    // Unequipped Leg Armor
-    $scope.inventoryLegItems = [
-      {
-        itemHash: "12345",
-        itemName: "Unequipped Leg Armor",
-        tierTypeName:"tierTypeName",
-        itemType: "itemType",
-        statValue: "statValue",
-        itemDescription:"itemDescription",
-        statName: "statName",
-        valueNumber: "valueNumber",
-        itemPerkDescription: "itemPerkDescription",
-      }
-    ];
-    // Equipped Class Item
-    $scope.inventoryClassItems_Equipped = [
-      {
-        itemHash: "12345",
-        itemName: "Equipped Class Armor",
-        tierTypeName:"tierTypeName",
-        itemType: "itemType",
-        statValue: "statValue",
-        itemDescription:"itemDescription",
-        statName: "statName",
-        valueNumber: "valueNumber",
-        itemPerkDescription: "itemPerkDescription",
-      }
-    ];
-    // Unequipped Class Armor
-    $scope.inventoryClassItems = [
-      {
-        itemHash: "12345",
-        itemName: "Unequipped Class Armor",
-        tierTypeName:"tierTypeName",
-        itemType: "itemType",
-        statValue: "statValue",
-        itemDescription:"itemDescription",
-        statName: "statName",
-        valueNumber: "valueNumber",
-        itemPerkDescription: "itemPerkDescription",
-      }
-    ];
+
     // Guardians
     $scope.guardians = [
     {
