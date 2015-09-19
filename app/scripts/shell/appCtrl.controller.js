@@ -318,6 +318,7 @@
             valueNumber: "valueNumber",
             itemPerkDescription: "itemPerkDescription",
             itemImageURL: "images/armor-helmet-legendary.jpg",
+            itemAction: "",
           }
         ],
         unequipped: [
@@ -332,6 +333,7 @@
             valueNumber: "valueNumber",
             itemPerkDescription: "itemPerkDescription",
             itemImageURL: "images/armor-helmet-legendary.jpg",
+            itemAction: "Equip",
           }
         ]
       },
@@ -350,6 +352,7 @@
             valueNumber: "valueNumber",
             itemPerkDescription: "itemPerkDescription",
             itemImageURL: "images/armor-gauntlet-legendary.jpg",
+            itemAction: "",
           }
         ],
         unequipped: [
@@ -364,6 +367,7 @@
             valueNumber: "valueNumber",
             itemPerkDescription: "itemPerkDescription",
             itemImageURL: "images/armor-gauntlet-legendary.jpg",
+            itemAction: "Equip",
           }
         ]
       },
@@ -382,6 +386,7 @@
             valueNumber: "valueNumber",
             itemPerkDescription: "itemPerkDescription",
             itemImageURL: "images/armor-chest-exotic.jpg",
+            itemAction: "",
           }
         ],
         unequipped: [
@@ -396,6 +401,7 @@
             valueNumber: "valueNumber",
             itemPerkDescription: "itemPerkDescription",
             itemImageURL: "images/armor-chest-legendary.jpg",
+            itemAction: "Equip",
           }
         ]
       },
@@ -414,6 +420,7 @@
             valueNumber: "valueNumber",
             itemPerkDescription: "itemPerkDescription",
             itemImageURL: "images/missing_icon.png",
+            itemAction: "",
           }
         ],
         unequipped: [
@@ -428,6 +435,7 @@
             valueNumber: "valueNumber",
             itemPerkDescription: "itemPerkDescription",
             itemImageURL: "images/missing_icon.png",
+            itemAction: "Equip",
           }
         ]
       },
@@ -446,6 +454,7 @@
             valueNumber: "valueNumber",
             itemPerkDescription: "itemPerkDescription",
             itemImageURL: "images/armor-class-legendary.jpg",
+            itemAction: "",
           }
         ],
         unequipped: [
@@ -460,6 +469,7 @@
             valueNumber: "valueNumber",
             itemPerkDescription: "itemPerkDescription",
             itemImageURL: "images/armor-class-legendary.jpg",
+            itemAction: "Equip",
           }
         ]
       },
@@ -478,6 +488,7 @@
             valueNumber: "valueNumber",
             itemPerkDescription: "itemPerkDescription",
             itemImageURL: "images/missing_icon.png",
+            itemAction: "",
           }
         ],
         unequipped: [
@@ -492,6 +503,7 @@
             valueNumber: "valueNumber",
             itemPerkDescription: "itemPerkDescription",
             itemImageURL: "images/missing_icon.png",
+            itemAction: "Equip",
           }
         ]
       }
