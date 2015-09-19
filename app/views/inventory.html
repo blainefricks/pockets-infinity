@@ -9,15 +9,14 @@
 
 <div class="bucketsLeft">
   <div class="bucket {{bucket.id}}" ng-repeat="bucket in bucketsLeft">
-    <div class="bucketItem equipped" ng-repeat="bucketItem in bucket.equipped">
-      <div class="itemImage" style="background-image:url('{{bucketItem.itemImageURL}}');"></div>
+    <div class="bucketItem equipped" ng-repeat="bucketItem in bucket.equipped" style="background-image:url('{{bucketItem.itemImageURL}}');">
+        <div class="itemAction">{{bucketItem.itemAction}}</div>
       <div destiny-tooltip></div>
     </div>
     <div class="unequippedItems">
       <div class="label">{{bucket.label}}</div>
-      <div class="bucketItem" ng-repeat="bucketItem in bucket.unequipped">
-        <div class="itemImage" style="background-image:url('{{bucketItem.itemImageURL}}');"></div>
-        <div class="itemAction">Equip</div>
+      <div class="bucketItem" ng-repeat="bucketItem in bucket.unequipped" style="background-image:url('{{bucketItem.itemImageURL}}');">
+        <div class="itemAction">{{bucketItem.itemAction}}</div>
         <div destiny-tooltip></div>
       </div>
     </div>
@@ -26,15 +25,14 @@
 
 <div class="bucketsRight">
   <div class="bucket {{bucket.id}}" ng-repeat="bucket in bucketsRight">
-    <div class="bucketItem equipped" ng-repeat="bucketItem in bucket.equipped">
-      <div class="itemImage" style="background-image:url('{{bucketItem.itemImageURL}}');"></div>
+    <div class="bucketItem equipped" ng-repeat="bucketItem in bucket.equipped" style="background-image:url('{{bucketItem.itemImageURL}}');">
+        <div class="itemAction">{{bucketItem.itemAction}}</div>
       <div destiny-tooltip></div>
     </div>
     <div class="unequippedItems">
       <div class="label">{{bucket.label}}</div>
-      <div class="bucketItem" ng-repeat="bucketItem in bucket.unequipped">
-        <div class="itemImage" style="background-image:url('{{bucketItem.itemImageURL}}');"></div>
-        <div class="itemAction">Equip</div>
+      <div class="bucketItem" ng-repeat="bucketItem in bucket.unequipped" style="background-image:url('{{bucketItem.itemImageURL}}');">
+        <div class="itemAction">{{bucketItem.itemAction}}</div>
         <div destiny-tooltip></div>
       </div>
     </div>

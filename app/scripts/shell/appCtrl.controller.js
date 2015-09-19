@@ -20,7 +20,8 @@
             tierTypeName:"Common",
             itemType: "Warlock Subclass",
             itemDescription: "There are flames that even the Darkness cannot extinguish.",
-            itemImageURL: "",
+            itemImageURL: "images/subclass-void.jpg",
+            itemAction: "",
           }
         ],
         unequipped: [
@@ -30,6 +31,8 @@
             tierTypeName:"Common",
             itemType: "Warlock Subclass",
             itemDescription: "Those who have stared into the Void are not bound by the laws of space and time.",
+            itemImageURL: "images/subclass-void.jpg",
+            itemAction: "Equip",
           }
         ],
       },
@@ -37,19 +40,6 @@
         id: "bucket-primary-weapons",
         label: "Primary Weapons",
         equipped: [
-          {
-            itemHash: "12345",
-            itemName: "Her Right Hand",
-            tierTypeName:"Legendary",
-            itemType: "Auto Rifle",
-            statValue: "statValue",
-            itemDescription:"The Royal Guard's weapon of choice.",
-            statName: "statName",
-            valueNumber: "valueNumber",
-            itemPerkDescription: "itemPerkDescription"
-          },
-        ],
-        unequipped: [
           {
             itemHash: "3164616404",
             itemName:"Thorn",
@@ -60,17 +50,37 @@
             statName: "statName",
             valueNumber: "valueNumber",
             itemPerkDescription: "itemPerkDescription",
+            itemImageURL: "images/weapon-primary-exotic.jpg",
+            itemAction: "",
+          },
+        ],
+        unequipped: [
+
+          {
+            itemHash: "12345",
+            itemName: "Her Right Hand",
+            tierTypeName:"Legendary",
+            itemType: "Auto Rifle",
+            statValue: "statValue",
+            itemDescription:"The Royal Guard's weapon of choice.",
+            statName: "statName",
+            valueNumber: "valueNumber",
+            itemPerkDescription: "itemPerkDescription",
+            itemImageURL: "images/weapon-primary-legendary.jpg",
+            itemAction: "Equip",
           },
           {
             itemHash: "itemHash",
             itemName:"itemName",
             itemType: "itemType",
-            tierTypeName:"Uncommon",
+            tierTypeName:"Common",
             itemDescription:"itemDescription",
             statName: "statName",
             statValue: "statValue",
             valueNumber: "valueNumber",
             itemPerkDescription: "itemPerkDescription",
+            itemImageURL: "images/weapon-special-common.jpg",
+            itemAction: "Equip",
           },
           {
             itemHash: "itemHash",
@@ -82,6 +92,8 @@
             statValue: "statValue",
             valueNumber: "valueNumber",
             itemPerkDescription: "itemPerkDescription",
+            itemImageURL: "images/missing_icon.png",
+            itemAction: "Equip",
           },
           {
             itemHash: "itemHash",
@@ -93,6 +105,8 @@
             statName: "statName",
             valueNumber: "valueNumber",
             itemPerkDescription: "itemPerkDescription",
+            itemImageURL: "images/weapon-primary-legendary.jpg",
+            itemAction: "Equip",
           },
           {
             itemHash: "itemHash",
@@ -104,6 +118,8 @@
             statName: "statName",
             valueNumber: "valueNumber",
             itemPerkDescription: "itemPerkDescription",
+            itemImageURL: "images/weapon-primary-legendary.jpg",
+            itemAction: "Equip",
           },
         ],
       },
@@ -121,6 +137,7 @@
             statName: "statName",
             valueNumber: "valueNumber",
             itemPerkDescription: "itemPerkDescription",
+            itemImageURL: "images/weapon-special-legendary.jpg",
           }
         ],
         unequipped: [
@@ -134,6 +151,8 @@
             statName: "statName",
             valueNumber: "valueNumber",
             itemPerkDescription: "itemPerkDescription",
+            itemImageURL: "images/weapon-special-exotic.jpg",
+            itemAction: "Equip",
           },
           {
             itemHash: "itemHash",
@@ -145,6 +164,8 @@
             statName: "statName",
             valueNumber: "valueNumber",
             itemPerkDescription: "itemPerkDescription",
+            itemImageURL: "images/weapon-special-common.jpg",
+            itemAction: "Equip",
           },
           {
             itemHash: "itemHash",
@@ -156,6 +177,8 @@
             statName: "statName",
             valueNumber: "valueNumber",
             itemPerkDescription: "itemPerkDescription",
+            itemImageURL: "images/weapon-special-common.jpg",
+            itemAction: "Equip",
           },
           {
             itemHash: "itemHash",
@@ -167,6 +190,8 @@
             statName: "statName",
             valueNumber: "valueNumber",
             itemPerkDescription: "itemPerkDescription",
+            itemImageURL: "images/weapon-special-common.jpg",
+            itemAction: "Equip",
           }
         ],
       },
@@ -184,6 +209,7 @@
             statName: "statName",
             valueNumber: "valueNumber",
             itemPerkDescription: "itemPerkDescription",
+            itemImageURL: "images/weapon-heavy-legendary.jpg",
           }
         ],
         unequipped: [
@@ -197,6 +223,8 @@
             statName: "statName",
             valueNumber: "valueNumber",
             itemPerkDescription: "itemPerkDescription",
+            itemImageURL: "images/weapon-heavy-exotic.jpg",
+            itemAction: "Equip",
           },
           {
             itemHash: "itemHash",
@@ -208,6 +236,8 @@
             statName: "statName",
             valueNumber: "valueNumber",
             itemPerkDescription: "itemPerkDescription",
+            itemImageURL: "images/weapon-heavy-legendary.jpg",
+            itemAction: "Equip",
           },
           {
             itemHash: "itemHash",
@@ -219,6 +249,8 @@
             statName: "statName",
             valueNumber: "valueNumber",
             itemPerkDescription: "itemPerkDescription",
+            itemImageURL: "images/weapon-heavy-legendary.jpg",
+            itemAction: "Equip",
           },
           {
             itemHash: "itemHash",
@@ -230,6 +262,8 @@
             statName: "statName",
             valueNumber: "valueNumber",
             itemPerkDescription: "itemPerkDescription",
+            itemImageURL: "images/weapon-heavy-legendary.jpg",
+            itemAction: "Equip",
           }
         ],
       },
@@ -241,12 +275,13 @@
             itemHash: "itemHash",
             itemName:"itemName",
             itemType: "itemType",
-            tierTypeName:"tierTypeName",
+            tierTypeName:"Rare",
             itemDescription:"itemDescription",
             statValue: "statValue",
             statName: "statName",
             valueNumber: "valueNumber",
             itemPerkDescription: "itemPerkDescription",
+            itemImageURL: "images/ghost-rare.jpg",
           }
         ],
         unequipped: [
@@ -254,12 +289,14 @@
             itemHash: "itemHash",
             itemName:"itemName",
             itemType: "itemType",
-            tierTypeName:"tierTypeName",
+            tierTypeName:"Rare",
             itemDescription:"itemDescription",
             statValue: "statValue",
             statName: "statName",
             valueNumber: "valueNumber",
             itemPerkDescription: "itemPerkDescription",
+            itemImageURL: "images/ghost-rare.jpg",
+            itemAction: "Equip",
           }
         ]
       }
@@ -279,7 +316,8 @@
             itemDescription:"itemDescription",
             statName: "statName",
             valueNumber: "valueNumber",
-            itemPerkDescription: "itemPerkDescription"
+            itemPerkDescription: "itemPerkDescription",
+            itemImageURL: "images/armor-helmet-legendary.jpg",
           }
         ],
         unequipped: [
@@ -292,7 +330,8 @@
             itemDescription:"itemDescription",
             statName: "statName",
             valueNumber: "valueNumber",
-            itemPerkDescription: "itemPerkDescription"
+            itemPerkDescription: "itemPerkDescription",
+            itemImageURL: "images/armor-helmet-legendary.jpg",
           }
         ]
       },
@@ -310,6 +349,7 @@
             statName: "statName",
             valueNumber: "valueNumber",
             itemPerkDescription: "itemPerkDescription",
+            itemImageURL: "images/armor-gauntlet-legendary.jpg",
           }
         ],
         unequipped: [
@@ -323,6 +363,7 @@
             statName: "statName",
             valueNumber: "valueNumber",
             itemPerkDescription: "itemPerkDescription",
+            itemImageURL: "images/armor-gauntlet-legendary.jpg",
           }
         ]
       },
@@ -340,6 +381,7 @@
             statName: "statName",
             valueNumber: "valueNumber",
             itemPerkDescription: "itemPerkDescription",
+            itemImageURL: "images/armor-chest-exotic.jpg",
           }
         ],
         unequipped: [
@@ -353,6 +395,7 @@
             statName: "statName",
             valueNumber: "valueNumber",
             itemPerkDescription: "itemPerkDescription",
+            itemImageURL: "images/armor-chest-legendary.jpg",
           }
         ]
       },
@@ -370,6 +413,7 @@
             statName: "statName",
             valueNumber: "valueNumber",
             itemPerkDescription: "itemPerkDescription",
+            itemImageURL: "images/missing_icon.png",
           }
         ],
         unequipped: [
@@ -383,6 +427,7 @@
             statValue: "statValue",
             valueNumber: "valueNumber",
             itemPerkDescription: "itemPerkDescription",
+            itemImageURL: "images/missing_icon.png",
           }
         ]
       },
@@ -400,6 +445,7 @@
             statValue: "statValue",
             valueNumber: "valueNumber",
             itemPerkDescription: "itemPerkDescription",
+            itemImageURL: "images/armor-class-legendary.jpg",
           }
         ],
         unequipped: [
@@ -413,6 +459,7 @@
             statValue: "statValue",
             valueNumber: "valueNumber",
             itemPerkDescription: "itemPerkDescription",
+            itemImageURL: "images/armor-class-legendary.jpg",
           }
         ]
       },
@@ -430,6 +477,7 @@
             statValue: "statValue",
             valueNumber: "valueNumber",
             itemPerkDescription: "itemPerkDescription",
+            itemImageURL: "images/missing_icon.png",
           }
         ],
         unequipped: [
@@ -443,6 +491,7 @@
             statValue: "statValue",
             valueNumber: "valueNumber",
             itemPerkDescription: "itemPerkDescription",
+            itemImageURL: "images/missing_icon.png",
           }
         ]
       }
