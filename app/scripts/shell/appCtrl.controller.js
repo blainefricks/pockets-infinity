@@ -334,6 +334,19 @@
             itemPerkDescription: "itemPerkDescription",
             itemImageURL: "images/armor-helmet-legendary.jpg",
             itemAction: "Equip",
+          },
+          {
+            itemHash: "12345",
+            itemName: "itemName",
+            tierTypeName:"Exotic",
+            itemType: "itemType",
+            statValue: "statValue",
+            itemDescription:"itemDescription",
+            statName: "statName",
+            valueNumber: "valueNumber",
+            itemPerkDescription: "itemPerkDescription",
+            itemImageURL: "images/armor-helmet-legendary.jpg",
+            itemAction: "Equip",
           }
         ]
       },

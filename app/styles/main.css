@@ -91,7 +91,7 @@ body {
   position: relative;
   top: 140px;
   margin: 0px auto;
-  width: 300px;
+  width: 480px;
   height: 450px;
 }
 .leftStats {
@@ -144,27 +144,32 @@ body {
 .bucketsLeft .unequippedItems {
   right: 87px;
   text-align: right;
+  background-position: 10px 0px;
 }
 .bucketsRight .unequippedItems {
-  left: -105px;
+  left: -104px;
 }
 .bucket:hover .unequippedItems {
   /*padding-right: 10px;*/
   -webkit-transform: scale(1);
   transform: scale(1);
-  background-position: 10px 0;
 }
 .bucketsRight .bucket:hover .unequippedItems {
-  left: 83px;
+  left: 87px;
 }
 .unequippedItems .bucketItem {
   position: relative;
   display: inline-block;
-  margin-left: 5px;
   margin-bottom: 3px;
 }
-.bucketsLeft .unequippedItems .bucketItem {float: right;}
-.bucketsRight .unequippedItems .bucketItem {float: left;}
+.bucketsLeft .unequippedItems .bucketItem {
+  float: right;
+  margin-left: 5px;
+ }
+.bucketsRight .unequippedItems .bucketItem {
+  float: left;
+  margin-right: 5px;
+ }
 .unequippedItems .label {
   opacity: 0;
   position: absolute;
