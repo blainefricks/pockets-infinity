@@ -192,7 +192,7 @@
     /*********************************************************/
 
 
-    function getInventories() {
+    function getInventory(membership, guardian) {
       inventoryPromise = inventoryPromise || getBungieCookies()
       .then(getGuardianInventoryRequest)
       .then($http)
@@ -203,11 +203,12 @@
 
     function getGuardianInventoryRequest(cookie, membership, guardian) {
       console.log("getGuardianInventoryRequest(cookie)", cookie); // dev
-      // Returns the inventory for the supplied character.
+      // Retrieve the inventory for the supplied character.
+      // http://www.bungie.net/Platform/Destiny/{membershipType}/Account/{destinyMembershipId}/Character/{characterId}/Activities/
 
       return {
         method: "GET",
-        url: "https://bungie.net/Destiny/" + membership.platform + "/Account/" + membership.id + "/Character/" + guardian.id + "/Inventory/",
+        url: "https://bungie.net/Destiny/" + membership.platform + "/Account/" + membership.id + "/Character/" + guardian.id + "/Activities/",
         headers: {
           "X-API-Key": apiKey,
           "X-CSRF": cookie.bungled
