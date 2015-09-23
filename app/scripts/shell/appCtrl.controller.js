@@ -8,6 +8,48 @@
 
     bungieService.getBungieNetUser();
 
+
+    // Guardians
+    $scope.guardians = [
+    {
+      backgroundPath: 'https://www.bungie.net/common/destiny_content/icons/22e446f665be869f2fff588370a3cb3d.jpg',
+      emblemPath: 'https://www.bungie.net/common/destiny_content/icons/ff1ca3e58f41b13bc17c9bb711844f64.jpg',
+      characterClass: 'Warlock',
+      id: '1234',
+      dateLastPlayed: '2015-08-23T16:45:33Z',
+      gender: 'Male',
+      light: '165',
+      level: '34',
+      percentToNextLevel: '50',
+      race: 'Awoken'
+    },
+    {
+      backgroundPath: 'https://www.bungie.net/common/destiny_content/icons/22e446f665be869f2fff588370a3cb3d.jpg',
+      emblemPath: 'https://www.bungie.net/common/destiny_content/icons/ff1ca3e58f41b13bc17c9bb711844f64.jpg',
+      characterClass: 'Titan',
+      id: '2345',
+      dateLastPlayed: '2015-08-26T16:45:33Z',
+      light: '115',
+      gender: 'Male',
+      level: '31',
+      percentToNextLevel: '85',
+      race: 'Exo'
+    },
+    {
+      backgroundPath: 'https://www.bungie.net/common/destiny_content/icons/22e446f665be869f2fff588370a3cb3d.jpg',
+      emblemPath: 'https://www.bungie.net/common/destiny_content/icons/ff1ca3e58f41b13bc17c9bb711844f64.jpg',
+      characterClass: 'Hunter',
+      id: '5678',
+      dateLastPlayed: '2015-08-19T16:45:33Z',
+      gender: 'Male',
+      light: '98',
+      level: '19',
+      percentToNextLevel: '15',
+      race: 'Exo'
+    }
+  ];
+
+
     // Buckets
     $scope.bucketsLeft = [
       {
@@ -521,30 +563,5 @@
         ]
       }
     ];
-
-    // Guardians
-    $scope.guardians = [
-    {
-      displayName: 'Reclaimer01',
-      className: 'Warlock',
-      powerLevel: '32',
-      guardianProgress: '50%',
-      nameplateURL: 'https://www.bungie.net/common/destiny_content/icons/d482a38c8062563aa3bc641856b85161.jpg'
-    },
-    {
-      displayName: 'Reclaimer01',
-      className: 'Titan',
-      powerLevel: '31',
-      guardianProgress: '50%',
-      nameplateURL: 'https://www.bungie.net/common/destiny_content/icons/756173d646f132f1de9d87545caa1054.jpg'
-    },
-    {
-      displayName: 'Reclaimer01',
-      className: 'Hunter',
-      powerLevel: '31',
-      guardianProgress: '50%',
-      nameplateURL: 'https://www.bungie.net/common/destiny_content/icons/4b7ec936d5acb61f37077d0783952573.jpg'
-    }
-  ];
   }
 }());

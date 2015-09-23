@@ -49,3 +49,69 @@
 [guardian-picker]:hover .guardianContainer:nth-child(3) {
   top: 156px;
 }
+.emblem {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  height: 66px;
+  width: 66px;
+  background-color: grey;
+  background-size: cover;
+}
+.guardianProgress {
+  position: absolute;
+  display: block;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background-color: rgba(255,255,255,0.15);
+}
+.guardianProgress .barFill {
+  height: 100%;
+  background-color: rgba(255,255,255,0.75);
+}
+.guardianDetails {
+  position: relative;
+  padding-left: 66px;
+}
+.guardianClass {
+  padding-top: 6px;
+  font-weight: bold;
+  font-size: 18px;
+}
+.guardianRace {
+  font-weight: bold;
+  font-size: 14px;
+}
+.guardianLevel {
+  position: absolute;
+  display: inline-block;
+  top: 6px;
+  right: 0;
+  font-size: 22px;
+  font-weight: bold;
+  line-height: 21.5px;
+}
+.guardianLight {
+  position: absolute;
+  display: inline-block;
+  bottom: 0;
+  right: 0;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 16px;
+  color: #f5dc56;
+}
+.guardianLight::before {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: -10px;
+  width: 5px;
+  height: 5px;
+  background-color: #f5dc56;
+  transform: rotate(45deg);
+}
