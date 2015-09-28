@@ -21,7 +21,7 @@
       -ms-text-size-adjust: none;
        -o-text-size-adjust: none;
 }
-html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, code, del, dfn, em, img, q, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, textarea, table, caption, tbody, tfoot, thead, tr, th, td {
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, code, del, dfn, em, img, q, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, textarea, table, caption, tbody, tfoot, thead, tr, th, td, inventory, guardian-picker {
   margin: 0;
   padding: 0;
   border: 0;
@@ -87,7 +87,8 @@ body {
 ** Guardian Inventory
 *********************************************************
 */
-[inventory] {
+inventory {
+  display: block;
   position: relative;
   top: 140px;
   margin: 0px auto;

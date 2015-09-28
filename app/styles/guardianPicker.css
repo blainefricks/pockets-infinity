@@ -1,4 +1,4 @@
-[guardian-picker] {
+guardian-picker {
   position: absolute;
   display: block;
   top: 7px;
@@ -6,7 +6,7 @@
   cursor: pointer;
   z-index: 30;
 }
-[guardian-picker]:hover {
+guardian-picker:hover {
   width: 300px;
   height: 225px;
 }
@@ -38,15 +38,15 @@
   transform: scale(0.90);
   opacity: 0.5;
 }
-[guardian-picker]:hover .guardianContainer:nth-child(2),
-[guardian-picker]:hover .guardianContainer:nth-child(3){
+guardian-picker:hover .guardianContainer:nth-child(2),
+guardian-picker:hover .guardianContainer:nth-child(3){
   transform: scale(1);
   opacity: 1;
 }
-[guardian-picker]:hover .guardianContainer:nth-child(2){
+guardian-picker:hover .guardianContainer:nth-child(2){
   top: 78px;
 }
-[guardian-picker]:hover .guardianContainer:nth-child(3) {
+guardian-picker:hover .guardianContainer:nth-child(3) {
   top: 156px;
 }
 .emblem {
