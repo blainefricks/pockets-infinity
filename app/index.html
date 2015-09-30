@@ -18,19 +18,21 @@
   <link rel="stylesheet" type="text/css" href="styles/destinyTooltip.css">
 </head>
 
-<body ng-app="app">
+<body ng-app="app" ng-strict-di>
 
+  <!-- begin vendor scripts -->
   <script src="vendor/angular/angular.min.js"></script>
   <script src="vendor/angular/angular-cookies.min.js"></script>
+  <!-- end vendor scripts -->
+
+  <!-- begin app scripts -->
   <script src="scripts/app.module.js"></script>
   <script src="scripts/services/bungieService.factory.js"></script>
   <script src="scripts/shell/appCtrl.controller.js"></script>
   <script src="scripts/inventory/guardianPicker.directive.js"></script>
   <script src="scripts/inventory/inventory.directive.js"></script>
   <script src="scripts/inventory/destinyTooltip.directive.js"></script>
-<!--
-  <script src="scripts/getting-started.js"></script>
--->
+  <!-- end app scripts -->
 
   <div class="version-number">Pockets Infinity v0.1.1-alpha</div>
   <a class="submit-bug" href="https://github.com/blainefricks/pockets-infinity/issues" target="_blank">Report a Bug</a>

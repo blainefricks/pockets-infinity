@@ -5,14 +5,16 @@
   app.directive('guardianPicker', GuardianPicker);
 
   function GuardianPicker() {
+    console.log("guardianPicker"); // dev
+
     return {
       controller: GuardianPickerCtrl,
       controllerAs: 'vm',
       bindToController: true,
-      scope: {},
       restrict: 'E',
+      scope: {},
       template: [
-        '<div ng-repeat="guardian in vm.guardians track by guardian.id" class="guardianContainer" id="{{guardian.id}}" style="background-image:url({{guardian.backgroundPath}})">',
+        '<div ng-repeat="guardian in guardians" class="guardianContainer" id="{{guardian.id}}" style="background-image:url({{guardian.backgroundPath}})">',
         '  <div class="emblem" style="background-image:url({{guardian.emblemPath}});"></div>',
         '  <div class="guardianDetails">',
         '    <div class="guardianClass">{{guardian.characterClass}}</div>',
@@ -36,6 +38,7 @@
     $scope.$on('guardians-updated', function (e, args) {
       console.log("Broadcast Received: guardians-updated"); // dev
       vm.guardians = args.guardians;
+      console.log(vm.guardians); // dev
     });
   }
 
