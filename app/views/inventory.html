@@ -11,13 +11,13 @@
   <div class="bucket {{bucket.id}}" ng-repeat="bucket in bucketsLeft">
     <div class="bucketItem equipped" ng-repeat="bucketItem in bucket.equipped" style="background-image:url('{{bucketItem.itemImageURL}}');">
         <div class="itemAction">{{bucketItem.itemAction}}</div>
-      <div destiny-tooltip></div>
+      <destiny-tooltip></destiny-tooltip>
     </div>
     <div class="unequippedItems">
       <div class="label">{{bucket.label}}</div>
       <div class="bucketItem" ng-repeat="bucketItem in bucket.unequipped" style="background-image:url('{{bucketItem.itemImageURL}}');">
         <div class="itemAction">{{bucketItem.itemAction}}</div>
-        <div destiny-tooltip></div>
+        <destiny-tooltip></destiny-tooltip>
       </div>
     </div>
   </div>
@@ -27,13 +27,13 @@
   <div class="bucket {{bucket.id}}" ng-repeat="bucket in bucketsRight">
     <div class="bucketItem equipped" ng-repeat="bucketItem in bucket.equipped" style="background-image:url('{{bucketItem.itemImageURL}}');">
         <div class="itemAction">{{bucketItem.itemAction}}</div>
-      <div destiny-tooltip></div>
+      <destiny-tooltip></destiny-tooltip>
     </div>
     <div class="unequippedItems">
       <div class="label">{{bucket.label}}</div>
       <div class="bucketItem" ng-repeat="bucketItem in bucket.unequipped" style="background-image:url('{{bucketItem.itemImageURL}}');">
         <div class="itemAction">{{bucketItem.itemAction}}</div>
-        <div destiny-tooltip></div>
+        <destiny-tooltip></destiny-tooltip>
       </div>
     </div>
   </div>

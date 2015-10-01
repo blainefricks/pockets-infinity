@@ -1,4 +1,4 @@
-[destiny-tooltip] {
+destiny-tooltip {
   display: none;
   position: absolute;
   top: 0;
@@ -8,13 +8,13 @@
   opacity: .99;
   z-index: 999;
 }
-.bucketItem:hover [destiny-tooltip] {
+.bucketItem:hover destiny-tooltip {
   display: block;
 }
-.bucketsLeft [destiny-tooltip] {
+.bucketsLeft destiny-tooltip {
   left: 100px;
 }
-.bucketsRight [destiny-tooltip] {
+.bucketsRight destiny-tooltip {
   right: 100px;
 }
 .destinyTooltip {
