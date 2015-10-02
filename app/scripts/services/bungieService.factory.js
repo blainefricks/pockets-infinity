@@ -12,7 +12,8 @@
 
     var factoryServices = {
       getBungieNetUser : getBungieNetUser,
-      getGuardians : getGuardians
+      getGuardians : getGuardians,
+      getInventory : getInventory
     }
 
     return factoryServices;
@@ -209,14 +210,13 @@
       return inventoryPromise;
     }
 
-    function getGuardianInventoryRequest(cookie, membership, guardian) {
-      console.log("getGuardianInventoryRequest(cookie)", cookie); // dev
+    function getGuardianInventoryRequest(membership, guardian, cookie) {
       // Retrieve the inventory for the supplied character.
-      // http://www.bungie.net/Platform/Destiny/{membershipType}/Account/{destinyMembershipId}/Character/{characterId}/Activities/
+      // http://www.bungie.net/Platform/Destiny/{membershipType}/Account/{destinyMembershipId}/Character/{characterId}/Inventory/Summary/
 
       return {
         method: "GET",
-        url: "https://bungie.net/Destiny/" + membership.platform + "/Account/" + membership.id + "/Character/" + guardian.id + "/Activities/",
+        url: "https://bungie.net/Platform/Destiny/" + membership.platform + "/Account/" + membership.id + "/Character/" + guardian.id + "/Inventory/Summary/",
         headers: {
           "X-API-Key": apiKey,
           "X-CSRF": cookie.bungled
@@ -226,7 +226,7 @@
     }
 
     function processGuardianInventoryRequest(response) {
-      console.log("processGuardianInventory(response)", response); // dev
+      console.log(response); // dev
 
       return response;
     }
