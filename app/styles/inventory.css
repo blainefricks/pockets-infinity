@@ -1,0 +1,195 @@
+inventory {
+  display: block;
+  position: relative;
+  width: 100%;
+  min-width: 1080px;
+  background-color: rgba(255,255,255,0.05);
+  padding: 16px 16px 16px 374px;
+}
+.bucketList {
+  position: relative;
+  display: inline-block;
+  width: 50%;
+  padding-right: 30px;
+  padding-bottom: 30px;
+  vertical-align: top;
+}
+.bucketLabel {
+  font-size: 18px;
+  letter-spacing: 2px;
+  font-weight: bold;
+  color: #f5dc56;
+  text-transform: uppercase;
+  line-height: 45px;
+  border-bottom: 2px solid rgba(255,255,255,0.25);
+  margin-bottom: 16px;
+}
+li.bucketItem {
+  position: relative;
+  display: inline-block;
+  width: 50%;
+  height: 40px;
+  padding: 0px 16px 0px 56px;
+  margin-bottom: 16px;
+  cursor: -webkit-grab;
+}
+li.bucketItem:active {cursor: -webkit-grabbing;}
+li.bucketItem.layoutCompact {
+  width: 60px;
+  height: 60px;
+  padding: 0px;
+  margin: 3px;
+}
+.bucketItemImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  background: rgba(0,0,0,0.5);
+  border: 2px solid #fff;
+  background-size: 100%;
+}
+.layoutCompact .bucketItemImage {
+  width: 60px;
+  height: 60px;
+}
+.layoutCompact .bucketItemName,
+.layoutCompact .bucketItemOwner,
+.layoutCompact .bucketItemPower {
+  display: none;
+}
+.bucketItemName {
+  font-weight: bold;
+}
+.bucketItemOwner {
+  font-size: 14px;
+}
+.bucketItemPower {
+  position: absolute;
+  top: 0px;
+  right: 16px;
+  line-height: 40px;
+  font-weight: bold;
+}
+
+/* Responsive CSS */
+/* This doesn't seem to work at the moment? */
+@media all and (min-width: 480px;){
+  .bucketList {width: 100%;}
+  li.bucketItem {width: 100%;}
+}
+
+
+
+/*.leftStats {
+  position: absolute;
+  top: 0;
+  left: 140px;
+  font-size: 25px;
+  color: rgba(245,245,245,0.5);
+}
+.rightStats {
+  position: absolute;
+  top: 0;
+  right: 110px;
+  font-size: 25px;
+  text-align: right;
+  color: rgba(245,245,245,0.5);
+}
+.bucketsLeft,
+.bucketsRight {
+  margin-bottom: 250px;
+}
+.bucketsLeft{
+  position: absolute;
+  left: 0;
+}
+.bucketsRight{
+  position: absolute;
+  right: 0;
+}
+.bucket {
+  position: relative;
+  opacity: 0.99;
+}
+.bucket:hover {
+  z-index: 30;
+}
+.unequippedItems{
+  position: absolute;
+  top: 0;
+  width: 266px;
+  height: 252px;
+  white-space: normal;
+  background-image: url(/images/bg_inventory_bucket.png);
+  background-repeat: no-repeat;
+  -webkit-transform-origin: 100% 0;
+          transform-origin: 100% 0;
+  -webkit-transform: scale(0.28125);
+          transform: scale(0.28125);
+}
+.bucketsLeft .unequippedItems {
+  right: 87px;
+  text-align: right;
+  background-position: 10px 0px;
+}
+.bucketsRight .unequippedItems {
+  left: -104px;
+}
+.bucket:hover .unequippedItems {
+  padding-right: 10px;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+.bucketsRight .bucket:hover .unequippedItems {
+  left: 87px;
+}
+.unequippedItems .bucketItem {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 3px;
+}
+.bucketsLeft .unequippedItems .bucketItem {
+  float: right;
+  margin-left: 5px;
+ }
+.bucketsRight .unequippedItems .bucketItem {
+  float: left;
+  margin-right: 5px;
+ }
+.unequippedItems .label {
+  opacity: 0;
+  position: absolute;
+  top: -25px;
+}
+.bucketsLeft .unequippedItems .label {
+  right: 0;
+}
+.bucketsRight .unequippedItems .label {
+  left: 5px;
+}
+.bucket:hover .unequippedItems .label {
+  opacity: 0.99;
+}
+.bucketItem {
+  position: relative;
+  width: 82px;
+  height: 82px;
+  margin-bottom: 30px;
+  background: rgba(0,0,0,0.5);
+  border: 4px solid #fff;
+  background-size: 100%;
+}
+.itemAction {
+  width: 100%;
+  opacity: 0;
+  text-align: center;
+  line-height: 74px;
+  font-family: Roboto-Medium;
+  cursor: pointer;
+}
+.bucketItem:hover .itemAction {
+  opacity: 0.99;
+  background-color: rgba(0,0,0,0.6);
+}*/
