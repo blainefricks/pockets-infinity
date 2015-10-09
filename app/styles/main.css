@@ -51,6 +51,10 @@ body {
   font-weight: 400;
   width: 100%;
 }
+footer {
+  width: 100%;
+  min-height: 300px;
+}
 
 .version-number {
   position: fixed;
