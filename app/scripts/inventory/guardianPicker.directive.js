@@ -4,13 +4,16 @@
 
   app.directive('guardianPicker', GuardianPicker);
 
-  function GuardianPicker() {
+  GuardianPicker.$inject = ['$timeout'];
+
+  function GuardianPicker($timeout) {
     console.log("guardianPicker"); // dev
 
     return {
       controller: GuardianPickerCtrl,
       controllerAs: 'vm',
       bindToController: true,
+      link: Link,
       restrict: 'E',
       scope: {},
       template: [
@@ -28,12 +31,23 @@
         '</div>'
       ].join('')
     };
+
+    function Link (element, attribute, transclude) {
+      $timeout(function () {
+        $timeout(function () {
+          // body...
+        }, 0);
+      }, 0);
+    }
   }
 
   GuardianPickerCtrl.$inject = ['$scope'];
 
   function GuardianPickerCtrl($scope) {
     var vm = this;
+    vm.guardians = [];
+
+    // dev data
 
     // vm.guardians = [
     //   {
@@ -73,6 +87,8 @@
     //     race: 'Exo'
     //   }
     // ];
+
+    // end dev data
 
     $scope.$on('guardians-updated', function (e, args) {
       console.log("Broadcast Received: guardians-updated"); // dev
