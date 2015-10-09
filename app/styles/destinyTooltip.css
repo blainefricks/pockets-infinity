@@ -10,10 +10,11 @@ destiny-tooltip {
 }
 .bucketItem:hover destiny-tooltip {
   display: block;
+  top: 56px;
+  left: 0px;
 }
-.bucketsLeft destiny-tooltip {
-  left: 100px;
-}
+.layoutCompact.bucketItem:hover destiny-tooltip {top: 66px;}
+
 .bucketsRight destiny-tooltip {
   right: 100px;
 }

@@ -1,4 +1,15 @@
-<div class="leftStats">
+<ul class="bucketList" ng-repeat="bucket in buckets" id="{{bucket.id}}">
+  <div class="bucketLabel">{{bucket.label}}</div>
+  <li ng-repeat="bucketItem in bucket.bucketItems" class="bucketItem">
+    <destiny-tooltip></destiny-tooltip>
+    <div class="bucketItemImage" style="background-image:url('{{bucketItem.itemImageURL}}');"></div>
+    <div class="bucketItemName">{{bucketItem.itemName}}</div>
+    <div class="bucketItemOwner">{{bucketItem.itemOwner}}</div>
+    <div class="bucketItemPower">{{bucketItem.statValue}}</div>
+  </li>
+</ul>
+
+<!-- <div class="leftStats">
   <div class="level">
     <div class="label">Level</div>
     <div class="value">{{guardian.level}}</div>
@@ -38,3 +49,4 @@
     </div>
   </div>
 </div>
+ -->
