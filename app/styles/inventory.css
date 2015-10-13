@@ -74,8 +74,7 @@ li.bucketItem.layoutCompact {
 }
 
 /* Responsive CSS */
-/* This doesn't seem to work at the moment? */
-@media all and (min-width: 480px;){
+@media (max-width: 480px){
   .bucketList {width: 100%;}
   li.bucketItem {width: 100%;}
 }
