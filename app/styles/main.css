@@ -59,24 +59,6 @@ footer {
   min-height: 300px;
 }
 
-.version-number {
-  position: fixed;
-  display: block;
-  top: 0;
-  left: 0;
-  padding: 8px 15px;
-  font-family: 'Consolas', 'Courier', sans-serif;
-  font-size: 14px;
-  font-weight: bold;
-  color: #fff;
-  margin: 0 auto;
-  text-decoration: none;
-  background-color: rgba(255,255,255,0.15);
-  border-radius: 0px 0px 4px 0px;
-  opacity: 0.75;
-  z-index: 9999;
-}
-
 .destiny-info {
   position: relative;
   display: block;

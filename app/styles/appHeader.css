@@ -1,0 +1,33 @@
+app-header {
+  position: relative;
+  display: block;
+  height: 50px;
+  width: 100%;
+  background-color: rgba(255,255,255,0.05);
+  padding: 0px 16px;
+  margin-bottom: 30px;
+}
+
+.version-number {
+  position: relative;
+  display: inline-block;
+  top: 0;
+  left: 0;
+  font-family: 'Consolas', 'Courier', sans-serif;
+  font-size: 14px;
+  line-height: 50px;
+  font-weight: bold;
+  color: #fff;
+  margin: 0 auto;
+  text-decoration: none;
+  border-radius: 0px 0px 4px 0px;
+  z-index: 9999;
+}
+#user {
+  position: relative;
+  display: inline-block;
+  line-height: 50px;
+  float: right;
+  padding-right: 30px;
+  font-weight: bold;
+}

@@ -13,6 +13,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="stylesheet" type="text/css" href="styles/main.css">
+  <link rel="stylesheet" type="text/css" href="styles/appHeader.css">
   <link rel="stylesheet" type="text/css" href="styles/guardianPicker.css">
   <link rel="stylesheet" type="text/css" href="styles/submit-bug.css">
   <link rel="stylesheet" type="text/css" href="styles/inventory.css">
@@ -20,6 +21,14 @@
 </head>
 
 <body ng-app="app" ng-strict-di>
+
+  <div ng-controller="appCtrl">
+    <toaster></toaster>
+    <app-header></app-header>
+    <guardian-picker></guardian-picker>
+    <inventory></inventory>
+    <footer></footer>
+  </div>
 
   <!-- begin vendor scripts -->
   <script src="vendor/angular/angular.min.js"></script>
@@ -30,23 +39,13 @@
   <script src="scripts/app.module.js"></script>
   <script src="scripts/services/bungieService.factory.js"></script>
   <script src="scripts/shell/appCtrl.controller.js"></script>
+  <script src="scripts/shell/appHeader.directive.js"></script>
   <script src="scripts/inventory/guardianPicker.directive.js"></script>
   <script src="scripts/inventory/inventory.directive.js"></script>
   <script src="scripts/inventory/destinyTooltip.directive.js"></script>
   <!-- end app scripts -->
 
-  <div class="version-number">Pockets Infinity v0.1.1-alpha</div>
   <a class="submit-bug" href="https://github.com/blainefricks/pockets-infinity/issues" target="_blank">Report a Bug</a>
-
-  <div class="destiny-info">
-    <div id="error"></div>
-  </div>
-
-  <div ng-controller="appCtrl">
-    <guardian-picker></guardian-picker>
-    <inventory></inventory>
-    <footer></footer>
-  </div>
 
 </body>
 
