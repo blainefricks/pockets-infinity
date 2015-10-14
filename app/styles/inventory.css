@@ -2,7 +2,7 @@ inventory {
   display: block;
   position: relative;
   width: 100%;
-  min-width: 1080px;
+  min-width: 780px;
   background-color: rgba(255,255,255,0.05);
   padding: 16px 16px 16px 374px;
 }
@@ -13,6 +13,9 @@ inventory {
   padding-right: 30px;
   padding-bottom: 30px;
   vertical-align: top;
+}
+.bucketList:nth-child(even) {
+  padding-right: 0px;
 }
 .bucketLabel {
   font-size: 18px;
@@ -61,6 +64,8 @@ li.bucketItem.layoutCompact {
 }
 .bucketItemName {
   font-weight: bold;
+  padding-right: 30px;
+  text-overflow: ellipsis;
 }
 .bucketItemOwner {
   font-size: 14px;
@@ -74,11 +79,19 @@ li.bucketItem.layoutCompact {
 }
 
 /* Responsive CSS */
-@media (max-width: 480px){
-  .bucketList {width: 100%;}
+@media (max-width: 1240px){
   li.bucketItem {width: 100%;}
 }
-
+@media (max-width: 1010px){
+  .bucketList {
+    width: 100%;
+    padding-right: 0px;
+  }
+  li.bucketItem {width: 50%;}
+}
+@media (max-width: 920px){
+  li.bucketItem {width: 100%;}
+}
 
 
 /*.leftStats {
