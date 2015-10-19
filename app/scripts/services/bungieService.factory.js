@@ -122,11 +122,19 @@
       console.log("Gamertag:",handle); // dev
       console.log("Membership ID:",userData.membershipId); // dev
 
-      return {
-        handle : handle,
-        id : userData.membershipId,
-        platform : platformId
-      };
+      var _user = [
+        {
+          handle : handle,
+          id : userData.membershipId,
+          platform : platformId
+        }
+      ];
+
+      $rootScope.$broadcast('user-updated', {
+        user: _user
+      });
+
+      return _user;
     }
 
 

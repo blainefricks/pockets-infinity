@@ -1,6 +1,9 @@
 (function(){
+  'use strict';
 
-  app.directive('appHeader', function() {
+  app.directive('appHeader', AppHeader);
+
+  function AppHeader() {
 
     return {
       controller: AppHeaderCtrl,
@@ -10,20 +13,22 @@
       scope: {},
       template: [
         '<div class="version-number">Pockets Infinity v0.1.1-alpha</div>',
-        '<div id="user">{{vm.active.user}}</div>'
+        '<div id="user" ng-repeat="user in vm.user">{{user.handle}}</div>'
       ].join('')
     };
-  });
+  };
 
   AppHeaderCtrl.$inject = ['$scope'];
 
   function AppHeaderCtrl ($scope) {
     var vm = this;
-    vm.active = [
-      {
-        id: "Username"
-      }
-    ];
+    vm.user = [];
+
+    $scope.$on('user-updated', function (e, args) {
+      console.log("appHeader Broadcast Received: user-updated"); // dev
+      vm.user = args.user;
+      console.log(vm.user);
+    });
   }
 
 }());
