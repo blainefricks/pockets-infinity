@@ -24,6 +24,18 @@
     var vm = this;
     vm.user = [];
 
+    // dev data
+
+    // vm.user = [
+    //   {
+    //     handle : 'Reclaimer01',
+    //     id : '1234',
+    //     platform : 1
+    //   }
+    // ];
+
+    // end dev data
+
     $scope.$on('user-updated', function (e, args) {
       console.log("appHeader Broadcast Received: user-updated"); // dev
       vm.user = args.user;

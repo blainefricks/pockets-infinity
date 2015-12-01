@@ -13,10 +13,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="stylesheet" type="text/css" href="styles/main.css">
-  <link rel="stylesheet" type="text/css" href="styles/appHeader.css">
-  <link rel="stylesheet" type="text/css" href="styles/guardianPicker.css">
   <link rel="stylesheet" type="text/css" href="styles/submit-bug.css">
+  <link rel="stylesheet" type="text/css" href="styles/appHeader.css">
   <link rel="stylesheet" type="text/css" href="styles/inventory.css">
+  <link rel="stylesheet" type="text/css" href="styles/guardianPicker.css">
+  <link rel="stylesheet" type="text/css" href="styles/buckets.css">
+  <link rel="stylesheet" type="text/css" href="styles/bucketItem.css">
   <link rel="stylesheet" type="text/css" href="styles/destinyTooltip.css">
 </head>
 
@@ -25,7 +27,6 @@
   <div ng-controller="appCtrl">
     <toaster></toaster>
     <app-header></app-header>
-    <guardian-picker></guardian-picker>
     <inventory></inventory>
     <footer></footer>
   </div>
@@ -40,8 +41,10 @@
   <script src="scripts/services/bungieService.factory.js"></script>
   <script src="scripts/shell/appCtrl.controller.js"></script>
   <script src="scripts/shell/appHeader.directive.js"></script>
-  <script src="scripts/inventory/guardianPicker.directive.js"></script>
   <script src="scripts/inventory/inventory.directive.js"></script>
+  <script src="scripts/inventory/guardianPicker.directive.js"></script>
+  <script src="scripts/inventory/buckets.directive.js"></script>
+  <script src="scripts/inventory/bucketItem.directive.js"></script>
   <script src="scripts/inventory/destinyTooltip.directive.js"></script>
   <!-- end app scripts -->
 

@@ -103,6 +103,7 @@
 
     function generateMembership(response) {
       var userData = response.data.Response.user;
+      console.log(userData); // dev
       var handle = null;
       var id = null;
       var platformId = null;
@@ -157,10 +158,13 @@
     }
 
     function getGuardiansRequest(membership, cookie) {
+      // /{membershipType}/Account/{destinyMembershipId}/Summary/
+      console.log(membership); // dev
+      console.log("https://www.bungie.net/Platform/Destiny/" + membership.platform + "/Account/" + membership.id + "/Summary/"); // dev
 
       return {
         method: "GET",
-        url: "https://www.bungie.net/Platform/User/GetBungieAccount/" + membership.id + "/" + membership.platform + "/",
+        url: "https://www.bungie.net/Platform/Destiny/" + membership.platform + "/Account/" + membership.id + "/Summary/",
         headers : {
           "X-API-Key": apiKey,
           "X-CSRF": cookie.bungled

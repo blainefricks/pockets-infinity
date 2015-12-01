@@ -1,0 +1,62 @@
+
+bucket-item {
+  position: relative;
+  display: inline-block;
+  width: 50%;
+  height: 40px;
+  padding: 0px 16px 0px 56px;
+  margin-bottom: 16px;
+  cursor: -webkit-grab;
+}
+bucket-item:active {cursor: -webkit-grabbing;}
+bucket-item.layoutCompact {
+  width: 60px;
+  height: 60px;
+  padding: 0px;
+  margin: 3px;
+}
+.bucketItemImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  background: rgba(0,0,0,0.5);
+  border: 2px solid #fff;
+  background-size: 100%;
+}
+.layoutCompact .bucketItemImage {
+  width: 60px;
+  height: 60px;
+}
+.layoutCompact .bucketItemName,
+.layoutCompact .bucketItemOwner,
+.layoutCompact .bucketItemPower {
+  display: none;
+}
+.bucketItemName {
+  font-weight: bold;
+  padding-right: 30px;
+  text-overflow: ellipsis;
+}
+.bucketItemOwner {
+  font-size: 14px;
+}
+.bucketItemPower {
+  position: absolute;
+  top: 0px;
+  right: 16px;
+  line-height: 40px;
+  font-weight: bold;
+}
+
+/* Responsive CSS */
+@media (max-width: 1240px){
+  bucket-item {width: 100%;}
+}
+@media (max-width: 1010px){
+  bucket-item {width: 50%;}
+}
+@media (max-width: 920px){
+  bucket-item {width: 100%;}
+}

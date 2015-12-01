@@ -4,7 +4,7 @@
 
   app.directive('guardianPicker', GuardianPicker);
 
-  GuardianPicker.$inject = ['$timeout'];
+  // GuardianPicker.$inject = ['$timeout'];
 
   function GuardianPicker($timeout) {
     console.log("guardianPicker"); // dev
@@ -13,11 +13,10 @@
       controller: GuardianPickerCtrl,
       controllerAs: 'vm',
       bindToController: true,
-      link: Link,
       restrict: 'E',
       scope: {},
       template: [
-        '<div ng-repeat="guardian in vm.guardians" class="guardianContainer" id="{{guardian.id}}" style="background-image:url({{guardian.backgroundPath}})">',
+        '<div ng-repeat="guardian in vm.guardians" class="guardianContainer" style="background-image:url({{guardian.backgroundPath}})">',
         '  <div class="emblem" style="background-image:url({{guardian.emblemPath}});"></div>',
         '  <div class="guardianDetails">',
         '    <div class="guardianClass">{{guardian.characterClass}}</div>',
@@ -28,22 +27,16 @@
         '  <div class="guardianProgress">',
         '    <div class="barFill" style="width:{{guardian.percentToNextLevel}}%;"></div>',
         '  </div>',
+        '  <inventory-guardian id="{{guardian.id}}"></inventory-guardian>',
+        '  <inventory-drop id="{{guardian.id}}"></inventory-drop>',
         '</div>'
       ].join('')
     };
-
-    function Link (element, attribute, transclude) {
-      $timeout(function () {
-        $timeout(function () {
-          // body...
-        }, 0);
-      }, 0);
-    }
   }
 
   GuardianPickerCtrl.$inject = ['$scope'];
 
-  function GuardianPickerCtrl($scope) {
+  function GuardianPickerCtrl ($scope) {
     var vm = this;
     vm.guardians = [];
 
@@ -91,7 +84,7 @@
     // end dev data
 
     $scope.$on('guardians-updated', function (e, args) {
-      console.log("Broadcast Received: guardians-updated"); // dev
+      console.log("GuardianPickerCtrl Broadcast Received: guardians-updated"); // dev
       vm.guardians = args.guardians;
       console.log(vm.guardians); // dev
     });
