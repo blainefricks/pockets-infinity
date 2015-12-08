@@ -13,7 +13,7 @@
         'bucketItem': '=bucketItemData'
       },
       template: [
-        '<destiny-tooltip></destiny-tooltip>',
+        '<destiny-tooltip tooltip-data="vm.bucketItem[0]"></destiny-tooltip>',
         '<div class="bucketItemImage" style="background-image:url(\'{{vm.bucketItem[0].itemImageURL}}\');"></div>',
         '<div class="bucketItemName">{{vm.bucketItem[0].itemName}}</div>',
         '<div class="bucketItemOwner">{{vm.bucketItem[0].itemOwner}}</div>',
