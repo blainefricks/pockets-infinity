@@ -8,12 +8,12 @@ destiny-tooltip {
   opacity: .99;
   z-index: 999;
 }
-.bucketItem:hover destiny-tooltip {
+bucket-item:hover destiny-tooltip {
   display: block;
   top: 56px;
   left: 0px;
 }
-.layoutCompact.bucketItem:hover destiny-tooltip {top: 66px;}
+bucket-item.layoutCompact:hover destiny-tooltip {top: 66px;}
 
 .bucketsRight destiny-tooltip {
   right: 100px;
