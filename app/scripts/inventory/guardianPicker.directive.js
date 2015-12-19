@@ -1,13 +1,9 @@
- (function(){
-
-  // 'vm' is 'view-model'
+(function(){
+  'use strict';
 
   app.directive('guardianPicker', GuardianPicker);
 
-  // GuardianPicker.$inject = ['$timeout'];
-
-  function GuardianPicker($timeout) {
-    console.log("guardianPicker"); // dev
+  function GuardianPicker() {
 
     return {
       controller: GuardianPickerCtrl,
@@ -36,9 +32,9 @@
 
   GuardianPickerCtrl.$inject = ['$scope'];
 
-  function GuardianPickerCtrl ($scope) {
+  function GuardianPickerCtrl($scope) {
     var vm = this;
-    vm.guardians = [];
+    // vm.guardians = [];
 
     // dev data
 
@@ -50,9 +46,9 @@
     //     id: '1234',
     //     dateLastPlayed: '2015-08-23T16:45:33Z',
     //     gender: 'Male',
-    //     light: '165',
-    //     level: '34',
-    //     percentToNextLevel: '50',
+    //     light: 165,
+    //     level: 34,
+    //     percentToNextLevel: 50,
     //     race: 'Awoken'
     //   },
     //   {
@@ -61,10 +57,10 @@
     //     characterClass: 'Titan',
     //     id: '2345',
     //     dateLastPlayed: '2015-08-26T16:45:33Z',
-    //     light: '115',
+    //     light: 115,
     //     gender: 'Male',
-    //     level: '31',
-    //     percentToNextLevel: '85',
+    //     level: 31,
+    //     percentToNextLevel: 85,
     //     race: 'Exo'
     //   },
     //   {
@@ -74,9 +70,9 @@
     //     id: '5678',
     //     dateLastPlayed: '2015-08-19T16:45:33Z',
     //     gender: 'Male',
-    //     light: '98',
-    //     level: '19',
-    //     percentToNextLevel: '15',
+    //     light: 98,
+    //     level: 19,
+    //     percentToNextLevel: 15,
     //     race: 'Exo'
     //   }
     // ];

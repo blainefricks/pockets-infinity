@@ -59,6 +59,18 @@
 
     /*********************************************************/
 
+    function processResponse(response) {
+      console.log(response); // dev
+      if (response.data.ErrorCode > 1) {
+        console.log(response.data.ErrorStatus + '\n' + response.data.Message); // dev
+      };
+
+      return response;
+    }
+
+
+    /*********************************************************/
+
 
     function getBungieNetUser() {
       // Returns account information for the current user
@@ -66,11 +78,12 @@
       bungieNetUserPromise = bungieNetUserPromise || getBungieCookies()
         .then(getBungieNetUserRequest)
         .then($http)
-        .then(processBungieNetRequest)
+        .then(processResponse)
         .catch(function(error) {
           console.log("Failed!", error);
         })
         .then(generateMembership)
+        .then(getDestinyAccount)
         .then(getGuardians);
 
       return bungieNetUserPromise;
@@ -91,21 +104,11 @@
       };
     }
 
-    function processBungieNetRequest(response) {
-      // console.log("processBungieNetRequest(response)", response); // dev
-      if (response.data.ErrorCode > 1) {
-        document.getElementById("error").innerHTML = "<b>" + response.data.ErrorStatus + "</b><br>" + response.data.Message; // 0.1.1
-        console.log(response.data.ErrorStatus + "\n" + response.data.Message); // dev
-      };
-
-      return response;
-    }
-
     function generateMembership(response) {
       var userData = response.data.Response.user;
       console.log(userData); // dev
       var handle = null;
-      var id = null;
+      var membershipId = null;
       var platformId = null;
 
       if (userData.xboxDisplayName) {
@@ -123,16 +126,14 @@
       console.log("Gamertag:",handle); // dev
       console.log("Membership ID:",userData.membershipId); // dev
 
-      var _user = [
-        {
-          handle : handle,
-          id : userData.membershipId,
-          platform : platformId
-        }
-      ];
+      var _user = {
+                    handle : handle,
+                    membershipId : userData.membershipId,
+                    membershipType : platformId
+                  };
 
       $rootScope.$broadcast('user-updated', {
-        user: _user
+        user: [_user]
       });
 
       return _user;
@@ -141,49 +142,65 @@
 
     /*********************************************************/
 
-
-    function getGuardians(membership) {
+    function getDestinyAccount(membership) {
       console.log(membership); // dev
 
-      guardianPromise = guardianPromise || getBungieCookies()
-        .then(getGuardiansRequest.bind(null, membership))
+      var bungieAccountPromise = bungieAccountPromise || getBungieCookies()
+        .then(getDestinyAccountRequest.bind(null, membership))
         .then($http)
-        .then(processGuardiansRequest)
+        .then(processResponse)
         .catch(function(error) {
-          console.log("Failed!", error);
+          console.log('Failed!', error);
         })
-        .then(generateGuardians);
+        .then(generateDestinyAccount);
 
-      return guardianPromise;
+      return bungieAccountPromise;
     }
 
-    function getGuardiansRequest(membership, cookie) {
-      // /{membershipType}/Account/{destinyMembershipId}/Summary/
+    function getDestinyAccountRequest(membership, cookie) {
+      // http://www.bungie.net/Platform/User/GetBungieAccount/{membershipId}/{membershipType}/
+      // Returns the account information for the given membershipId and type, including any exposed BungieNet and Destiny information. Will respect privacy of links based on requesting user for anonymous requests.
+
       console.log(membership); // dev
-      console.log("https://www.bungie.net/Platform/Destiny/" + membership.platform + "/Account/" + membership.id + "/Summary/"); // dev
+      console.log('https://www.bungie.net/Platform/User/GetBungieAccount/' + membership.membershipId + '/' + membership.membershipType + '/'); // dev
 
       return {
-        method: "GET",
-        url: "https://www.bungie.net/Platform/Destiny/" + membership.platform + "/Account/" + membership.id + "/Summary/",
-        headers : {
-          "X-API-Key": apiKey,
-          "X-CSRF": cookie.bungled
-        },
-        withCredentials: true
-      }
-    }
-
-    function processGuardiansRequest(response) {
-      console.log(response); // dev
-      if (response.data.ErrorCode > 1) {
-        console.log(response.data.ErrorStatus + "\n" + response.data.Message); // dev
+        method: 'GET',
+        url: 'https://www.bungie.net/Platform/User/GetBungieAccount/' + membership.membershipId + '/' + membership.membershipType + '/',
+        headers: {
+          'X-API-Key': apiKey,
+          'X-CSRF': cookie.bungled
+        }
       };
-
-      return response;
     }
 
-    function generateGuardians(response) {
-      var guardianData = response.data.Response.destinyAccounts[0].characters;
+    function generateDestinyAccount(response) {
+      var destinyAccount = response.data.Response.destinyAccounts[0];
+      console.log(destinyAccount); // dev
+
+      return destinyAccount;
+    }
+
+    /*********************************************************/
+
+    // function getGuardiansRequest(membership, cookie) {
+    //   // /{membershipType}/Account/{destinyMembershipId}/Summary/
+    //   console.log(membership); // dev
+    //   console.log("https://www.bungie.net/Platform/Destiny/" + membership.membershipType + "/Account/" + membership.membershipId + "/Summary/"); // dev
+
+    //   return {
+    //     method: "GET",
+    //     url: "https://www.bungie.net/Platform/Destiny/" + membership.membershipType + "/Account/" + membership.membershipId + "/Summary/",
+    //     headers : {
+    //       "X-API-Key": apiKey,
+    //       "X-CSRF": cookie.bungled
+    //     },
+    //     withCredentials: true
+    //   }
+    // }
+
+    function getGuardians(response) {
+      var guardianData = response.characters;
       var _guardians = [];
 
       for (var i = 0; i < guardianData.length; i++) {
@@ -217,7 +234,7 @@
       inventoryPromise = inventoryPromise || getBungieCookies()
       .then(getGuardianInventoryRequest)
       .then($http)
-      .then(processGuardianInventoryRequest);
+      .then(processResponse);
 
       return inventoryPromise;
     }
@@ -237,10 +254,5 @@
       }
     }
 
-    function processGuardianInventoryRequest(response) {
-      console.log(response); // dev
-
-      return response;
-    }
   }
 })();

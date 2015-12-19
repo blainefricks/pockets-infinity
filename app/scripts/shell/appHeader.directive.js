@@ -22,7 +22,7 @@
 
   function AppHeaderCtrl ($scope) {
     var vm = this;
-    vm.user = [];
+    // vm.user = [];
 
     // dev data
 
